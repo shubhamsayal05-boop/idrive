@@ -1,0 +1,111 @@
+/* ================= ODRIV — workbook UI chrome ================= */
+
+* { box-sizing: border-box; }
+
+.App { height: 100vh; display: flex; flex-direction: column; overflow: hidden;
+  font-family: Calibri, "Segoe UI", "IBM Plex Sans", Arial, sans-serif; font-size: 13px; color: #222; }
+
+/* ---- title bar ---- */
+.xl-titlebar { background: #217346; color: #fff; height: 30px; display: flex;
+  align-items: center; padding: 0 10px; font-size: 12.5px; flex: 0 0 auto; gap: 10px; }
+.xl-titlebar .doc-name { flex: 1; text-align: center; opacity: .95; letter-spacing: .2px; }
+.xl-titlebar .logo { font-weight: 700; letter-spacing: 1px; }
+
+/* ---- ribbon-ish strip ---- */
+.xl-ribbon { background: #F3F2F1; border-bottom: 1px solid #D4D4D4; padding: 3px 10px;
+  display: flex; align-items: center; gap: 6px; flex: 0 0 auto; min-height: 32px; flex-wrap: wrap; }
+.xl-ribbon .sep { width: 1px; height: 20px; background: #D4D4D4; margin: 0 4px; }
+.xl-ribbon .hint { color: #777; font-size: 11.5px; margin-left: auto; }
+
+/* ---- formula bar ---- */
+.xl-formulabar { display: flex; align-items: stretch; border-bottom: 1px solid #D4D4D4;
+  background: #fff; flex: 0 0 auto; height: 24px; }
+.xl-namebox { width: 110px; border-right: 1px solid #D4D4D4; padding: 3px 8px;
+  font-size: 12px; color: #444; overflow: hidden; white-space: nowrap; }
+.xl-fx { width: 26px; border-right: 1px solid #D4D4D4; text-align: center; color: #888;
+  font-style: italic; font-family: Georgia, serif; padding-top: 2px; }
+.xl-formula { flex: 1; padding: 3px 8px; font-size: 12px; color: #333; overflow: hidden;
+  white-space: nowrap; text-overflow: ellipsis; }
+
+/* ---- sheet area ---- */
+.xl-sheet-area { flex: 1; overflow: auto; background: #fff; position: relative; }
+
+/* ---- bottom tab strip ---- */
+.xl-tabstrip { background: #F3F2F1; border-top: 1px solid #D4D4D4; display: flex;
+  align-items: center; flex: 0 0 auto; height: 27px; padding-left: 4px; }
+.xl-tabs { display: flex; overflow-x: auto; scrollbar-width: thin; flex: 1; height: 100%; }
+.xl-tab { padding: 4px 12px; border-right: 1px solid #D4D4D4; cursor: pointer;
+  white-space: nowrap; font-size: 12px; color: #444; background: #E9E9E9;
+  border-top: 2px solid transparent; display: flex; align-items: center; gap: 5px; }
+.xl-tab:hover { background: #fff; }
+.xl-tab.active { background: #fff; color: #217346; font-weight: 700;
+  border-top: 2px solid #217346; }
+.xl-tab.config { color: #8a4500; font-style: italic; }
+.xl-tab .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+.xl-lock-btn { padding: 2px 10px; margin: 0 4px; font-size: 11px; cursor: pointer;
+  border: 1px solid #ADADAD; background: #ECECEC; border-radius: 2px; white-space: nowrap; }
+.xl-lock-btn:hover { background: #E5F1FB; border-color: #0078D7; }
+
+/* ---- form-control button ---- */
+.xl-btn { font-family: inherit; font-size: 12px; padding: 5px 12px; cursor: pointer;
+  background: linear-gradient(#FDFDFD, #ECECEC); border: 1px solid #ADADAD;
+  border-radius: 2px; box-shadow: 0 1px 0 rgba(0,0,0,.05); color: #222;
+  transition: background .12s, border-color .12s; white-space: nowrap; }
+.xl-btn:hover { background: #E5F1FB; border-color: #0078D7; }
+.xl-btn:active { background: #CCE4F7; }
+.xl-btn:disabled { color: #999; cursor: default; background: #F5F5F5; }
+.xl-btn.primary { background: linear-gradient(#3C6E91, #2E566F); color: #fff; border-color: #24445A; font-weight: 700; }
+.xl-btn.primary:hover { background: #3C6E91; }
+.xl-btn.danger { background: linear-gradient(#C0504D, #A03835); color: #fff; border-color: #8a2f2c; font-weight: 700; }
+.xl-btn.danger:hover { background: #C0504D; }
+
+/* ---- generic grid ---- */
+.xl-grid { border-collapse: collapse; font-size: 12px; }
+.xl-grid th, .xl-grid td { border: 1px solid #D4D4D4; padding: 2px 6px; min-width: 30px;
+  height: 20px; white-space: nowrap; }
+.xl-grid th { background: #F3F2F1; color: #555; font-weight: 400; text-align: center; }
+.xl-grid .rowhead { background: #F3F2F1; color: #555; text-align: center; min-width: 34px; }
+.xl-grid td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.xl-grid td.sel { outline: 2px solid #217346; outline-offset: -2px; }
+.xl-cell-input { width: 100%; border: none; outline: none; font: inherit; background: #FFFDE7; }
+
+/* config sheet container */
+.cfg-sheet { padding: 14px 18px; }
+.cfg-sheet h2 { font-size: 16px; margin: 0 0 4px; color: #215967; font-weight: 700; }
+.cfg-sheet .note { font-size: 11.5px; color: #888; margin-bottom: 10px; }
+.cfg-toolbar { display: flex; gap: 8px; align-items: center; margin: 8px 0; flex-wrap: wrap; }
+.cfg-toolbar select, .cfg-toolbar input { border: 1px solid #ADADAD; padding: 3px 6px;
+  font: inherit; border-radius: 2px; background: #fff; }
+
+/* ---- modal ---- */
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 50;
+  display: flex; align-items: center; justify-content: center; }
+.modal { background: #F0F0F0; border: 1px solid #777; box-shadow: 0 8px 30px rgba(0,0,0,.35);
+  min-width: 430px; max-width: 860px; max-height: 86vh; display: flex; flex-direction: column; }
+.modal-title { background: linear-gradient(#fff, #E5E5E5); padding: 6px 10px; font-weight: 700;
+  border-bottom: 1px solid #ccc; display: flex; justify-content: space-between; align-items: center; }
+.modal-title .x { cursor: pointer; padding: 0 6px; color: #a00; font-weight: 700; }
+.modal-body { padding: 14px; overflow: auto; }
+.modal-footer { padding: 8px 12px; border-top: 1px solid #ccc; display: flex; gap: 8px;
+  justify-content: flex-end; }
+.form-row { display: grid; grid-template-columns: 170px 1fr; gap: 8px; margin-bottom: 7px;
+  align-items: center; }
+.form-row label { font-size: 12px; color: #333; text-align: right; }
+.form-row input, .form-row select { border: 1px solid #ADADAD; padding: 4px 6px; font: inherit;
+  background: #fff; border-radius: 2px; }
+
+/* ---- moniteur ---- */
+.moniteur { font-size: 11.5px; padding: 3px 8px; border: 1px solid #889; background: #fff;
+  color: #333; min-height: 22px; }
+.moniteur.busy { background: #FF0000; color: #fff; font-weight: 700; }
+
+/* spinner */
+.spin { display: inline-block; width: 13px; height: 13px; border: 2px solid #fff;
+  border-top-color: transparent; border-radius: 50%; animation: sp 0.8s linear infinite; vertical-align: -2px; }
+.spin.dark { border-color: #217346; border-top-color: transparent; }
+@keyframes sp { to { transform: rotate(360deg); } }
+
+/* scrollbars */
+::-webkit-scrollbar { height: 11px; width: 11px; }
+::-webkit-scrollbar-thumb { background: #C1C1C1; border: 2px solid #F3F2F1; border-radius: 6px; }
+::-webkit-scrollbar-track { background: #F3F2F1; }

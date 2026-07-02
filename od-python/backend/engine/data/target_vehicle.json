@@ -1,0 +1,1492 @@
+{
+ "rows": [
+  {
+   "sdv": "(PT) KD - tip in downshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 94,
+   "dyn": 88.3
+  },
+  {
+   "sdv": "(TO) KD - tip in downshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 95.1,
+   "dyn": 91.1
+  },
+  {
+   "sdv": "Accel Cst Load",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Accel Cst Load - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Accel Load Decrease",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 99.2,
+   "dyn": null
+  },
+  {
+   "sdv": "Accel Load Increase",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 97.6,
+   "dyn": null
+  },
+  {
+   "sdv": "Auto start vehicle moving",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 99.9,
+   "dyn": 93.7
+  },
+  {
+   "sdv": "Auto start vehicle stationary",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Auto Stop",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 95.8,
+   "dyn": null
+  },
+  {
+   "sdv": "Coast - brake-on downshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 94.9,
+   "dyn": 95.8
+  },
+  {
+   "sdv": "Coast - brake-on upshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 98.5,
+   "dyn": 100
+  },
+  {
+   "sdv": "Coast-brake-on downshift Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 98.9,
+   "dyn": 93.7
+  },
+  {
+   "sdv": "Cst Speed Cst Load",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Cst Speed Cst Load - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 94.8,
+   "dyn": null
+  },
+  {
+   "sdv": "Cst Speed Without Load",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Cst Speed Without Load - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 99.9,
+   "dyn": null
+  },
+  {
+   "sdv": "DA Rolling Start",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "DASS Eng Off quick",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 99.6,
+   "dyn": 95.9
+  },
+  {
+   "sdv": "DASS Eng Off slow",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 99.3,
+   "dyn": 100
+  },
+  {
+   "sdv": "DASS Eng On",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 99.9,
+   "dyn": 97.4
+  },
+  {
+   "sdv": "DASS Eng On - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 99.5,
+   "dyn": 97.4
+  },
+  {
+   "sdv": "Decel Cst Brake",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Decel Trans to Cst Spd",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Decel Without Brake",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 96.6,
+   "dyn": null
+  },
+  {
+   "sdv": "Decel Without Brake - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Drive Away Creep Eng Off",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 94.6,
+   "dyn": 100
+  },
+  {
+   "sdv": "Drive Away Creep Eng On",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 93.38,
+   "dyn": 100
+  },
+  {
+   "sdv": "Drive Away Creep Eng On - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Idle Air Cond On-Off",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Idle Vehicle Stationary",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": "-"
+  },
+  {
+   "sdv": "Idle Vehicle Stationary - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 99.1,
+   "dyn": null
+  },
+  {
+   "sdv": "Lever change",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 99.3,
+   "dyn": null
+  },
+  {
+   "sdv": "Load reversal downshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 97.9,
+   "dyn": 76.3
+  },
+  {
+   "sdv": "Load reversal upshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Maneuvering",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Maneuvering - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 83.8,
+   "dyn": 100
+  },
+  {
+   "sdv": "Maneuvering with throttle",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 70.6
+  },
+  {
+   "sdv": "Manual Start",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 45.5
+  },
+  {
+   "sdv": "Manual Stop",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Power-on downshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 93.5,
+   "dyn": 87.4
+  },
+  {
+   "sdv": "Power-on upshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 99.5,
+   "dyn": 99.6
+  },
+  {
+   "sdv": "Power-on upshift Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 99.4,
+   "dyn": 100
+  },
+  {
+   "sdv": "Rate of low points",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 0.0131,
+   "dyn": 0.0105
+  },
+  {
+   "sdv": "Shift Abort",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 97.8,
+   "dyn": 98.6
+  },
+  {
+   "sdv": "Tip in at constant speed",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 96.6,
+   "dyn": 72.7
+  },
+  {
+   "sdv": "Tip in at deceleration",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 98.7,
+   "dyn": 94.8
+  },
+  {
+   "sdv": "Tip out after acceleration",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 93.8,
+   "dyn": 94.7
+  },
+  {
+   "sdv": "Tip out at constant speed",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Tip out upshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 57.5,
+   "dyn": 100
+  },
+  {
+   "sdv": "Vehicle Stop",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 42.2,
+   "dyn": null
+  },
+  {
+   "sdv": "Vehicle Stop - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "(PT) KD - tip in downshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 94.1,
+   "dyn": 88.4
+  },
+  {
+   "sdv": "(TO) KD - tip in downshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 95.1,
+   "dyn": 91.1
+  },
+  {
+   "sdv": "Accel Cst Load",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Accel Cst Load - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Accel Load Decrease",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 99.2,
+   "dyn": null
+  },
+  {
+   "sdv": "Accel Load Increase",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 97.6,
+   "dyn": null
+  },
+  {
+   "sdv": "Auto start vehicle moving",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 99.9,
+   "dyn": 93.7
+  },
+  {
+   "sdv": "Auto start vehicle stationary",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Auto Stop",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 95.8,
+   "dyn": null
+  },
+  {
+   "sdv": "Coast - brake-on downshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 94.9,
+   "dyn": 95.8
+  },
+  {
+   "sdv": "Coast - brake-on upshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 98.5,
+   "dyn": 100
+  },
+  {
+   "sdv": "Coast-brake-on downshift Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 98.9,
+   "dyn": 93.7
+  },
+  {
+   "sdv": "Cst Speed Cst Load",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Cst Speed Cst Load - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 94.8,
+   "dyn": null
+  },
+  {
+   "sdv": "Cst Speed Without Load",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Cst Speed Without Load - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 99.9,
+   "dyn": null
+  },
+  {
+   "sdv": "DA Rolling Start",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "DASS Eng Off quick",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 99.6,
+   "dyn": 95.9
+  },
+  {
+   "sdv": "DASS Eng Off slow",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 99.3,
+   "dyn": 100
+  },
+  {
+   "sdv": "DASS Eng On",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 99.9,
+   "dyn": 97.4
+  },
+  {
+   "sdv": "DASS Eng On - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 99.5,
+   "dyn": 97.4
+  },
+  {
+   "sdv": "Decel Cst Brake",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Decel Trans to Cst Spd",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Decel Without Brake",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 96.6,
+   "dyn": null
+  },
+  {
+   "sdv": "Decel Without Brake - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Drive Away Creep Eng Off",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 95.3,
+   "dyn": 100
+  },
+  {
+   "sdv": "Drive Away Creep Eng On",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 93.38,
+   "dyn": 100
+  },
+  {
+   "sdv": "Drive Away Creep Eng On - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Idle Air Cond On-Off",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Idle Vehicle Stationary",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": "-"
+  },
+  {
+   "sdv": "Idle Vehicle Stationary - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 99.1,
+   "dyn": null
+  },
+  {
+   "sdv": "Lever change",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 99.3,
+   "dyn": null
+  },
+  {
+   "sdv": "Load reversal downshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 97.9,
+   "dyn": 76.3
+  },
+  {
+   "sdv": "Load reversal upshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Maneuvering",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Maneuvering - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 83.8,
+   "dyn": 100
+  },
+  {
+   "sdv": "Maneuvering with throttle",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": 70.6
+  },
+  {
+   "sdv": "Manual Start",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": 45.5
+  },
+  {
+   "sdv": "Manual Stop",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Power-on downshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 93.6,
+   "dyn": 87.4
+  },
+  {
+   "sdv": "Power-on upshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 99.4,
+   "dyn": 99.6
+  },
+  {
+   "sdv": "Power-on upshift Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 99.4,
+   "dyn": 100
+  },
+  {
+   "sdv": "Rate of low points",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 0.0131,
+   "dyn": 0.0105
+  },
+  {
+   "sdv": "Shift Abort",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 97.8,
+   "dyn": 98.6
+  },
+  {
+   "sdv": "Tip in at constant speed",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 96.6,
+   "dyn": 72.7
+  },
+  {
+   "sdv": "Tip in at deceleration",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 98.7,
+   "dyn": 94.8
+  },
+  {
+   "sdv": "Tip out after acceleration",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 93.8,
+   "dyn": 94.7
+  },
+  {
+   "sdv": "Tip out at constant speed",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Tip out upshift",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 58,
+   "dyn": 100
+  },
+  {
+   "sdv": "Vehicle Stop",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 53.1,
+   "dyn": null
+  },
+  {
+   "sdv": "Vehicle Stop - Cold",
+   "drive_version": "V4.6",
+   "vehicle": "P8 MHEV MDL2",
+   "mode": "Hybrid",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Drive Away Creep Eng On",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Drive Away Creep Eng Off",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 62.6,
+   "dyn": 100
+  },
+  {
+   "sdv": "DASS Eng On",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 98.4,
+   "dyn": 97.3
+  },
+  {
+   "sdv": "DASS Eng Off quick",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 95.7,
+   "dyn": 99.3
+  },
+  {
+   "sdv": "DA Rolling Start",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 70.1,
+   "dyn": 100
+  },
+  {
+   "sdv": "Accel Cst Load",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 98,
+   "dyn": null
+  },
+  {
+   "sdv": "Accel Load Increase",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 95.4,
+   "dyn": null
+  },
+  {
+   "sdv": "Accel Load Decrease",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 97.2,
+   "dyn": null
+  },
+  {
+   "sdv": "Decel Without Brake",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 98.7,
+   "dyn": null
+  },
+  {
+   "sdv": "Decel Cst Brake",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Decel Trans to Cst Spd",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Cst Speed Without Load",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 99.9,
+   "dyn": null
+  },
+  {
+   "sdv": "Cst Speed Cst Load",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 99.7,
+   "dyn": null
+  },
+  {
+   "sdv": "Power-on upshift",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 97.8,
+   "dyn": 100
+  },
+  {
+   "sdv": "Coast - brake-on downshift",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 99.8,
+   "dyn": 97.2
+  },
+  {
+   "sdv": "Tip out upshift",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 89.7,
+   "dyn": 100
+  },
+  {
+   "sdv": "Load Reversal upshift",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Coast - brake-on upshift",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 99.6,
+   "dyn": 100
+  },
+  {
+   "sdv": "Power-on downshift",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 92.6,
+   "dyn": 86.7
+  },
+  {
+   "sdv": "(PT) KD - tip in downshift",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 60,
+   "dyn": 98.3
+  },
+  {
+   "sdv": "(TO) KD - tip in downshift",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 81.9,
+   "dyn": 98
+  },
+  {
+   "sdv": "Load Reversal Downshift",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 95.9
+  },
+  {
+   "sdv": "Lever change",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Maneuvering",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Maneuvering with throttle",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 91.5,
+   "dyn": 100
+  },
+  {
+   "sdv": "Converter controlled slip",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 99.9,
+   "dyn": null
+  },
+  {
+   "sdv": "Converter lock up",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 96.5,
+   "dyn": null
+  },
+  {
+   "sdv": "Converter release",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 99.8,
+   "dyn": null
+  },
+  {
+   "sdv": "Shift Abort",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 98.8,
+   "dyn": 100
+  },
+  {
+   "sdv": "Cylinder Deactivation",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 99.2,
+   "dyn": null
+  },
+  {
+   "sdv": "Cylinder reactivation",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 98.4,
+   "dyn": null
+  },
+  {
+   "sdv": "Tip in at deceleration",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 97.2,
+   "dyn": 99.9
+  },
+  {
+   "sdv": "Tip in at constant speed",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 92.9,
+   "dyn": 86.4
+  },
+  {
+   "sdv": "Tip Out After Acceleration",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 98.4,
+   "dyn": 94.7
+  },
+  {
+   "sdv": "Tip Out At Constant Speed",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 94.1,
+   "dyn": 99.7
+  },
+  {
+   "sdv": "Idle Vehicle Stationary",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 97.3,
+   "dyn": null
+  },
+  {
+   "sdv": "Idle Air Cond On-Off",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Manual Start",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Auto start vehicle moving",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 97.9
+  },
+  {
+   "sdv": "Manual Stop",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Auto stop",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Vehicle Stop",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 97,
+   "dyn": null
+  },
+  {
+   "sdv": "Rate of low points",
+   "drive_version": "V4.6",
+   "vehicle": "24M_3.6_JL_PS-A_V222_0223",
+   "mode": "AUTO",
+   "driv": 0.013083371389798966,
+   "dyn": 0.008588486133966634
+  },
+  {
+   "sdv": "Drive Away Creep Eng On",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Drive Away Creep Eng Off",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 89.9,
+   "dyn": 85.9
+  },
+  {
+   "sdv": "DASS Eng On",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 99.9,
+   "dyn": 94
+  },
+  {
+   "sdv": "DASS Eng Off quick",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 86.3,
+   "dyn": 89.9
+  },
+  {
+   "sdv": "DA Rolling Start",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 99.9,
+   "dyn": 93.5
+  },
+  {
+   "sdv": "Accel Cst Load",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 99.2,
+   "dyn": null
+  },
+  {
+   "sdv": "Accel Load Increase",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 77.3,
+   "dyn": null
+  },
+  {
+   "sdv": "Accel Load Decrease",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 95.2,
+   "dyn": null
+  },
+  {
+   "sdv": "Decel Without Brake",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Decel Cst Brake",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Decel Trans to Cst Spd",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Cst Speed Without Load",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 99.9,
+   "dyn": null
+  },
+  {
+   "sdv": "Cst Speed Cst Load",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Power-on upshift",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 89.4,
+   "dyn": 100
+  },
+  {
+   "sdv": "Coast - brake-on downshift",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 99.3,
+   "dyn": 94.9
+  },
+  {
+   "sdv": "Coast-brake-on downshift Cold",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Tip out upshift",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 98.7,
+   "dyn": 100
+  },
+  {
+   "sdv": "Load Reversal upshift",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 92.7,
+   "dyn": 100
+  },
+  {
+   "sdv": "Coast - brake-on upshift",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 99.5,
+   "dyn": 100
+  },
+  {
+   "sdv": "Power-on downshift",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 72.2,
+   "dyn": 84.6
+  },
+  {
+   "sdv": "(PT) KD - tip in downshift",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 80.5,
+   "dyn": 93.8
+  },
+  {
+   "sdv": "(TO) KD - tip in downshift",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 63.7,
+   "dyn": 93.9
+  },
+  {
+   "sdv": "Load Reversal Downshift",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Lever change",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 79.5,
+   "dyn": null
+  },
+  {
+   "sdv": "Maneuvering",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 31.7,
+   "dyn": 100
+  },
+  {
+   "sdv": "Maneuvering with throttle",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 68.6,
+   "dyn": 100
+  },
+  {
+   "sdv": "Converter controlled slip",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 99.4,
+   "dyn": null
+  },
+  {
+   "sdv": "Converter lock up",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 96.8,
+   "dyn": null
+  },
+  {
+   "sdv": "Converter release",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Shift Abort",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 99.5,
+   "dyn": 100
+  },
+  {
+   "sdv": "Tip in at deceleration",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 94.2,
+   "dyn": 99.7
+  },
+  {
+   "sdv": "Tip in at constant speed",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 99.4
+  },
+  {
+   "sdv": "Tip Out After Acceleration",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 98.5,
+   "dyn": 98.2
+  },
+  {
+   "sdv": "Tip Out At Constant Speed",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Idle Vehicle Stationary",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 99.1,
+   "dyn": null
+  },
+  {
+   "sdv": "Idle Air Cond On-Off",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": null
+  },
+  {
+   "sdv": "Manual Start",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 100,
+   "dyn": 100
+  },
+  {
+   "sdv": "Auto start vehicle moving",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 96.4,
+   "dyn": 97.7
+  },
+  {
+   "sdv": "Manual Stop",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 89.7,
+   "dyn": null
+  },
+  {
+   "sdv": "Vehicle Stop",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": null,
+   "dyn": null
+  },
+  {
+   "sdv": "Rate of low points",
+   "drive_version": "V4.6",
+   "vehicle": "24MY_JL_2.0T_VP_V150_091322",
+   "mode": "AUTO",
+   "driv": 0.03009797532869834,
+   "dyn": 0.008466057134497437
+  }
+ ]
+}

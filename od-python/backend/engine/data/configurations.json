@@ -1,0 +1,143 @@
+{
+ "lever_positions": {
+  "0": "P",
+  "1": "R",
+  "2": "N",
+  "3": "D",
+  "68": "M",
+  "69": "S"
+ },
+ "versions": [
+  "4.2",
+  "4.6"
+ ],
+ "target_vehicles": [
+  "P8 MHEV MDL2"
+ ],
+ "milestones": {
+  "EL1": 4,
+  "EL2": 4,
+  "MDL1": 4,
+  "MDL2": 4,
+  "MDL3": 4,
+  "Post AMC1": 4,
+  "Post AMC2": 4,
+  "Post AMC3": 4,
+  "SERIE": 4,
+  "QG2": 4,
+  "QG3": 4,
+  "QG4": 4,
+  "QG5": 4,
+  "QG6": 4
+ },
+ "areas": [
+  "EUROPE",
+  "CHINA",
+  "North America",
+  "LATAM",
+  "India",
+  "World"
+ ],
+ "engine_types": [
+  "GASOLINE",
+  "DIESEL"
+ ],
+ "gearbox_types": [
+  "AT"
+ ],
+ "gears": [
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10"
+ ],
+ "temperature_split": 30,
+ "modes": {
+  "0": {
+   "name": "HIGHTEMPMODE1",
+   "family": "AUTO"
+  },
+  "1": {
+   "name": "HIGHTEMPMODE2",
+   "family": "AUTO"
+  },
+  "2": {
+   "name": "HIGHTEMPMODE3",
+   "family": "AUTO"
+  },
+  "3": {
+   "name": "MANUALMODE",
+   "family": "MANUAL"
+  },
+  "4": {
+   "name": "VDCMODE",
+   "family": "AUTO"
+  },
+  "5": {
+   "name": "VSRMODE",
+   "family": "AUTO"
+  },
+  "6": {
+   "name": "SNOWMODE1",
+   "family": "AUTO"
+  },
+  "7": {
+   "name": "SNOWMODE2",
+   "family": "AUTO"
+  },
+  "8": {
+   "name": "SNOWMODE3",
+   "family": "AUTO"
+  },
+  "9": {
+   "name": "SPORTMODE",
+   "family": "AUTO"
+  },
+  "10": {
+   "name": "GREENMODE",
+   "family": "ECO"
+  },
+  "11": {
+   "name": "Reserved",
+   "family": "ECO"
+  },
+  "12": {
+   "name": "URBANMODE",
+   "family": "ECO"
+  },
+  "13": {
+   "name": "DOWNADAPTMODE",
+   "family": "AUTO"
+  },
+  "14": {
+   "name": "ADAPTMODE",
+   "family": "AUTO"
+  },
+  "15": {
+   "name": "ECOMODE",
+   "family": "ECO"
+  },
+  "16": {
+   "name": "SPORT",
+   "family": "SPORT"
+  },
+  "17": {
+   "name": "HYBRIDE",
+   "family": "HYBRIDE"
+  },
+  "18": {
+   "name": "ZEV",
+   "family": "ZEV"
+  },
+  "19": {
+   "name": "ZEV",
+   "family": "ZEV"
+  },
+  "20": {
+   "name": "4WD",
+   "family": "4WD"
+  }
+ }
+}

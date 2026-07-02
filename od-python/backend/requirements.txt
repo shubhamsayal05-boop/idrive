@@ -1,0 +1,18 @@
+# ODRIV runtime requirements — only what the app actually imports.
+# (The original scaffold pinned 130+ unused packages, including a wheel on a
+#  private CDN that breaks installation; none of them are needed to run ODRIV.)
+fastapi
+uvicorn
+motor
+pymongo
+mongomock-motor
+python-dotenv
+python-multipart
+openpyxl
+python-pptx
+reportlab
+matplotlib
+
+# test suite (optional)
+pytest
+requests
