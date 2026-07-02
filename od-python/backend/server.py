@@ -404,7 +404,8 @@ async def get_rating():
 
 
 _TARGET_PROGRESS = {"running": False, "percent": 0, "phase": "", "done": False,
-                    "error": None, "read_method": None, "read_detail": None}
+                    "error": None, "read_method": None, "read_detail": None,
+                    "applied": 0, "failed": [], "warnings": []}
 
 
 def _set_tprogress(percent=None, phase=None, **kw):
@@ -437,6 +438,7 @@ async def _run_set_targets():
             pass
         multi, labels = {}, []
         primary_rows = None
+        failed = []
         span = 92.0 / max(1, len(pend))
 
         async def _score_pending(i, t):
@@ -453,15 +455,17 @@ async def _run_set_targets():
                              "db_file": t.get("db_file")}
                 else:
                     ident = t.get("id")
-                vehicle, rows = await _resolve_target_rows(t.get("source"), ident)
-                if t.get("source") == "accdb":
+                src = t.get("source")
+                vehicle, rows = await _resolve_target_rows(src, ident)
+                if src == "accdb":
                     info = _ab.get_last_read_info()
                     if info.get("method"):
                         _TARGET_PROGRESS["read_method"] = info["method"]
                         _TARGET_PROGRESS["read_detail"] = info.get("detail")
-                return i, vehicle, rows
-            except Exception:
-                return i, None, None
+                return i, vehicle, rows, None
+            except Exception as e:
+                detail = getattr(e, "detail", None) or str(e)
+                return i, None, None, {"target": lbl, "detail": detail}
 
         import asyncio
         sem = asyncio.Semaphore(3)
@@ -469,23 +473,35 @@ async def _run_set_targets():
             async with sem:
                 return await _score_pending(i, t)
         results = await asyncio.gather(*[_bounded(i, t) for i, t in enumerate(pend)])
-        for i, vehicle, rows in sorted(results, key=lambda r: r[0]):
+        for i, vehicle, rows, err in sorted(results, key=lambda r: r[0]):
+            if err:
+                failed.append(err)
+                continue
             if vehicle is None:
                 continue
             labels.append(vehicle)
             multi[vehicle] = {r["sdv"].strip().upper(): r for r in rows}
-            if i == 0:
+            if primary_rows is None:
                 primary_rows = rows
+        _TARGET_PROGRESS["applied"] = len(labels)
+        _TARGET_PROGRESS["failed"] = failed
         if multi:
             tv["multi"] = {v: list(rm.values()) for v, rm in multi.items()}
             tv["targets"] = labels
-            # the per-SDV target column shows the PRIMARY (first) selected target
             if primary_rows is not None:
                 tv["rows"] = [dict(r) for r in primary_rows]
             await db.config.update_one({"section": "target_vehicle"},
                                        {"$set": {"data": tv}})
-            await moniteur("SET AS TARGET : scored target vehicle(s): "
-                           + ", ".join(labels))
+            msg = "SET AS TARGET : scored target vehicle(s): " + ", ".join(labels)
+            if failed:
+                msg += f" ({len(failed)} failed)"
+                _TARGET_PROGRESS["warnings"] = [
+                    f"{f['target']}: {f['detail']}" for f in failed]
+            await moniteur(msg)
+        elif failed:
+            _TARGET_PROGRESS["error"] = (
+                "None of the target vehicles could be scored. "
+                + "; ".join(f"{f['target']}: {f['detail']}" for f in failed))
         _set_tprogress(100, "Done", running=False, done=True)
     except Exception as e:
         _set_tprogress(phase=f"Error: {e}", running=False, done=True,
@@ -502,7 +518,8 @@ async def set_as_target_start():
     pend = (tv or {}).get("pending") or []
     if not pend:
         raise HTTPException(400, "No target vehicles selected for this project.")
-    _set_tprogress(0, "Starting…", running=True, done=False, error=None)
+    _set_tprogress(0, "Starting…", running=True, done=False, error=None,
+                   applied=0, failed=[], warnings=[])
     import asyncio
     asyncio.create_task(_run_set_targets())
     return {"ok": True, "started": True, "count": len(pend)}
@@ -1560,7 +1577,9 @@ async def targets_set_pending(payload: dict = Body(...)):
             return
         if t.get("id") is not None or t.get("label"):
             pend.append({"source": t.get("source"), "id": t.get("id"),
-                         "label": t.get("label")})
+                         "label": t.get("label"),
+                         "uniquename": t.get("uniquename"),
+                         "db_file": t.get("db_file")})
     _keep(primary)
     for e in extras:
         _keep(e)

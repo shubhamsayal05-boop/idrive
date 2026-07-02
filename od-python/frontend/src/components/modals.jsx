@@ -116,16 +116,19 @@ export function NewProjectModal({ onClose, onCreated, lists }) {
       onCreated();
     } finally { setSaving(false); setSavingMsg(""); }
   };
-  // toggle a target vehicle in the multi-select (reference, tool, or accdb)
-  const toggleTarget = (source, id, label) => {
+  // toggle a target vehicle in the multi-select (reference, tool, accdb, sqlite)
+  const toggleTarget = (entry) => {
+    const { source, id, label, uniquename, db_file } = entry;
     const cur = form._targets || [];
     const key = `${source}::${id ?? label}`;
     const exists = cur.some((c) => `${c.source}::${c.id ?? c.label}` === key);
     const next = exists
       ? cur.filter((c) => `${c.source}::${c.id ?? c.label}` !== key)
-      : [...cur, { source, id, label }];
+      : [...cur, { source, id, label, uniquename, db_file }];
     setForm({ ...form, _targets: next });
   };
+  const pickTarget = (source, id, label, extra = {}) =>
+    toggleTarget({ source, id, label, uniquename: extra.uniquename, db_file: extra.db_file });
   const isTarget = (source, id, label) =>
     (form._targets || []).some((c) => c.source === source &&
       String(c.id ?? c.label) === String(id ?? label));
@@ -183,7 +186,7 @@ export function NewProjectModal({ onClose, onCreated, lists }) {
           {(targetGroups?.references && targetGroups.references.length ? targetGroups.references : targets).map((o) => (
             <label key={`t-ref-${o}`} style={{ display: "flex", gap: 6, fontWeight: 400, fontSize: 11.5, padding: "1px 0" }}>
               <input type="checkbox" checked={isTarget("ref", null, o)}
-                onChange={() => toggleTarget("ref", null, o)}
+                onChange={() => pickTarget("ref", null, o)}
                 data-testid={`np-target-ref`} />
               {o}
             </label>
@@ -194,7 +197,7 @@ export function NewProjectModal({ onClose, onCreated, lists }) {
           {(targetGroups?.tool || []).map((p) => (
             <label key={`t-tool-${p.id}`} style={{ display: "flex", gap: 6, fontWeight: 400, fontSize: 11.5, padding: "1px 0" }}>
               <input type="checkbox" checked={isTarget("tool", p.id, p.label)}
-                onChange={() => toggleTarget("tool", p.id, p.label)}
+                onChange={() => pickTarget("tool", p.id, p.label)}
                 data-testid={`np-target-tool-${String(p.id).slice(0, 8)}`} />
               {p.label}{p.driv_index != null ? ` (driv ${p.driv_index})` : ""}
             </label>
@@ -203,9 +206,11 @@ export function NewProjectModal({ onClose, onCreated, lists }) {
             <div style={{ fontSize: 10, color: "#999", margin: "5px 0 1px" }}>DATABASE VEHICLES — SHARED ACCESS DB</div>
           )}
           {(targetGroups?.accdb || []).map((p) => (
-            <label key={`t-acc-${p.id}`} style={{ display: "flex", gap: 6, fontWeight: 400, fontSize: 11.5, padding: "1px 0" }}>
-              <input type="checkbox" checked={isTarget("accdb", p.id, p.label)}
-                onChange={() => toggleTarget("accdb", p.id, p.label)}
+            <label key={`t-acc-${p.id}-${p.label}`} style={{ display: "flex", gap: 6, fontWeight: 400, fontSize: 11.5, padding: "1px 0" }}>
+              <input type="checkbox"
+                checked={isTarget(p.source || "accdb", p.id, p.label)}
+                onChange={() => pickTarget(p.source || "accdb", p.id, p.label,
+                  { uniquename: p.uniquename, db_file: p.db_file })}
                 data-testid={`np-target-accdb-${p.id}`} />
               {p.label} (ID {p.id})
             </label>

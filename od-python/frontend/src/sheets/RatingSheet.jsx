@@ -41,6 +41,12 @@ export default function RatingSheet() {
         if (!p.running && p.done) break;
       }
       await load(); await refresh();
+      const final = (await api.get("/rating/set-as-target/progress")).data;
+      if (final.error) throw new Error(final.error);
+      if (final.failed?.length) {
+        alert(`${final.applied ?? 0} of ${(final.applied ?? 0) + final.failed.length} targets scored.\n\nCould not score:\n`
+          + final.failed.map((f) => `• ${f.target}: ${f.detail}`).join("\n"));
+      }
     } catch (e) {
       // 400 = no targets selected for this project
       alert(e.response?.data?.detail || e.message);
