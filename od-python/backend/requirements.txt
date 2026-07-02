@@ -13,6 +13,11 @@ python-pptx
 reportlab
 matplotlib
 
+# shared Access database (.accdb) read/write
+access-parser
+jaydebeapi
+JPype1
+
 # test suite (optional)
 pytest
 requests

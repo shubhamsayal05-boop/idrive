@@ -27,6 +27,14 @@ import json
 import sqlite3
 import time
 import datetime
+import importlib.util
+import subprocess
+
+if importlib.util.find_spec("access_parser") is None:
+    print("Installing access-parser (one time, needs internet)...", flush=True)
+    subprocess.check_call(
+        [sys.executable, "-m", "pip", "install",
+         "--disable-pip-version-check", "access-parser"])
 
 from access_parser import AccessParser
 

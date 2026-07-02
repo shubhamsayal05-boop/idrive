@@ -11,8 +11,19 @@ Usage:
 
 Output: odriv.sqlite in the year subfolder (or in <folder> if flat layout).
 """
+import importlib.util
 import os
+import subprocess
 import sys
+
+# Self-heal: access-parser is required to read .accdb but may not be installed
+# if the venv was created before it was added to requirements.txt.
+if importlib.util.find_spec("access_parser") is None:
+    print("Installing access-parser (one time, needs internet)...", flush=True)
+    subprocess.check_call(
+        [sys.executable, "-m", "pip", "install",
+         "--disable-pip-version-check", "access-parser"])
+    print("Done.\n", flush=True)
 
 # allow running from od-python/ without installing the backend package
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "backend"))
