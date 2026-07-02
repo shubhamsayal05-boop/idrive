@@ -21,6 +21,10 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
+echo.
+echo Large databases are copied to local disk first, then converted.
+echo Each shard can take 10-30 minutes. Progress is printed per table.
+echo.
 set /p FOLDER="Folder containing _OdrivDB.accdb (e.g. Y:\Odriv DB\db): "
 set /p YEAR="Year subfolder (e.g. 2024, or leave blank): "
 echo.

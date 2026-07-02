@@ -84,6 +84,9 @@ def main():
     print("Shards  :", ", ".join(os.path.basename(s) for s in shards))
     print("Output  :", out_path)
     print()
+    print("NOTE: Large shards are copied to local disk first, then parsed.")
+    print("      Each dataSub table may take several minutes — progress is")
+    print("      printed per table. Total time is often 30-90 min.\n")
 
     convert(shards, out_path, catalog_file=catalog)
     print()
@@ -93,4 +96,4 @@ def main():
 
 
 if __name__ == "__main__":
-  main()
+    main()

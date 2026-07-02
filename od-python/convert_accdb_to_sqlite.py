@@ -6,20 +6,16 @@ Why SQLite: it is local (no network/VPN round-trips), indexed (jump straight to
 one vehicle's rows), and pre-joins the dataSub1/2/3 channel tables once at
 conversion time so scoring reads a ready-to-use event list.
 
+Network drives: .accdb files on mapped drives (Y:, etc.) are copied to a local
+cache folder first, and the SQLite file is built locally then copied to the
+destination. Parsing multi-hundred-column dataSub tables over SMB can take
+30+ minutes per table with no visible progress — local copies avoid that.
+
 Output schema (odriv.sqlite):
   projet : one row per vehicle (all projet columns), PRIMARY KEY (code)
-           + a unique row even when ID is duplicated/null across shards.
-  event  : one row per event:
-             vehicle_code TEXT   -> projet.code
-             vehicle_id   TEXT   -> original projet.ID (for reference)
-             sdv          TEXT   -> sub-event / SDV name
-             channels     TEXT   -> JSON {"col_1": v, "col_2": v, ...}
-           INDEX on vehicle_code (the hot path for "score this target").
+  event  : one row per event (vehicle_code, vehicle_id, sdv, channels JSON)
+  entete : col_N -> channel name map (from catalog)
   meta   : source files, conversion timestamp, schema version, counts.
-
-The channels JSON keeps the EXACT shape the scoring engine already expects
-(events as {"sdv":..., "col_N":...} dicts), so scoring from SQLite is identical
-to scoring from .accdb — no engine changes required.
 """
 import sys
 import os
@@ -29,6 +25,7 @@ import time
 import datetime
 import importlib.util
 import subprocess
+import shutil
 
 if importlib.util.find_spec("access_parser") is None:
     print("Installing access-parser (one time, needs internet)...", flush=True)
@@ -39,37 +36,114 @@ if importlib.util.find_spec("access_parser") is None:
 from access_parser import AccessParser
 
 SCHEMA_VERSION = "sqlite-v1"
+DEFAULT_CACHE = os.path.join(os.path.expanduser("~"), ".odriv", "convert_cache")
 
 
-def _table(db, name):
+def _cache_dir():
+    d = os.environ.get("ODRIV_CONVERT_CACHE", DEFAULT_CACHE)
+    os.makedirs(d, exist_ok=True)
+    return d
+
+
+def _is_probably_network(path):
+    """Heuristic: treat non-system local drives as network (mapped shares)."""
+    if os.name != "nt":
+        return False
+    abspath = os.path.abspath(path)
+    if abspath.startswith("\\\\"):
+        return True
+    drive = os.path.splitdrive(abspath)[0].upper()
+    return bool(drive) and drive not in ("C:", "D:")
+
+
+def _local_copy(src, cache_dir=None):
+    """Copy a network .accdb to local disk once; reuse if unchanged."""
+    cache_dir = cache_dir or _cache_dir()
+    base = os.path.basename(src)
+    local = os.path.join(cache_dir, base)
+    try:
+        src_size = os.path.getsize(src)
+        src_mtime = os.path.getmtime(src)
+    except OSError:
+        return src
+    if (os.path.isfile(local)
+            and os.path.getsize(local) == src_size
+            and os.path.getmtime(local) >= src_mtime):
+        print(f"    using cached local copy of {base}", flush=True)
+        return local
+    print(f"    copying {base} ({src_size / 1e6:.0f} MB) to local disk "
+          f"(faster than parsing over the network)...", flush=True)
+    t0 = time.time()
+    tmp = local + ".part"
+    shutil.copy2(src, tmp)
+    os.replace(tmp, local)
+    print(f"    copy finished in {time.time() - t0:.0f}s", flush=True)
+    return local
+
+
+def _stage_paths(accdb_files, out_path, catalog_file, use_local_cache):
+    """Return (shard_paths, catalog_path, sqlite_build_path, final_out_path)."""
+    final_out = os.path.abspath(out_path)
+    cache = _cache_dir()
+    build_out = os.path.join(cache, "odriv_build.sqlite")
+    if os.path.exists(build_out):
+        os.remove(build_out)
+
+    if not use_local_cache:
+        return accdb_files, catalog_file, final_out, None
+
+    need_stage = (_is_probably_network(final_out)
+                  or any(_is_probably_network(f) for f in accdb_files)
+                  or (catalog_file and _is_probably_network(catalog_file)))
+    if not need_stage:
+        return accdb_files, catalog_file, final_out, None
+
+    print(f"\nLocal staging folder: {cache}", flush=True)
+    print("(Re-runs reuse cached copies — delete that folder to force refresh.)\n",
+          flush=True)
+
+    shards = [_local_copy(f, cache) for f in accdb_files]
+    cat = (_local_copy(catalog_file, cache) if catalog_file else None)
+    return shards, cat, build_out, final_out
+
+
+def _table(db, name, label=None):
     """Parse a table to {col: [values...]} or return None if absent/empty."""
+    label = label or name
+    print(f"    parsing {label}...", flush=True)
+    t0 = time.time()
     try:
         t = db.parse_table(name)
-    except Exception:
+    except Exception as exc:
+        print(f"    {label}: failed ({exc})", flush=True)
         return None
     if not t:
+        print(f"    {label}: empty", flush=True)
         return None
     cols = list(t.keys())
     if not cols or len(t[cols[0]]) == 0:
+        print(f"    {label}: 0 rows", flush=True)
         return None
+    n = len(t[cols[0]])
+    print(f"    {label}: {n:,} rows in {time.time() - t0:.0f}s", flush=True)
     return t
 
 
-def convert(accdb_files, out_path, catalog_file=None):
+def convert(accdb_files, out_path, catalog_file=None, use_local_cache=True):
     t0 = time.time()
-    con = sqlite3.connect(out_path)
-    cur = con.cursor()
-    cur.execute("PRAGMA journal_mode=WAL")
-    cur.execute("PRAGMA synchronous=NORMAL")
+    shards, catalog, build_path, final_out = _stage_paths(
+        accdb_files, out_path, catalog_file, use_local_cache)
 
-    # ---- schema ----
+    con = sqlite3.connect(build_path)
+    cur = con.cursor()
+    cur.execute("PRAGMA journal_mode=OFF")
+    cur.execute("PRAGMA synchronous=OFF")
+    cur.execute("PRAGMA temp_store=MEMORY")
+
     cur.execute("DROP TABLE IF EXISTS projet")
     cur.execute("DROP TABLE IF EXISTS event")
     cur.execute("DROP TABLE IF EXISTS meta")
     cur.execute("DROP TABLE IF EXISTS entete")
-    # entete: the authoritative col_N -> channel-name map (from the base
-    # catalog). Without it, events cannot be scored. Stored once here so the
-    # SQLite database is self-contained.
     cur.execute(
         "CREATE TABLE entete ("
         "  col_num INTEGER PRIMARY KEY,"
@@ -77,10 +151,10 @@ def convert(accdb_files, out_path, catalog_file=None):
         "  channel_name TEXT"
         ")")
     n_entete = 0
-    if catalog_file and os.path.isfile(catalog_file):
-        print(f"\n--- reading entete from {os.path.basename(catalog_file)} ---",
+    if catalog and os.path.isfile(catalog):
+        print(f"\n--- reading entete from {os.path.basename(catalog)} ---",
               flush=True)
-        cdb = AccessParser(catalog_file)
+        cdb = AccessParser(catalog)
         et = _table(cdb, "entete")
         if et is not None:
             ncol = len(et.get("IdCol", []))
@@ -100,7 +174,6 @@ def convert(accdb_files, out_path, catalog_file=None):
             print(f"    entete columns: {n_entete}", flush=True)
         con.commit()
 
-    # projet columns are discovered from the first shard that has the table
     projet_cols = None
     cur.execute(
         "CREATE TABLE event ("
@@ -108,31 +181,28 @@ def convert(accdb_files, out_path, catalog_file=None):
         "  vehicle_code TEXT,"
         "  vehicle_id   TEXT,"
         "  sdv          TEXT,"
-        "  channels     TEXT"      # JSON
+        "  channels     TEXT"
         ")")
     cur.execute("CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT)")
 
-    seen_codes = set()        # de-dup vehicles by unique code
+    seen_codes = set()
     total_vehicles = 0
     total_events = 0
     per_file = []
 
-    for path in accdb_files:
+    for path in shards:
         fname = os.path.basename(path)
         print(f"\n--- reading {fname} ---", flush=True)
         db = AccessParser(path)
 
-        # ===== vehicles (projet) =====
         proj = _table(db, "projet")
         veh_in_file = 0
-        # map this shard's project ID -> code, for linking events below
         id_to_code = {}
         uniq_to_code = {}
         if proj is not None:
             pcols = list(proj.keys())
             if projet_cols is None:
                 projet_cols = pcols
-                # build the projet table now that we know its columns
                 coldefs = ", ".join(f'"{c}" TEXT' for c in projet_cols)
                 cur.execute(
                     f'CREATE TABLE projet ({coldefs}, '
@@ -151,7 +221,7 @@ def convert(accdb_files, out_path, catalog_file=None):
                 if uniq is not None:
                     uniq_to_code.setdefault(str(uniq), code)
                 if code in seen_codes:
-                    continue          # vehicle already taken from another shard
+                    continue
                 seen_codes.add(code)
                 vals = [None if row.get(c) is None else str(row.get(c))
                         for c in projet_cols]
@@ -161,9 +231,8 @@ def convert(accdb_files, out_path, catalog_file=None):
                     veh_in_file += 1
                     total_vehicles += 1
                 except sqlite3.IntegrityError:
-                    pass              # duplicate code key, keep first
+                    pass
 
-        # ===== events (dataId + dataSub1/2/3) =====
         did = _table(db, "dataId")
         ev_in_file = 0
         if did is not None:
@@ -173,9 +242,7 @@ def convert(accdb_files, out_path, catalog_file=None):
             id_col = did.get("N\u00b0", list(range(1, n + 1)))
             sename_col = did.get(
                 "Sous situation de vie, Sub Event Name", [None] * n)
-            code_col = did.get("code", [None] * n)   # acquisition code (not vehicle)
 
-            # build idData -> row-position maps for each dataSub table once
             subs = []
             for tn in ("dataSub1", "dataSub2", "dataSub3"):
                 st = _table(db, tn)
@@ -185,18 +252,17 @@ def convert(accdb_files, out_path, catalog_file=None):
                 pos = {idd: j for j, idd in enumerate(idlist)}
                 chan_cols = [c for c in st.keys() if c.startswith("col_")]
                 subs.append((st, pos, chan_cols))
+                print(f"      {tn}: {len(chan_cols)} channel columns", flush=True)
 
             batch = []
+            report_every = max(5000, n // 20)
             for i in range(n):
                 eid = id_col[i]
-                # resolve vehicle code from the event's UniqueName (the projet ID
-                # or uniquename); fall back to the raw value as a last resort
                 uname = uname_col[i]
                 vcode = (id_to_code.get(str(uname))
                          or uniq_to_code.get(str(uname)))
                 vid = str(uname) if uname is not None else None
                 sdv = sename_col[i]
-                # assemble channel dict from the dataSub tables
                 channels = {}
                 for st, pos, chan_cols in subs:
                     j = pos.get(eid)
@@ -215,6 +281,8 @@ def convert(accdb_files, out_path, catalog_file=None):
                         "VALUES (?,?,?,?)", batch)
                     ev_in_file += len(batch)
                     batch = []
+                if (i + 1) % report_every == 0:
+                    print(f"      events merged: {i + 1:,} / {n:,}", flush=True)
             if batch:
                 cur.executemany(
                     "INSERT INTO event "
@@ -226,14 +294,13 @@ def convert(accdb_files, out_path, catalog_file=None):
         con.commit()
         per_file.append({"file": fname, "vehicles": veh_in_file,
                          "events": ev_in_file})
-        print(f"    vehicles: {veh_in_file}, events: {ev_in_file}", flush=True)
+        print(f"    vehicles: {veh_in_file}, events: {ev_in_file:,}",
+              flush=True)
 
-    # ---- index the hot path ----
     print("\n--- building indexes ---", flush=True)
     cur.execute("CREATE INDEX ix_event_vehicle ON event(vehicle_code)")
     cur.execute("CREATE INDEX ix_event_vehicle_id ON event(vehicle_id)")
 
-    # ---- meta ----
     meta = {
         "schema_version": SCHEMA_VERSION,
         "converted_at": datetime.datetime.now().isoformat(timespec="seconds"),
@@ -252,27 +319,43 @@ def convert(accdb_files, out_path, catalog_file=None):
     con.commit()
     con.close()
 
+    if final_out:
+        os.makedirs(os.path.dirname(final_out) or ".", exist_ok=True)
+        print(f"\n--- copying odriv.sqlite to {final_out} ---", flush=True)
+        t1 = time.time()
+        tmp = final_out + ".part"
+        shutil.copy2(build_path, tmp)
+        os.replace(tmp, final_out)
+        print(f"    copy finished in {time.time() - t1:.0f}s", flush=True)
+        result_path = final_out
+    else:
+        result_path = build_path
+
     dt = time.time() - t0
-    size_mb = os.path.getsize(out_path) / 1e6
-    print(f"\n=== DONE in {dt:.1f}s ===")
-    print(f"  output: {out_path} ({size_mb:.1f} MB)")
+    size_mb = os.path.getsize(result_path) / 1e6
+    print(f"\n=== DONE in {dt:.0f}s ({dt / 60:.1f} min) ===")
+    print(f"  output: {result_path} ({size_mb:.1f} MB)")
     print(f"  vehicles: {total_vehicles}")
-    print(f"  events:   {total_events}")
+    print(f"  events:   {total_events:,}")
     return total_vehicles, total_events
 
 
 if __name__ == "__main__":
     args = sys.argv[1:]
-    # optional: --catalog <base _OdrivDB.accdb> holds the entete map
     catalog = None
     if "--catalog" in args:
         ci = args.index("--catalog")
         catalog = args[ci + 1]
         args = args[:ci] + args[ci + 2:]
+    if "--no-local-cache" in args:
+        args.remove("--no-local-cache")
+        use_cache = False
+    else:
+        use_cache = True
     files = args[:-1]
     out = args[-1]
     if not files:
         print("usage: convert_accdb_to_sqlite.py [--catalog base.accdb] "
-              "<db1.accdb> [db2...] <out.sqlite>")
+              "[--no-local-cache] <db1.accdb> [db2...] <out.sqlite>")
         sys.exit(1)
-    convert(files, out, catalog_file=catalog)
+    convert(files, out, catalog_file=catalog, use_local_cache=use_cache)
