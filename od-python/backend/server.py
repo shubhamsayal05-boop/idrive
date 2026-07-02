@@ -696,43 +696,51 @@ async def accdb_check_path(payload: dict = Body(...)):
     """Validate the shared-database path. Reports SQLite when present (preferred),
     otherwise the .accdb catalog + year shards."""
     from engine import accdb_bridge, sqlite_bridge
-    path = (payload or {}).get("path") or ""
+    raw = (payload or {}).get("path") or ""
+    path = sqlite_bridge.normalize_path(raw)
     year = (payload or {}).get("year") or await _shared_accdb_year()
-    p = path.strip().strip('"') if path else ""
+    year = str(year).strip() if year else None
     sqlite_file = sqlite_bridge.find_sqlite(path, year) if path else None
     if sqlite_file:
         n_veh = 0
+        read_err = None
         try:
-            n_veh = len(sqlite_bridge.read_projects(path))
-        except Exception:
-            pass
+            n_veh = len(sqlite_bridge.read_projects(sqlite_file))
+        except Exception as e:
+            read_err = str(e)
         meta = {}
         try:
-            meta = sqlite_bridge.get_meta(path)
+            meta = sqlite_bridge.get_meta(sqlite_file)
         except Exception:
             pass
         return {"path": path, "year": year,
-                "is_folder": os.path.isdir(p) if p else False,
+                "is_folder": os.path.isdir(path) if path else False,
                 "mode": "sqlite",
                 "ok": True,
                 "sqlite_file": os.path.basename(sqlite_file),
                 "sqlite_path": sqlite_file,
                 "vehicle_count": n_veh,
+                "read_error": read_err,
                 "converted_at": meta.get("converted_at", ""),
                 "found": [os.path.basename(sqlite_file)],
                 "count": 1}
     files = accdb_bridge.resolve_db_files(path, year)
     import glob as _glob
     years = []
-    if p and os.path.isdir(p):
-        for d in sorted(_glob.glob(os.path.join(p, "*"))):
+    if path and os.path.isdir(path):
+        for d in sorted(_glob.glob(os.path.join(path, "*"))):
             if os.path.isdir(d) and _glob.glob(os.path.join(d, "_OdrivDB_*.accdb")):
                 years.append(os.path.basename(d))
+    # path points at a .sqlite file but we could not open it
+    hint = None
+    if path.lower().endswith((".sqlite", ".sqlite3", ".db")):
+        hint = ("Could not open this SQLite file. Check the VPN / mapped drive, "
+                "or copy odriv.sqlite to a local folder (e.g. C:\\OdrivDB\\).")
     return {"path": path, "year": year,
-            "is_folder": os.path.isdir(p) if p else False,
+            "is_folder": os.path.isdir(path) if path else False,
             "mode": "accdb",
             "found": [os.path.basename(f) for f in files], "count": len(files),
-            "year_folders": years, "ok": len(files) > 0}
+            "year_folders": years, "ok": len(files) > 0, "hint": hint}
 
 
 @api.post("/accdb/projects")
@@ -951,6 +959,9 @@ async def get_settings():
 async def update_settings(payload: dict = Body(...)):
     allowed = {k: v for k, v in (payload or {}).items()
                if k in ("accdb_path", "accdb_year")}
+    if "accdb_path" in allowed:
+        from engine import sqlite_bridge
+        allowed["accdb_path"] = sqlite_bridge.normalize_path(allowed["accdb_path"])
     await db.app_settings.update_one(
         {"_id_key": "app"}, {"$set": {**allowed, "_id_key": "app"}}, upsert=True)
     if "accdb_path" in allowed:
@@ -1024,8 +1035,9 @@ async def prewarm_status():
 
 
 async def _shared_accdb_path():
+    from engine import sqlite_bridge
     s = await db.app_settings.find_one({"_id_key": "app"}, {"_id": 0})
-    return (s or {}).get("accdb_path") or ""
+    return sqlite_bridge.normalize_path((s or {}).get("accdb_path") or "")
 
 
 async def _shared_accdb_year():

@@ -294,7 +294,8 @@ export default function HomeSheet() {
                   ? `✓ Using SQLite (fast): ${accdbInfo.sqlite_file} — ${accdbInfo.vehicle_count ?? "?"} vehicles`
                   : accdbInfo.ok
                   ? `✓ Using Access (slow): ${accdbInfo.count} file${accdbInfo.count > 1 ? "s" : ""}: ${accdbInfo.found.join(", ")}`
-                  : "✗ No odriv.sqlite or _OdrivDB.accdb found here. Check the path."}
+                  : (accdbInfo.hint
+                    || "✗ No odriv.sqlite or _OdrivDB.accdb found. Set the folder (e.g. ...\\db\\2024) or the odriv.sqlite file, then Save path.")}
                 {accdbInfo.ok && accdbInfo.mode === "accdb" && !accdbInfo.found?.some(f => f.endsWith(".sqlite")) && (
                   <div style={{ color: "#a60", marginTop: 2 }}>
                     Tip: run CONVERT_TO_SQLITE.bat to create odriv.sqlite in this folder for instant target reads.

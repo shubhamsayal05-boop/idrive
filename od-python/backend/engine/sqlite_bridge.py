@@ -22,6 +22,13 @@ import sqlite3
 SQLITE_FILENAME = "odriv.sqlite"
 
 
+def normalize_path(path):
+    """Strip whitespace and surrounding quotes from a configured path."""
+    if not path:
+        return ""
+    return str(path).strip().strip('"').strip("'")
+
+
 def find_sqlite(path, year=None):
     """Resolve a SQLite database from a configured path that may be the file
     itself or a folder containing one. Returns the absolute file path or None.
@@ -32,6 +39,8 @@ def find_sqlite(path, year=None):
       3. if `year` is set: the year subfolder under a parent-style path
       4. the parent folder (when path is already a year subfolder)
     """
+    path = normalize_path(path)
+    year = str(year).strip() if year else None
     if not path:
         return None
     if os.path.isfile(path) and path.lower().endswith(
