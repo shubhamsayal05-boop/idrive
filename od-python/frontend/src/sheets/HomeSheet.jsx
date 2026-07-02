@@ -266,14 +266,13 @@ export default function HomeSheet() {
 
           <div style={{ marginTop: 14, padding: "8px 10px", border: "1px solid #d6d6d6", background: "#f7f9fb" }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, color: "#17375E", marginBottom: 4 }}>
-              Shared database (Access)
+              Shared database
             </div>
             <div style={{ fontSize: 11, color: "#777", marginBottom: 6 }}>
-              The <b>folder</b> that holds <code>_OdrivDB.accdb</code> — the shared
-              database path, e.g.
-              <code> Y:\TransTrqCal\Shift Quality Validation\Odriv DB\db</code>. The event
-              databases live in a <b>year</b> subfolder (e.g. 2024). The
-              drive must be connected (VPN).
+              Point at the folder with <code>odriv.sqlite</code> (fast, recommended)
+              or the <code>_OdrivDB.accdb</code> folder on the shared drive.
+              Examples: <code>Y:\...\Odriv DB\db\2024</code> or
+              <code>Y:\...\Odriv DB\db\2024\odriv.sqlite</code>
             </div>
             <div style={{ display: "flex", gap: 6 }}>
               <input value={accdbPath} onChange={(e) => setAccdbPath(e.target.value)}
@@ -291,10 +290,17 @@ export default function HomeSheet() {
             {accdbInfo && (
               <div style={{ fontSize: 11, marginTop: 6, color: accdbInfo.ok ? "#070" : "#a00" }}
                 data-testid="home-accdb-status">
-                {accdbInfo.ok
-                  ? `✓ Found ${accdbInfo.count} database file${accdbInfo.count > 1 ? "s" : ""}: ${accdbInfo.found.join(", ")}`
-                  : "✗ No _OdrivDB.accdb found here. Check the path and that the VPN / mapped drive is connected."}
-                {accdbInfo.year_folders && accdbInfo.year_folders.length > 0 && !accdbYear && (
+                {accdbInfo.ok && accdbInfo.mode === "sqlite"
+                  ? `✓ Using SQLite (fast): ${accdbInfo.sqlite_file} — ${accdbInfo.vehicle_count ?? "?"} vehicles`
+                  : accdbInfo.ok
+                  ? `✓ Using Access (slow): ${accdbInfo.count} file${accdbInfo.count > 1 ? "s" : ""}: ${accdbInfo.found.join(", ")}`
+                  : "✗ No odriv.sqlite or _OdrivDB.accdb found here. Check the path."}
+                {accdbInfo.ok && accdbInfo.mode === "accdb" && !accdbInfo.found?.some(f => f.endsWith(".sqlite")) && (
+                  <div style={{ color: "#a60", marginTop: 2 }}>
+                    Tip: run CONVERT_TO_SQLITE.bat to create odriv.sqlite in this folder for instant target reads.
+                  </div>
+                )}
+                {accdbInfo.year_folders && accdbInfo.year_folders.length > 0 && !accdbYear && accdbInfo.mode !== "sqlite" && (
                   <div style={{ color: "#a60", marginTop: 2 }}>
                     Year subfolders found: {accdbInfo.year_folders.join(", ")} — set the Year above
                     to load events from the right one.

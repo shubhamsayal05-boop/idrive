@@ -22,47 +22,61 @@ import sqlite3
 SQLITE_FILENAME = "odriv.sqlite"
 
 
-def find_sqlite(path):
+def find_sqlite(path, year=None):
     """Resolve a SQLite database from a configured path that may be the file
     itself or a folder containing one. Returns the absolute file path or None.
 
     Matching, in order:
       1. the path itself, if it is a .sqlite/.db file
-      2. a file literally named odriv.sqlite in the folder
-      3. ANY single *.sqlite / *.sqlite3 / *.db file in the folder (so the file
-         can be named anything, e.g. odriv (1).sqlite)
-    Only looks inside the given folder (no parent-directory climb), to avoid
-    accidentally picking up an unrelated database.
+      2. odriv.sqlite (or any *.sqlite) in the folder
+      3. if `year` is set: the year subfolder under a parent-style path
+      4. the parent folder (when path is already a year subfolder)
     """
     if not path:
         return None
-    # 1) the path is the file
     if os.path.isfile(path) and path.lower().endswith(
             (".sqlite", ".sqlite3", ".db")):
-        return path
-    folder = path if os.path.isdir(path) else os.path.dirname(path)
-    if not folder or not os.path.isdir(folder):
+        return os.path.abspath(path)
+
+    def _in_folder(folder):
+        if not folder or not os.path.isdir(folder):
+            return None
+        canonical = os.path.join(folder, SQLITE_FILENAME)
+        if os.path.isfile(canonical):
+            return os.path.abspath(canonical)
+        try:
+            matches = [os.path.join(folder, f) for f in sorted(os.listdir(folder))
+                       if f.lower().endswith((".sqlite", ".sqlite3", ".db"))
+                       and os.path.isfile(os.path.join(folder, f))]
+        except OSError:
+            matches = []
+        if matches:
+            odriv = [m for m in matches if "odriv" in os.path.basename(m).lower()]
+            return os.path.abspath((odriv or matches)[0])
         return None
-    # 2) the canonical name
-    canonical = os.path.join(folder, SQLITE_FILENAME)
-    if os.path.isfile(canonical):
-        return canonical
-    # 3) any .sqlite-like file in the folder
-    try:
-        matches = [os.path.join(folder, f) for f in sorted(os.listdir(folder))
-                   if f.lower().endswith((".sqlite", ".sqlite3", ".db"))
-                   and os.path.isfile(os.path.join(folder, f))]
-    except OSError:
-        matches = []
-    if matches:
-        # prefer one whose name contains "odriv" if several exist
-        odriv = [m for m in matches if "odriv" in os.path.basename(m).lower()]
-        return (odriv or matches)[0]
+
+    folder = path if os.path.isdir(path) else os.path.dirname(path)
+    hit = _in_folder(folder)
+    if hit:
+        return hit
+    if year:
+        hit = _in_folder(os.path.join(folder, str(year)))
+        if hit:
+            return hit
+    parent = os.path.dirname(folder) if folder else ""
+    if parent:
+        hit = _in_folder(parent)
+        if hit:
+            return hit
+        if year:
+            hit = _in_folder(os.path.join(parent, str(year)))
+            if hit:
+                return hit
     return None
 
 
-def db_exists(path):
-    return find_sqlite(path) is not None
+def db_exists(path, year=None):
+    return find_sqlite(path, year) is not None
 
 
 def _connect(sqlite_path):

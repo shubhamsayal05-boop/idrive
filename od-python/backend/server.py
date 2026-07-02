@@ -693,15 +693,35 @@ async def accdb_jdbc_jar_dir():
 
 @api.post("/accdb/check-path")
 async def accdb_check_path(payload: dict = Body(...)):
-    """Validate a CFG-style path (folder or file) and report the .accdb files
-    found. Reads the source layout: <folder>\\_OdrivDB.accdb (catalog) plus
-    <folder>\\<year>\\_OdrivDB_1..4.accdb (event shards)."""
-    from engine import accdb_bridge
+    """Validate the shared-database path. Reports SQLite when present (preferred),
+    otherwise the .accdb catalog + year shards."""
+    from engine import accdb_bridge, sqlite_bridge
     path = (payload or {}).get("path") or ""
     year = (payload or {}).get("year") or await _shared_accdb_year()
-    files = accdb_bridge.resolve_db_files(path, year)
     p = path.strip().strip('"') if path else ""
-    # report any year subfolders discovered so the UI can hint at them
+    sqlite_file = sqlite_bridge.find_sqlite(path, year) if path else None
+    if sqlite_file:
+        n_veh = 0
+        try:
+            n_veh = len(sqlite_bridge.read_projects(path))
+        except Exception:
+            pass
+        meta = {}
+        try:
+            meta = sqlite_bridge.get_meta(path)
+        except Exception:
+            pass
+        return {"path": path, "year": year,
+                "is_folder": os.path.isdir(p) if p else False,
+                "mode": "sqlite",
+                "ok": True,
+                "sqlite_file": os.path.basename(sqlite_file),
+                "sqlite_path": sqlite_file,
+                "vehicle_count": n_veh,
+                "converted_at": meta.get("converted_at", ""),
+                "found": [os.path.basename(sqlite_file)],
+                "count": 1}
+    files = accdb_bridge.resolve_db_files(path, year)
     import glob as _glob
     years = []
     if p and os.path.isdir(p):
@@ -710,6 +730,7 @@ async def accdb_check_path(payload: dict = Body(...)):
                 years.append(os.path.basename(d))
     return {"path": path, "year": year,
             "is_folder": os.path.isdir(p) if p else False,
+            "mode": "accdb",
             "found": [os.path.basename(f) for f in files], "count": len(files),
             "year_folders": years, "ok": len(files) > 0}
 
@@ -894,7 +915,7 @@ async def _entete_colnum_map(cfg):
     path = await _shared_accdb_path()
     year = await _shared_accdb_year()
     # 1) SQLite (self-contained, fast)
-    if sqlite_bridge.db_exists(path):
+    if sqlite_bridge.db_exists(path, year):
         try:
             em = sqlite_bridge.read_entete_colmap(path)
             if em:
@@ -982,7 +1003,8 @@ async def _prewarm_sqlite_cache(path):
             ident = {"id": p.get("ID"), "code": code,
                      "uniquename": p.get("Uniquename"), "db_file": ""}
             # skip if already cached
-            sf = sqlite_bridge.find_sqlite(path)
+            _year = await _shared_accdb_year()
+            sf = sqlite_bridge.find_sqlite(path, _year)
             cache_id = code
             if _accdb_result_cache_get(sf, None, cache_id) is None:
                 try:
@@ -1038,7 +1060,7 @@ async def targets_available():
     # Prefer the converted SQLite database when one is present at/near the
     # configured path: it is local and indexed, so reading + scoring targets is
     # far faster than the network .accdb. Falls back to .accdb otherwise.
-    sqlite_file = sqlite_bridge.find_sqlite(path)
+    sqlite_file = sqlite_bridge.find_sqlite(path, _year)
     if sqlite_file:
         try:
             for p in sqlite_bridge.read_projects(path):
@@ -1107,7 +1129,7 @@ def _accdb_result_cache_key(path, year, ident):
     sig = ["v5", str(ident), str(year)]
     files = []
     # SQLite database (if the path resolves to one)
-    sf = sqlite_bridge.find_sqlite(path)
+    sf = sqlite_bridge.find_sqlite(path, year)
     if sf:
         files.append(sf)
     else:
@@ -1156,7 +1178,16 @@ async def _resolve_target_rows(source, ident):
                  per-SDV "index" is the benchmark target index the engine uses.
       - "tool" : a saved project in the tool database.
       - "accdb": a saved project in the shared Access DB.
+      - "sqlite": a saved project in the converted SQLite database.
     """
+    # Prefer SQLite whenever it exists at the configured path — targets picked
+    # before conversion may still carry source "accdb".
+    if source == "accdb":
+        from engine import sqlite_bridge
+        sp = await _shared_accdb_path()
+        sy = await _shared_accdb_year()
+        if sqlite_bridge.find_sqlite(sp, sy):
+            source = "sqlite"
     if source == "ref":
         # A reference vehicle has pre-stored per-SDV target indices in the seed
         # target_vehicle data (target_vehicle.json), keyed by vehicle name. Pull
@@ -1222,8 +1253,9 @@ async def _resolve_target_rows(source, ident):
         # query (a few ms) instead of parsing network Access tables.
         import asyncio
         path = await _shared_accdb_path()
+        _year = await _shared_accdb_year()
         from engine import sqlite_bridge
-        sqlite_file = sqlite_bridge.find_sqlite(path)
+        sqlite_file = sqlite_bridge.find_sqlite(path, _year)
         if not sqlite_file:
             raise HTTPException(400, "SQLite database not found at the configured "
                                      "path.")
