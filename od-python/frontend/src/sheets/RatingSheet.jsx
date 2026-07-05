@@ -104,6 +104,13 @@ export default function RatingSheet() {
 
       {/* meta + actions */}
       <div style={{ display: "flex", gap: 24, margin: "10px 0", alignItems: "flex-start", flexWrap: "wrap" }}>
+        {extraVehicles.length > 0 && (
+          <div style={{ fontSize: 11, color: "#070", padding: "4px 8px",
+            background: "#eef8ee", border: "1px solid #b8ddb8", borderRadius: 3 }}
+            data-testid="rating-target-count">
+            Comparison targets: {extraVehicles.join(", ")}
+          </div>
+        )}
         <table className="xl-grid">
           <tbody>
             <tr><td className="rowhead">Application :</td><td data-testid="rating-application">{project?.name_code || "-"}</td></tr>

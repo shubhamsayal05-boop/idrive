@@ -186,6 +186,7 @@ def convert(accdb_files, out_path, catalog_file=None, use_local_cache=True):
     cur.execute("CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT)")
 
     seen_codes = set()
+    skipped_dupes = 0
     total_vehicles = 0
     total_events = 0
     per_file = []
@@ -221,6 +222,7 @@ def convert(accdb_files, out_path, catalog_file=None, use_local_cache=True):
                 if uniq is not None:
                     uniq_to_code.setdefault(str(uniq), code)
                 if code in seen_codes:
+                    skipped_dupes += 1
                     continue
                 seen_codes.add(code)
                 vals = [None if row.get(c) is None else str(row.get(c))
@@ -309,6 +311,7 @@ def convert(accdb_files, out_path, catalog_file=None, use_local_cache=True):
         "entete_columns": str(n_entete),
         "total_vehicles": str(total_vehicles),
         "total_events": str(total_events),
+        "duplicate_codes_skipped": str(skipped_dupes),
         "per_file": json.dumps(per_file),
     }
     for k, v in meta.items():
@@ -337,6 +340,9 @@ def convert(accdb_files, out_path, catalog_file=None, use_local_cache=True):
     print(f"  output: {result_path} ({size_mb:.1f} MB)")
     print(f"  vehicles: {total_vehicles}")
     print(f"  events:   {total_events:,}")
+    if skipped_dupes:
+        print(f"  duplicate codes skipped: {skipped_dupes} "
+              f"(events from later shards still merged)")
     return total_vehicles, total_events
 
 

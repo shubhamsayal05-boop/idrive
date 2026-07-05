@@ -462,10 +462,10 @@ async def _run_set_targets():
                     if info.get("method"):
                         _TARGET_PROGRESS["read_method"] = info["method"]
                         _TARGET_PROGRESS["read_detail"] = info.get("detail")
-                return i, vehicle, rows, None
+                return i, vehicle, rows, None, lbl
             except Exception as e:
                 detail = getattr(e, "detail", None) or str(e)
-                return i, None, None, {"target": lbl, "detail": detail}
+                return i, None, None, {"target": lbl, "detail": detail}, lbl
 
         import asyncio
         sem = asyncio.Semaphore(3)
@@ -473,14 +473,22 @@ async def _run_set_targets():
             async with sem:
                 return await _score_pending(i, t)
         results = await asyncio.gather(*[_bounded(i, t) for i, t in enumerate(pend)])
-        for i, vehicle, rows, err in sorted(results, key=lambda r: r[0]):
+        used_keys = set()
+        for i, vehicle, rows, err, disp in sorted(results, key=lambda r: r[0]):
             if err:
                 failed.append(err)
                 continue
             if vehicle is None:
                 continue
-            labels.append(vehicle)
-            multi[vehicle] = {r["sdv"].strip().upper(): r for r in rows}
+            # Column header = the label the user picked (unique per selection).
+            # Using vehicle code alone caused collisions when two DB rows share a
+            # code or when parallel scoring returned the same code twice.
+            key = (disp or vehicle).strip()
+            if key in used_keys:
+                key = f"{key} [{vehicle}]"
+            used_keys.add(key)
+            labels.append(key)
+            multi[key] = {r["sdv"].strip().upper(): r for r in rows}
             if primary_rows is None:
                 primary_rows = rows
         _TARGET_PROGRESS["applied"] = len(labels)
@@ -1046,6 +1054,58 @@ async def _prewarm_sqlite_cache(path):
         _PREWARM_STATE["running"] = False
 
 
+@api.get("/sqlite/stats")
+async def sqlite_stats():
+    """Report what's inside the converted odriv.sqlite (vehicle/event counts,
+    per-shard breakdown from meta). One .sqlite file is expected — it merges
+    all _OdrivDB_1..4.accdb shards."""
+    from engine import sqlite_bridge
+    import json as _json
+    path = await _shared_accdb_path()
+    year = await _shared_accdb_year()
+    sf = sqlite_bridge.find_sqlite(path, year)
+    if not sf:
+        raise HTTPException(404, "No odriv.sqlite found at the configured path.")
+    meta = sqlite_bridge.get_meta(sf)
+    projs = sqlite_bridge.read_projects(sf)
+    import sqlite3
+    con = sqlite3.connect(f"file:{sf}?mode=ro", uri=True)
+    try:
+        n_events = con.execute("SELECT COUNT(*) FROM event").fetchone()[0]
+        n_linked = con.execute(
+            "SELECT COUNT(*) FROM event WHERE vehicle_code IS NOT NULL "
+            "AND vehicle_code != ''").fetchone()[0]
+        n_orphan = n_events - n_linked
+        per_veh = con.execute(
+            "SELECT vehicle_code, COUNT(*) AS n FROM event "
+            "WHERE vehicle_code IS NOT NULL AND vehicle_code != '' "
+            "GROUP BY vehicle_code ORDER BY n DESC").fetchall()
+        zero_event = [p.get("code") for p in projs
+                      if p.get("code") and not any(
+                          v == p.get("code") for v, _ in per_veh)]
+    finally:
+        con.close()
+    per_file = []
+    try:
+        per_file = _json.loads(meta.get("per_file") or "[]")
+    except Exception:
+        pass
+    return {
+        "sqlite_path": sf,
+        "vehicles": len(projs),
+        "events_total": n_events,
+        "events_linked_to_vehicle": n_linked,
+        "events_orphan": n_orphan,
+        "vehicles_with_zero_events": zero_event[:20],
+        "vehicles_with_zero_events_count": len(zero_event),
+        "per_shard": per_file,
+        "converted_at": meta.get("converted_at"),
+        "source_files": meta.get("source_files"),
+        "note": ("One odriv.sqlite is correct — it merges the catalog plus all "
+                 "numbered shards (_OdrivDB_1..4.accdb) into one database."),
+    }
+
+
 @api.get("/targets/prewarm-status")
 async def prewarm_status():
     return dict(_PREWARM_STATE)
@@ -1291,10 +1351,12 @@ async def _resolve_target_rows(source, ident):
         if isinstance(ident, dict):
             want_code = ident.get("code")
             want_id = ident.get("id")
-            cache_id = want_code or want_id
+            want_uniq = ident.get("uniquename")
+            cache_id = want_code or want_uniq or want_id
         else:
             want_code = ident if isinstance(ident, str) else None
             want_id = ident
+            want_uniq = None
             cache_id = ident
         # scored-result cache (keyed by unique code + db mtime), same as accdb
         cached = _accdb_result_cache_get(sqlite_file, None, cache_id)
@@ -1306,6 +1368,9 @@ async def _resolve_target_rows(source, ident):
         if want_code is not None:
             rec = next((p for p in projs
                         if str(p.get("code")) == str(want_code)), None)
+        if rec is None and want_uniq is not None:
+            rec = next((p for p in projs
+                        if str(p.get("Uniquename")) == str(want_uniq)), None)
         if rec is None and want_id is not None:
             rec = next((p for p in projs
                         if str(p.get("ID")) == str(want_id)), None)
