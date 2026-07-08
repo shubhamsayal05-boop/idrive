@@ -1,0 +1,520 @@
+{
+ "facteur_redplus": 2,
+ "nb_repet": 0,
+ "coef_orange_mainstream": 20,
+ "coef_orange_premium": 10,
+ "sdv": {
+  "Coast - brake-on downshift": {
+   "taux": 0.06053363537036173,
+   "p_rates": [
+    0.03049,
+    0.004472,
+    0.000434
+   ]
+  },
+  "Coast-brake-on downshift Cold": {
+   "taux": 0.004922285229077858,
+   "p_rates": [
+    0.03049,
+    0.004472,
+    0.000434
+   ]
+  },
+  "Coast - brake-on upshift": {
+   "taux": 0.0034346375918936707,
+   "p_rates": [
+    0.04053,
+    0.002575,
+    0
+   ]
+  },
+  "(PT) KD - tip in downshift": {
+   "taux": 0.0029563301406705157,
+   "p_rates": [
+    0.022216,
+    0.004036,
+    0
+   ]
+  },
+  "(TO) KD - tip in downshift": {
+   "taux": 0.0010807177094872282,
+   "p_rates": [
+    0.022216,
+    0.004036,
+    0
+   ]
+  },
+  "Load reversal downshift": {
+   "taux": 0.0020320107219056792,
+   "p_rates": [
+    0.08521,
+    0.0032540000000000004,
+    0
+   ]
+  },
+  "Load reversal upshift": {
+   "taux": 0.0031289368638193647,
+   "p_rates": [
+    0.0251,
+    0.003832,
+    0
+   ]
+  },
+  "Maneuvering": {
+   "taux": 2.0643233550383496e-05,
+   "p_rates": [
+    0.4,
+    0.2,
+    0.0667
+   ]
+  },
+  "Power-on downshift": {
+   "taux": 0.022747730647882162,
+   "p_rates": [
+    0.03441,
+    0.003722,
+    0.000502
+   ]
+  },
+  "Power-on upshift": {
+   "taux": 0.0856451159772975,
+   "p_rates": [
+    0.03302,
+    0.002674,
+    0.000528
+   ]
+  },
+  "Power-on upshift Cold": {
+   "taux": 0.006964222233448067,
+   "p_rates": [
+    0.03302,
+    0.002674,
+    0.000528
+   ]
+  },
+  "Lever change": {
+   "taux": 0.0023377114499799853,
+   "p_rates": [
+    0.044,
+    0.0075,
+    0.00375
+   ]
+  },
+  "Tip out upshift": {
+   "taux": 0.006689451226096573,
+   "p_rates": [
+    0.021523,
+    0.004065,
+    0.000628
+   ]
+  },
+  "Tip in At deceleration": {
+   "taux": 0.014565740572952218,
+   "p_rates": [
+    0.023333,
+    0.003065,
+    0.000912
+   ]
+  },
+  "Tip in At constant speed": {
+   "taux": 0.004585510921114587,
+   "p_rates": [
+    0.018196,
+    0.001967,
+    0.0009
+   ]
+  },
+  "Tip out After acceleration": {
+   "taux": 0.03846272613443608,
+   "p_rates": [
+    0.021523,
+    0.004065,
+    0.000628
+   ]
+  },
+  "Tip out At constant speed": {
+   "taux": 0.03877166369374882,
+   "p_rates": [
+    0.032552,
+    0.003597,
+    0.00574
+   ]
+  },
+  "Converter controlled slip": {
+   "taux": 0.0191512514940668,
+   "p_rates": [
+    0.0271,
+    0.0035,
+    0.00041
+   ]
+  },
+  "Converter lock up": {
+   "taux": 0.0253551780343983,
+   "p_rates": [
+    0.026378,
+    0.004309,
+    0.000336
+   ]
+  },
+  "Converter release": {
+   "taux": 0.022567906690191392,
+   "p_rates": [
+    0.060281,
+    0.005633,
+    0.000567
+   ]
+  },
+  "Auto stop": {
+   "taux": 0.013217060890271455,
+   "p_rates": [
+    0.9653,
+    0.0347,
+    0
+   ]
+  },
+  "Sailing Exit": {
+   "taux": 0.006284847321292344,
+   "p_rates": [
+    0.09911,
+    0.0089,
+    0
+   ]
+  },
+  "DASS Eng On": {
+   "taux": 0.006890798155038267,
+   "p_rates": [
+    0.0599,
+    0.004622,
+    0.00059
+   ]
+  },
+  "Drive Away Creep Eng On": {
+   "taux": 0.0011304930187390637,
+   "p_rates": [
+    1,
+    0,
+    0
+   ]
+  },
+  "Accel Cst Load": {
+   "taux": 0.052728879993875474,
+   "p_rates": [
+    0.03035,
+    0.003895,
+    0.000588
+   ]
+  },
+  "Cst Speed Without Load": {
+   "taux": 0.002303769677965853,
+   "p_rates": [
+    0.2,
+    0,
+    0
+   ]
+  },
+  "Cst Speed Cst Load": {
+   "taux": 0.03459812945970378,
+   "p_rates": [
+    0.032552,
+    0.003597,
+    0.00574
+   ]
+  },
+  "Idle Vehicle Stationary": {
+   "taux": 0.01530815277347644,
+   "p_rates": [
+    0.325667,
+    0.0027,
+    0.0003
+   ]
+  },
+  "Idle Air Cond On-Off": {
+   "taux": 0.00026649820617792987,
+   "p_rates": [
+    0.5,
+    0,
+    0
+   ]
+  },
+  "Cylinder Deactivation": {
+   "taux": 0.0315508046534976,
+   "p_rates": [
+    0.051018,
+    0.003712,
+    0
+   ]
+  },
+  "Cylinder reactivation": {
+   "taux": 0.03226381718803992,
+   "p_rates": [
+    0.03156,
+    0.005278,
+    0
+   ]
+  },
+  "DASS Eng On - Cold": {
+   "taux": 0.0005603244174512085,
+   "p_rates": [
+    0.0599,
+    0.004622,
+    0.00059
+   ]
+  },
+  "Drive Away Creep Eng On - Cold": {
+   "taux": 0.0005174559881691924,
+   "p_rates": [
+    1,
+    0,
+    0
+   ]
+  },
+  "Accel Cst Load - Cold": {
+   "taux": 0.004275314594098012,
+   "p_rates": [
+    0.03035,
+    0.003895,
+    0.000588
+   ]
+  },
+  "Cst Speed Without Load - Cold": {
+   "taux": 0.00018679213605128536,
+   "p_rates": [
+    0.2,
+    0,
+    0
+   ]
+  },
+  "Cst Speed Cst Load - Cold": {
+   "taux": 0.0028052537399759826,
+   "p_rates": [
+    0.032552,
+    0.003597,
+    0.00574
+   ]
+  },
+  "Idle Vehicle Stationary - Cold": {
+   "taux": 0.006900106001333423,
+   "p_rates": [
+    0.325667,
+    0.0027,
+    0.0003
+   ]
+  },
+  "Idle Air Cond On-Off - Cold": {
+   "taux": 0.00012012330285722152,
+   "p_rates": [
+    0.5,
+    0,
+    0
+   ]
+  },
+  "Cylinder Deactivation - Cold": {
+   "taux": 0.0025581733502835886,
+   "p_rates": [
+    0.051018,
+    0.003712,
+    0
+   ]
+  },
+  "Cylinder reactivation - Cold": {
+   "taux": 0.0026159851774086415,
+   "p_rates": [
+    0.03156,
+    0.005278,
+    0
+   ]
+  },
+  "DA Rolling Start": {
+   "taux": 0.006473662476867652,
+   "p_rates": [
+    0.072377,
+    0.003862,
+    0.001483
+   ]
+  },
+  "DASS Eng Off quick": {
+   "taux": 0.0021725477914920814,
+   "p_rates": [
+    0.1596,
+    0.0101,
+    0.0013
+   ]
+  },
+  "Drive Away Creep Eng Off": {
+   "taux": 0.0010763839521068803,
+   "p_rates": [
+    1,
+    0,
+    0
+   ]
+  },
+  "Auto start vehicle stationary": {
+   "taux": 0.00045855109211145856,
+   "p_rates": [
+    0.25,
+    0,
+    0
+   ]
+  },
+  "Auto start vehicle moving": {
+   "taux": 0.014385916615261448,
+   "p_rates": [
+    0.48,
+    0.02,
+    0
+   ]
+  },
+  "DASS Eng Off slow": {
+   "taux": 0.002207588884903244,
+   "p_rates": [
+    0.0599,
+    0.004622,
+    0.00059
+   ]
+  },
+  "DASS - Eng Off - COM": {
+   "taux": 0.00043801366763953254,
+   "p_rates": [
+    0.0599,
+    0.004622,
+    0.00059
+   ]
+  },
+  "DASS - Extended Eng Off": {
+   "taux": 4.86681852932814e-05,
+   "p_rates": [
+    0.0599,
+    0.004622,
+    0.00059
+   ]
+  },
+  "Manual Start": {
+   "taux": 0.0004936167638611584,
+   "p_rates": [
+    0.25,
+    0,
+    0
+   ]
+  },
+  "Manual Stop": {
+   "taux": 0.00024276234288253694,
+   "p_rates": [
+    0.5,
+    0,
+    0
+   ]
+  },
+  "Decel Without Brake - Cold": {
+   "taux": 0.0008789795051924744,
+   "p_rates": [
+    0.05115,
+    0.00413,
+    0.0009
+   ]
+  },
+  "Decel Cst Brake - Cold": {
+   "taux": 0.005266770383856153,
+   "p_rates": [
+    0.03049,
+    0.004472,
+    0.000434
+   ]
+  },
+  "Decel - Trans to Cst Spd - Cold": {
+   "taux": 8.992636476199931e-05,
+   "p_rates": [
+    0.138128,
+    0.006575,
+    0.000756
+   ]
+  },
+  "Vehicle Stop - Cold": {
+   "taux": 0.0010547754062309694,
+   "p_rates": [
+    0.5,
+    0,
+    0
+   ]
+  },
+  "Decel Without Brake": {
+   "taux": 0.010809577744707453,
+   "p_rates": [
+    0.05115,
+    0.00413,
+    0.0009
+   ]
+  },
+  "Decel Cst Brake": {
+   "taux": 0.06495683473422591,
+   "p_rates": [
+    0.03049,
+    0.004472,
+    0.000434
+   ]
+  },
+  "Decel Trans to Cst Spd": {
+   "taux": 0.0011059029538816084,
+   "p_rates": [
+    0.138128,
+    0.006575,
+    0.000756
+   ]
+  },
+  "Vehicle Stop": {
+   "taux": 0.01297149329364894,
+   "p_rates": [
+    0.5,
+    0,
+    0
+   ]
+  },
+  "Accel Load Increase": {
+   "taux": 0.22298170753655244,
+   "p_rates": [
+    0.024812,
+    0.004319,
+    0.000319
+   ]
+  },
+  "Accel Load Decrease": {
+   "taux": 0.05988137791102578,
+   "p_rates": [
+    0.027274,
+    0.003524,
+    0.000287
+   ]
+  },
+  "Shift Abort": {
+   "taux": 0.008694488354348637,
+   "p_rates": [
+    0.031792,
+    0.002799,
+    0.00098
+   ]
+  },
+  "Maneuvering - Cold": {
+   "taux": 1.8651133734487206e-06,
+   "p_rates": [
+    0.4,
+    0.2,
+    0.0667
+   ]
+  },
+  "Maneuvering with throttle": {
+   "taux": 0.0002701092510723182,
+   "p_rates": [
+    0.14,
+    0.025,
+    0.001
+   ]
+  },
+  "Maneuvering at creep speed": {
+   "taux": 2.29369261670928e-06,
+   "p_rates": [
+    0,
+    0,
+    0
+   ]
+  }
+ }
+}

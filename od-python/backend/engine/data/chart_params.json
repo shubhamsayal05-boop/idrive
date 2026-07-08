@@ -1,0 +1,1794 @@
+{
+ "Coast - brake-on downshift": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "AccelerationChassis",
+   "anchor": "B24",
+   "y_min": -3.5,
+   "y_max": 0,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Engine Torque",
+   "anchor": "B70",
+   "y_min": "Automatique",
+   "y_max": "Automatique",
+   "y_step": "Automatique",
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Coast-brake-on downshift Cold": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "AccelerationChassis",
+   "anchor": "B24",
+   "y_min": -3.5,
+   "y_max": 0,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Engine Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 50,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Coast - brake-on upshift": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "AccelerationChassis",
+   "anchor": "B24",
+   "y_min": -2.5,
+   "y_max": 1,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "gear old",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 50,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1
+  }
+ ],
+ "(PT) KD - tip in downshift": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Max Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": "Automatique",
+   "y_max": "Automatique",
+   "y_step": "Automatique",
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "(TO) KD - tip in downshift": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Max Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": "Automatique",
+   "y_max": "Automatique",
+   "y_step": "Automatique",
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Load reversal downshift": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Load reversal upshift": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "gear old",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1
+  }
+ ],
+ "Maneuvering": [
+  {
+   "name": "Graphique 1",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": "B24",
+   "y_min": "Automatique",
+   "y_max": "Automatique",
+   "y_step": "Automatique",
+   "x_min": "Automatique",
+   "x_max": "Automatique",
+   "x_step": "Automatique"
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": "B70",
+   "y_min": "Automatique",
+   "y_max": "Automatique",
+   "y_step": "Automatique",
+   "x_min": "Automatique",
+   "x_max": "Automatique",
+   "x_step": "Automatique"
+  }
+ ],
+ "Power-on downshift": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Power-on upshift": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Power-on upshift Cold": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Lever change": [
+  {
+   "name": "Graphique 1",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": "Automatique",
+   "y_max": "Automatique",
+   "y_step": "Automatique",
+   "x_min": "Automatique",
+   "x_max": "Automatique",
+   "x_step": "Automatique"
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": "Automatique",
+   "y_max": "Automatique",
+   "y_step": "Automatique",
+   "x_min": "Automatique",
+   "x_max": "Automatique",
+   "x_step": "Automatique"
+  }
+ ],
+ "Tip out upshift": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "gear old",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1
+  }
+ ],
+ "Tip in At deceleration": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Gear",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 1,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Tip in At constant speed": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Gear",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 1,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Tip out After acceleration": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Gear",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 1,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Tip out At constant speed": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Gear",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 1,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Converter controlled slip": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Gear",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 1,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Gearbox Temperature",
+   "y": "Vehicle Speed",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 140,
+   "y_step": 10,
+   "x_min": -30,
+   "x_max": 120,
+   "x_step": 10
+  }
+ ],
+ "Converter lock up": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Gear",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 1,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Gearbox Temperature",
+   "y": "Vehicle Speed",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 140,
+   "y_step": 10,
+   "x_min": "automatique",
+   "x_max": "automatique",
+   "x_step": "automatique"
+  }
+ ],
+ "Converter release": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Gear",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 1,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Gearbox Temperature",
+   "y": "Vehicle Speed",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 140,
+   "y_step": 10,
+   "x_min": -30,
+   "x_max": 120,
+   "x_step": 10
+  }
+ ],
+ "Auto stop": [
+  {
+   "name": "Graphique 1",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": "B24",
+   "y_min": "Automatique",
+   "y_max": "Automatique",
+   "y_step": "Automatique",
+   "x_min": "Automatique",
+   "x_max": "Automatique",
+   "x_step": "Automatique"
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": "B70",
+   "y_min": "Automatique",
+   "y_max": "Automatique",
+   "y_step": "Automatique",
+   "x_min": "Automatique",
+   "x_max": "Automatique",
+   "x_step": "Automatique"
+  }
+ ],
+ "Sailing Exit": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "gear new",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "gear new",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 1,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "DASS Eng On": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Throttle Position",
+   "y": "Ax max 2s",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 120,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Throttle Position",
+   "y": "Pedal change time",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 2,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 120,
+   "x_step": 10
+  }
+ ],
+ "Drive Away Creep Eng On": [
+  {
+   "name": "Graphique 1",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "Accel Cst Load": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Cst Speed Without Load": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Gear",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 1,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "Cst Speed Cst Load": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 60,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Idle Vehicle Stationary": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Engine Speed",
+   "y": "Engine Temperature",
+   "anchor": "B24",
+   "y_min": -30,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 2000,
+   "x_step": 250
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "Idle Air Cond On-Off": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Engine Speed",
+   "y": "Engine Temperature",
+   "anchor": "B24",
+   "y_min": -30,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 2000,
+   "x_step": 250
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "Cylinder Deactivation": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Cylinder reactivation": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "DASS Eng On - Cold": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Throttle Position",
+   "y": "Ax max 2s",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 120,
+   "x_step": "Automatique"
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Throttle Position",
+   "y": "Pedal change time",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 2,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 120,
+   "x_step": 10
+  }
+ ],
+ "Drive Away Creep Eng On - Cold": [
+  {
+   "name": "Graphique 1",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "Accel Cst Load - Cold": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Cst Speed Without Load - Cold": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Gear",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 1,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "Cst Speed Cst Load - Cold": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 60,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Idle Vehicle Stationary - Cold": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Engine Speed",
+   "y": "Engine Temperature",
+   "anchor": "B24",
+   "y_min": -30,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 2000,
+   "x_step": 250
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "Idle Air Cond On-Off - Cold": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Engine Speed",
+   "y": "Engine Temperature",
+   "anchor": "B24",
+   "y_min": -30,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 2000,
+   "x_step": 250
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "Cylinder Deactivation - Cold": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Cylinder reactivation - Cold": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "DA Rolling Start": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "delta pedal",
+   "y": "Vehicle Speed",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 120,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Throttle Position",
+   "y": "Pedal change time",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 2,
+   "y_step": 0.1,
+   "x_min": 0,
+   "x_max": 120,
+   "x_step": 10
+  }
+ ],
+ "DASS Eng Off quick": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Throttle Position",
+   "y": "Ax max 2s",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 120,
+   "x_step": "Automatique"
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Throttle Position",
+   "y": "Pedal change time",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 2,
+   "y_step": 0.1,
+   "x_min": 0,
+   "x_max": 120,
+   "x_step": 10
+  }
+ ],
+ "Drive Away Creep Eng Off": [
+  {
+   "name": "Graphique 1",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "Auto start vehicle stationary": [
+  {
+   "name": "Graphique 1",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "Auto start vehicle moving": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B25",
+   "y_min": 0,
+   "y_max": 100,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 150,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "DASS Eng Off slow": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Throttle Position",
+   "y": "Ax max 2s",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 120,
+   "x_step": "Automatique"
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Throttle Position",
+   "y": "Pedal change time",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 2,
+   "y_step": 0.1,
+   "x_min": 0,
+   "x_max": 120,
+   "x_step": 10
+  }
+ ],
+ "DASS - Eng Off - COM": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Throttle Position",
+   "y": "Ax max 2s",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 120,
+   "x_step": "Automatique"
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Throttle Position",
+   "y": "Pedal change time",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 2,
+   "y_step": 0.1,
+   "x_min": "Automatique",
+   "x_max": "Automatique",
+   "x_step": "Automatique"
+  }
+ ],
+ "DASS - Extended Eng Off": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Throttle Position",
+   "y": "Ax max 2s",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 120,
+   "x_step": "Automatique"
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Throttle Position",
+   "y": "Pedal change time",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 2,
+   "y_step": 0.1,
+   "x_min": "Automatique",
+   "x_max": "Automatique",
+   "x_step": "Automatique"
+  }
+ ],
+ "Manual Start": [
+  {
+   "name": "Graphique 1",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "Manual Stop": [
+  {
+   "name": "Graphique 1",
+   "active": false,
+   "x": "Engine Speed",
+   "y": "Engine Temperature",
+   "anchor": "B24",
+   "y_min": -30,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 6000,
+   "x_step": 250
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "Decel Without Brake - Cold": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Deceleration level",
+   "anchor": "B24",
+   "y_min": -2,
+   "y_max": 0,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "gear",
+   "y": "Deceleration level",
+   "anchor": "B70",
+   "y_min": -2,
+   "y_max": 0,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1
+  }
+ ],
+ "Decel Cst Brake - Cold": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Deceleration level",
+   "anchor": "B24",
+   "y_min": -3.5,
+   "y_max": 0,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "gear",
+   "y": "Deceleration level",
+   "anchor": "B70",
+   "y_min": -3.5,
+   "y_max": 0,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1
+  }
+ ],
+ "Decel - Trans to Cst Spd - Cold": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Deceleration level",
+   "anchor": "B24",
+   "y_min": -2,
+   "y_max": 0,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 50,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": "gear",
+   "y": "Engine Torque",
+   "anchor": "B70",
+   "y_min": "Automatique",
+   "y_max": "Automatique",
+   "y_step": "Automatique",
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1
+  }
+ ],
+ "Vehicle Stop - Cold": [
+  {
+   "name": "Graphique 1",
+   "active": false,
+   "x": "Engine Speed",
+   "y": "Engine Temperature",
+   "anchor": "B24",
+   "y_min": -30,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 6000,
+   "x_step": 250
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "Decel Without Brake": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Deceleration level",
+   "anchor": "B24",
+   "y_min": -2,
+   "y_max": 0,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "gear",
+   "y": "Deceleration level",
+   "anchor": "B70",
+   "y_min": -2,
+   "y_max": 0,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1
+  }
+ ],
+ "Decel Cst Brake": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Deceleration level",
+   "anchor": "B24",
+   "y_min": -3.5,
+   "y_max": 0,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "gear",
+   "y": "Deceleration level",
+   "anchor": "B70",
+   "y_min": -3.5,
+   "y_max": 0,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1
+  }
+ ],
+ "Decel Trans to Cst Spd": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Deceleration level",
+   "anchor": "B24",
+   "y_min": -2,
+   "y_max": 0,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 50,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": "gear",
+   "y": "Engine Torque",
+   "anchor": "B70",
+   "y_min": "Automatique",
+   "y_max": "Automatique",
+   "y_step": "Automatique",
+   "x_min": 0,
+   "x_max": 10,
+   "x_step": 1
+  }
+ ],
+ "Vehicle Stop": [
+  {
+   "name": "Graphique 1",
+   "active": false,
+   "x": "Engine Speed",
+   "y": "Engine Temperature",
+   "anchor": "B24",
+   "y_min": -30,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 6000,
+   "x_step": 250
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "Accel Load Increase": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Accel Load Decrease": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Shift Abort": [
+  {
+   "name": "Graphique 1",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Throttle Position",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 120,
+   "y_step": 10,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  },
+  {
+   "name": "Graphique 2",
+   "active": true,
+   "x": "Vehicle Speed",
+   "y": "Front shaft Torque",
+   "anchor": "B70",
+   "y_min": -50,
+   "y_max": 350,
+   "y_step": 50,
+   "x_min": 0,
+   "x_max": 140,
+   "x_step": 10
+  }
+ ],
+ "Maneuvering - Cold": [
+  {
+   "name": "Graphique 1",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ],
+ "Maneuvering with throttle": [
+  {
+   "name": "Graphique 1",
+   "active": false,
+   "x": "Throttle Position",
+   "y": "Ax max 2s",
+   "anchor": "B24",
+   "y_min": 0,
+   "y_max": 10,
+   "y_step": 0.5,
+   "x_min": 0,
+   "x_max": 120,
+   "x_step": "Automatique"
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": "Selector_Lever_Position",
+   "y": "Pedal change time",
+   "anchor": "B70",
+   "y_min": 0,
+   "y_max": 2,
+   "y_step": 0.1,
+   "x_min": "Automatique",
+   "x_max": "Automatique",
+   "x_step": "Automatique"
+  }
+ ],
+ "Maneuvering at creep speed": [
+  {
+   "name": "Graphique 1",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  },
+  {
+   "name": "Graphique 2",
+   "active": false,
+   "x": null,
+   "y": null,
+   "anchor": null,
+   "y_min": null,
+   "y_max": null,
+   "y_step": null,
+   "x_min": null,
+   "x_max": null,
+   "x_step": null
+  }
+ ]
+}

@@ -1,0 +1,1848 @@
+[
+ {
+  "order": 1,
+  "sdv": "POWER-ON DOWNSHIFT",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Power-on downshift",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 2,
+  "sdv": "TIP OUT UPSHIFT",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Tip out upshift",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 4,
+  "sdv": "TIP IN AT CONSTANT SPEED",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Tip in",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "At constant speed / acceleration",
+    "group": 2
+   }
+  ]
+ },
+ {
+  "order": 5,
+  "sdv": "TIP IN AT DECELERATION",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Tip in",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "At deceleration",
+    "group": 2
+   }
+  ]
+ },
+ {
+  "order": 6,
+  "sdv": "TIP OUT AT CONSTANT SPEED",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Tip out",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "At constant speed / acceleration",
+    "group": 2
+   },
+   {
+    "column": "P: ax level start, ax level start",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 0.3,
+    "group": 3
+   }
+  ]
+ },
+ {
+  "order": 7,
+  "sdv": "TIP OUT AFTER ACCELERATION",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Tip out",
+    "group": 1
+   },
+   {
+    "column": "P: ax level start, ax level start",
+    "op": "SUPERIEUR A",
+    "value": 0.3,
+    "group": 2
+   }
+  ]
+ },
+ {
+  "order": 8,
+  "sdv": "CONVERTER RELEASE",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Converter release",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 9,
+  "sdv": "CONVERTER CONTROLLED SLIP",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Converter controlled slip",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 10,
+  "sdv": "CONVERTER LOCK UP",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Converter lock up",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 11,
+  "sdv": "SAILING EXIT",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Exit sailing",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 15,
+  "sdv": "MANEUVERING",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Maneuvering",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 2
+   },
+   {
+    "column": "max, Throttle Position",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 4,
+    "group": 3
+   },
+   {
+    "column": "P: vehicle speed, vehicle Speed",
+    "op": "INFERIEUR A",
+    "value": "4",
+    "group": 4
+   }
+  ]
+ },
+ {
+  "order": 16,
+  "sdv": "LOAD REVERSAL UPSHIFT",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Load reversal upshift",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 17,
+  "sdv": "LOAD REVERSAL DOWNSHIFT",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Load reversal downshift",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 18,
+  "sdv": "Coast-brake-on downshift Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Coast / brake-on downshift",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR A",
+    "value": 50,
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 4
+   }
+  ]
+ },
+ {
+  "order": 19,
+  "sdv": "COAST - BRAKE-ON DOWNSHIFT",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Coast / brake-on downshift",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 2
+   }
+  ]
+ },
+ {
+  "order": 20,
+  "sdv": "Power-on upshift Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Power-on upshift",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR A",
+    "value": 50,
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 4
+   }
+  ]
+ },
+ {
+  "order": 21,
+  "sdv": "POWER-ON UPSHIFT",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Power-on upshift",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 2
+   }
+  ]
+ },
+ {
+  "order": 22,
+  "sdv": "COAST - BRAKE-ON UPSHIFT",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Coast / brake-on upshift",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 23,
+  "sdv": "(PT) KD - TIP IN DOWNSHIFT",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Kick down / tip in downshift",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Throttle Position",
+    "op": "SUPERIEUR A",
+    "value": 5,
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, AccelerationChassis",
+    "op": "SUPERIEUR OU EGAL A",
+    "value": -0.25,
+    "group": 3
+   }
+  ]
+ },
+ {
+  "order": 24,
+  "sdv": "(TO) KD - TIP IN DOWNSHIFT",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Kick down / tip in downshift",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, AccelerationChassis",
+    "op": "INFERIEUR A",
+    "value": -0.25,
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Throttle Position",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 5,
+    "group": 2
+   }
+  ]
+ },
+ {
+  "order": 31,
+  "sdv": "LEVER CHANGE",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "CONTIENT",
+    "value": "lever change",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Engage;Disengage;lever change",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 33,
+  "sdv": "AUTO STOP",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Auto stop",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 35,
+  "sdv": "DASS Eng On",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Standing start",
+    "group": 1
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "_EXT_",
+    "group": 2
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "extended",
+    "group": 3
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "_CoM_",
+    "group": 4
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "_COM_",
+    "group": 5
+   },
+   {
+    "column": "P: engine speed, engine speed",
+    "op": "SUPERIEUR A",
+    "value": "500",
+    "group": 6
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": "50",
+    "group": 7
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 7
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 7
+   }
+  ]
+ },
+ {
+  "order": 36,
+  "sdv": "Drive Away Creep Eng On",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Creep",
+    "group": 1
+   },
+   {
+    "column": "P: engine speed, engine speed",
+    "op": "SUPERIEUR A",
+    "value": "500",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 3
+   }
+  ]
+ },
+ {
+  "order": 37,
+  "sdv": "Accel Cst Load",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Acceleration",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Constant load",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 3
+   }
+  ]
+ },
+ {
+  "order": 38,
+  "sdv": "Cst Speed Without Load",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Constant speed",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Without load",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 3
+   }
+  ]
+ },
+ {
+  "order": 39,
+  "sdv": "Cst Speed Cst Load",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Constant speed",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Constant load",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 3
+   }
+  ]
+ },
+ {
+  "order": 40,
+  "sdv": "Idle Vehicle Stationary",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Idle",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Vehicle stationary",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 3
+   }
+  ]
+ },
+ {
+  "order": 41,
+  "sdv": "Idle Air Cond On-Off",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Idle",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Air conditioning on / off",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 3
+   }
+  ]
+ },
+ {
+  "order": 42,
+  "sdv": "Cylinder Deactivation",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Cylinder deactivation",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 2
+   }
+  ]
+ },
+ {
+  "order": 43,
+  "sdv": "Cylinder reactivation",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Cylinder reactivation",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 2
+   }
+  ]
+ },
+ {
+  "order": 44,
+  "sdv": "DASS Eng On - Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Standing start",
+    "group": 1
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "_EXT_",
+    "group": 2
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "extended",
+    "group": 3
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "_CoM_",
+    "group": 4
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "_COM_",
+    "group": 5
+   },
+   {
+    "column": "P: engine speed, engine speed",
+    "op": "SUPERIEUR A",
+    "value": "500",
+    "group": 6
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 7
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 8
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR OU EGAL A",
+    "value": "50",
+    "group": 9
+   }
+  ]
+ },
+ {
+  "order": 45,
+  "sdv": "Drive Away Creep Eng On - Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Creep",
+    "group": 1
+   },
+   {
+    "column": "P: engine speed, engine speed",
+    "op": "SUPERIEUR A",
+    "value": "500",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 4
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 50,
+    "group": 5
+   }
+  ]
+ },
+ {
+  "order": 46,
+  "sdv": "Accel Cst Load - Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Acceleration",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Constant load",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 4
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 50,
+    "group": 5
+   }
+  ]
+ },
+ {
+  "order": 47,
+  "sdv": "Cst Speed Without Load - Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Constant speed",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Without load",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 4
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 50,
+    "group": 5
+   }
+  ]
+ },
+ {
+  "order": 48,
+  "sdv": "Cst Speed Cst Load - Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Constant speed",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Constant load",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 4
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 50,
+    "group": 5
+   }
+  ]
+ },
+ {
+  "order": 49,
+  "sdv": "Idle Vehicle Stationary - Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Idle",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Vehicle stationary",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 4
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 50,
+    "group": 5
+   }
+  ]
+ },
+ {
+  "order": 50,
+  "sdv": "Idle Air Cond On-Off - Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Idle",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Air conditioning on / off",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 4
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 50,
+    "group": 5
+   }
+  ]
+ },
+ {
+  "order": 51,
+  "sdv": "Cylinder Deactivation - Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Cylinder deactivation",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 50,
+    "group": 4
+   }
+  ]
+ },
+ {
+  "order": 52,
+  "sdv": "Cylinder reactivation - Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Cylinder reactivation",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 50,
+    "group": 4
+   }
+  ]
+ },
+ {
+  "order": 53,
+  "sdv": "DA Rolling Start",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Rolling start",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 54,
+  "sdv": "DASS Eng Off quick",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Standing start",
+    "group": 1
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "_CoM_",
+    "group": 2
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "_COM_",
+    "group": 3
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "_EXT_",
+    "group": 4
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "extended",
+    "group": 5
+   },
+   {
+    "column": "P: engine speed, engine speed",
+    "op": "INFERIEUR A",
+    "value": "500",
+    "group": 6
+   },
+   {
+    "column": "P: pedal change time, pedal change time",
+    "op": "SUPERIEUR OU EGAL A",
+    "value": "0.05",
+    "group": 7
+   },
+   {
+    "column": "P: pedal change time, pedal change time",
+    "op": "INFERIEUR A",
+    "value": "0.4",
+    "group": 8
+   }
+  ]
+ },
+ {
+  "order": 55,
+  "sdv": "Drive Away Creep Eng Off",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Creep",
+    "group": 1
+   },
+   {
+    "column": "P: engine speed, engine speed",
+    "op": "INFERIEUR A",
+    "value": "500",
+    "group": 2
+   }
+  ]
+ },
+ {
+  "order": 56,
+  "sdv": "Auto start vehicle stationary",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Auto start vehicle stationary",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 57,
+  "sdv": "Auto start vehicle moving",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Auto start vehicle moving",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 58,
+  "sdv": "DASS Eng Off slow",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Standing start",
+    "group": 1
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "_CoM_",
+    "group": 2
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "_COM_",
+    "group": 3
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "_EXT_",
+    "group": 4
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "extended",
+    "group": 5
+   },
+   {
+    "column": "P: engine speed, engine speed",
+    "op": "INFERIEUR A",
+    "value": "500",
+    "group": 6
+   },
+   {
+    "column": "P: pedal change time, pedal change time",
+    "op": "SUPERIEUR OU EGAL A",
+    "value": "0.4",
+    "group": 7
+   }
+  ]
+ },
+ {
+  "order": 59,
+  "sdv": "DASS - Eng Off - COM",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Standing start",
+    "group": 1
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "CONTIENT",
+    "value": "_CoM_",
+    "group": 2
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "CONTIENT",
+    "value": "_COM_",
+    "group": 2
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "extended",
+    "group": 3
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "_EXT_",
+    "group": 4
+   },
+   {
+    "column": "P: engine speed, engine speed",
+    "op": "INFERIEUR A",
+    "value": "500",
+    "group": 5
+   }
+  ]
+ },
+ {
+  "order": 60,
+  "sdv": "DASS - Extended Eng Off",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Standing start",
+    "group": 1
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "CONTIENT",
+    "value": "_EXT_",
+    "group": 2
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "CONTIENT",
+    "value": "extended",
+    "group": 2
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "_CoM_",
+    "group": 3
+   },
+   {
+    "column": "Nom de l'essai, Acquisition Name",
+    "op": "NE CONTIENT PAS",
+    "value": "_COM_",
+    "group": 4
+   },
+   {
+    "column": "P: engine speed, engine speed",
+    "op": "INFERIEUR A",
+    "value": "500",
+    "group": 5
+   }
+  ]
+ },
+ {
+  "order": 61,
+  "sdv": "Manual Start",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Manual start",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 62,
+  "sdv": "Manual Stop",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Manual stop",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 63,
+  "sdv": "Decel Without Brake - Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Without brake",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 50,
+    "group": 4
+   }
+  ]
+ },
+ {
+  "order": 64,
+  "sdv": "Decel Cst Brake - Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Constant Brake",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 50,
+    "group": 4
+   }
+  ]
+ },
+ {
+  "order": 65,
+  "sdv": "Decel - Trans to Cst Spd - Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Transition to constant speed",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 50,
+    "group": 4
+   }
+  ]
+ },
+ {
+  "order": 66,
+  "sdv": "Vehicle Stop - Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Vehicle stop",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 50,
+    "group": 4
+   }
+  ]
+ },
+ {
+  "order": 68,
+  "sdv": "Decel Without Brake",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Without brake",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 2
+   }
+  ]
+ },
+ {
+  "order": 69,
+  "sdv": "Decel Cst Brake",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Constant Brake",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 2
+   }
+  ]
+ },
+ {
+  "order": 70,
+  "sdv": "Decel Trans to Cst Spd",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Transition to constant speed",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 2
+   }
+  ]
+ },
+ {
+  "order": 71,
+  "sdv": "Vehicle Stop",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Vehicle stop",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 2
+   }
+  ]
+ },
+ {
+  "order": 73,
+  "sdv": "Accel Load Increase",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Acceleration",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Load increase",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 3
+   }
+  ]
+ },
+ {
+  "order": 74,
+  "sdv": "Accel Load Decrease",
+  "active": true,
+  "conditions": [
+   {
+    "column": "SDV, Event Name",
+    "op": "EGAL A",
+    "value": "Acceleration",
+    "group": 1
+   },
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Load decrease",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": 50,
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 3
+   }
+  ]
+ },
+ {
+  "order": 75,
+  "sdv": "Shift Abort",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Shift abort",
+    "group": 1
+   }
+  ]
+ },
+ {
+  "order": 76,
+  "sdv": "Maneuvering - Cold",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Maneuvering",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "DIFFERENT DE",
+    "value": "",
+    "group": 3
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "INFERIEUR OU EGAL A",
+    "value": 50,
+    "group": 4
+   },
+   {
+    "column": "max, Throttle Position",
+    "op": "INFERIEUR OU EGAL A",
+    "value": "5",
+    "group": 5
+   }
+  ]
+ },
+ {
+  "order": 77,
+  "sdv": "Maneuvering with throttle",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Maneuvering",
+    "group": 1
+   },
+   {
+    "column": "max, Throttle Position",
+    "op": "SUPERIEUR A",
+    "value": "5",
+    "group": 2
+   }
+  ]
+ },
+ {
+  "order": 78,
+  "sdv": "Maneuvering at creep speed",
+  "active": true,
+  "conditions": [
+   {
+    "column": "Sous situation de vie, Sub Event Name",
+    "op": "EGAL A",
+    "value": "Maneuvering",
+    "group": 1
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "SUPERIEUR A",
+    "value": "40",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "----",
+    "group": 2
+   },
+   {
+    "column": "Val_A_Tstart, Gearbox Temperature",
+    "op": "EGAL A",
+    "value": "",
+    "group": 2
+   },
+   {
+    "column": "max, Throttle Position",
+    "op": "INFERIEUR OU EGAL A",
+    "value": "4",
+    "group": 3
+   },
+   {
+    "column": "P: vehicle speed, vehicle Speed",
+    "op": "SUPERIEUR OU EGAL A",
+    "value": "4",
+    "group": 4
+   }
+  ]
+ }
+]
