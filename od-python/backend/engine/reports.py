@@ -18,11 +18,6 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from pptx import Presentation
-from pptx.util import Inches, Pt
-from pptx.dml.color import RGBColor
-from pptx.enum.text import PP_ALIGN
-
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import landscape, A4
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
@@ -76,148 +71,9 @@ def _fmt(v, nd=1):
 
 # ================================================================ PPTX
 
-def build_pptx(data, out_path):
-    prs = Presentation()
-    prs.slide_width = Inches(13.333)
-    prs.slide_height = Inches(7.5)
-    blank = prs.slide_layouts[6]
-    project = data["project"]
-    glob = data["global"] or {}
-
-    # ---- title slide
-    s = prs.slides.add_slide(blank)
-    band = s.shapes.add_textbox(Inches(0.6), Inches(2.2), Inches(12), Inches(1.4))
-    p = band.text_frame.paragraphs[0]
-    p.text = "ODRIV — Objective Drivability Report"
-    p.font.size = Pt(40)
-    p.font.bold = True
-    p.font.color.rgb = RGBColor(*NAVY)
-    sub = s.shapes.add_textbox(Inches(0.6), Inches(3.6), Inches(12), Inches(2.2))
-    tf = sub.text_frame
-    lines = [
-        "Project: %s" % (project.get("name_code") or "-"),
-        "Vehicle mode: %s   Fuel: %s   Gears: %s" % (
-            project.get("mode") or "-", project.get("fuel") or "-", project.get("gears") or "-"),
-        "ODRIV milestone: %s   Drive version: V%s   Area: %s" % (
-            project.get("odriv_milestone") or "-",
-            str(project.get("version") or "-").lstrip("Vv"), project.get("area") or "-"),
-        "Target vehicle: %s" % (project.get("target_vehicle") or "-"),
-        "Document versions: %s" % (" / ".join(_fmt_doc_version(v) for v in data.get("doc_versions", []) if v) or "-"),
-        "Generated: %s" % datetime.now().strftime("%Y-%m-%d %H:%M"),
-    ]
-    for i, line in enumerate(lines):
-        para = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
-        para.text = line
-        para.font.size = Pt(16)
-
-    # ---- risk assessment slide
-    s = prs.slides.add_slide(blank)
-    _slide_title(s, "Risk assessment for customer complaints")
-    y = 1.2
-    for part, label in (("driv", "DRIVABILITY — comfort / disturbances"),
-                        ("dyn", "RESPONSIVENESS — performance feel")):
-        g = glob.get(part)
-        box = s.shapes.add_textbox(Inches(0.6), Inches(y), Inches(6.2), Inches(2.4))
-        tf = box.text_frame
-        tf.paragraphs[0].text = label
-        tf.paragraphs[0].font.bold = True
-        tf.paragraphs[0].font.size = Pt(16)
-        if g:
-            rows = [("Current status", g["verdict"]),
-                    ("Forecast status @ SOPM", g["verdict_pred"]),
-                    ("Global index", _fmt(g["index"])),
-                    ("Weighted % of events below target", _fmt((g["rate_low"] or 0) * 100, 2) + " %")]
-        else:
-            rows = [("Status", "No data")]
-        for k, v in rows:
-            para = tf.add_paragraph()
-            para.text = "%s :  %s" % (k, v)
-            para.font.size = Pt(13)
-            if v in VERDICT_COLOR:
-                para.font.bold = True
-                para.font.color.rgb = RGBColor(*VERDICT_COLOR[v])
-        y += 2.6
-
-    # ---- scorecard table slides
-    rows = data["sdv_results"]
-    chunks = [rows[i:i + 14] for i in range(0, len(rows), 14)] or [[]]
-    for ci, chunk in enumerate(chunks):
-        s = prs.slides.add_slide(blank)
-        _slide_title(s, "Scorecard — use cases (%d/%d)" % (ci + 1, len(chunks)))
-        tbl_rows = len(chunk) + 1
-        shape = s.shapes.add_table(tbl_rows, 11, Inches(0.4), Inches(1.1),
-                                   Inches(12.5), Inches(0.34 * tbl_rows))
-        table = shape.table
-        heads = ["USE CASE", "P1", "P2", "P3", "P1*", "P2*", "P3*",
-                 "Driv. Index", "Target", "Resp. Index", "Lowest event"]
-        for i, h in enumerate(heads):
-            c = table.cell(0, i)
-            c.text = h
-            c.text_frame.paragraphs[0].font.size = Pt(10)
-            c.text_frame.paragraphs[0].font.bold = True
-        for r, sdv in enumerate(chunk, 1):
-            d = sdv.get("driv") or {}
-            dy = sdv.get("dyn") or {}
-            table.cell(r, 0).text = sdv["name"]
-            for i, part_status in enumerate([(d.get("status") or {}).get(str(p), "NONE") for p in (1, 2, 3)] +
-                                            [(d.get("status_pred") or {}).get(str(p), "NONE") for p in (1, 2, 3)]):
-                c = table.cell(r, i + 1)
-                c.text = "\u25CF"
-                para = c.text_frame.paragraphs[0]
-                para.font.color.rgb = RGBColor(*DOT.get(part_status, DOT["NONE"]))
-                para.font.size = Pt(12)
-                para.alignment = PP_ALIGN.CENTER
-            table.cell(r, 7).text = _fmt(d.get("index"))
-            table.cell(r, 8).text = _fmt(d.get("target_index"))
-            table.cell(r, 9).text = _fmt(dy.get("index"))
-            table.cell(r, 10).text = str(d.get("lowest_event") or "-")[:34]
-            for i in range(11):
-                for para in table.cell(r, i).text_frame.paragraphs:
-                    if para.font.size is None:
-                        para.font.size = Pt(9)
-
-    # ---- per-SDV slides
-    for sdv in rows:
-        det = data["charts"].get(sdv["name"])
-        s = prs.slides.add_slide(blank)
-        _slide_title(s, sdv["name"])
-        d = sdv.get("driv") or {}
-        dy = sdv.get("dyn") or {}
-        box = s.shapes.add_textbox(Inches(0.5), Inches(1.05), Inches(5.4), Inches(4.6))
-        tf = box.text_frame
-        tf.word_wrap = True
-        stats = [
-            ("Events", str(sdv["n_events"])),
-            ("Drivability Index", _fmt(d.get("index"))),
-            ("Target Index", _fmt(d.get("target_index"))),
-            ("Responsiveness Index", _fmt(dy.get("index"))),
-        ]
-        cnt = d.get("counts") or {}
-        for color in ("RED", "YELLOW", "GREEN"):
-            stats.append((color.title() + " events (P1/P2/P3)",
-                          "%d / %d / %d" % (cnt.get(color + "_P1", 0),
-                                            cnt.get(color + "_P2", 0),
-                                            cnt.get(color + "_P3", 0))))
-        if d.get("lowest_event"):
-            stats.append(("Lowest event", str(d["lowest_event"])))
-        for i, (k, v) in enumerate(stats):
-            para = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
-            para.text = "%s :  %s" % (k, v)
-            para.font.size = Pt(13)
-        if det and det.get("png"):
-            s.shapes.add_picture(io.BytesIO(det["png"]), Inches(6.2), Inches(1.2),
-                                 width=Inches(6.6))
-    prs.save(out_path)
-    return out_path
-
-
-def _slide_title(slide, text):
-    box = slide.shapes.add_textbox(Inches(0.4), Inches(0.25), Inches(12.4), Inches(0.7))
-    p = box.text_frame.paragraphs[0]
-    p.text = text
-    p.font.size = Pt(24)
-    p.font.bold = True
-    p.font.color.rgb = RGBColor(*TEAL)
+def build_pptx(data, out_path, report_fields=None):
+    from engine.pptx_report import build_pptx as _build_pptx_odriv
+    return _build_pptx_odriv(data, out_path, report_fields=report_fields)
 
 
 # ================================================================ PDF

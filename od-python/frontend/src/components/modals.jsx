@@ -265,6 +265,7 @@ export function DocVersionsModal({ onClose }) {
     sender_tel: "",
     sender_email: "",
     synthesis: "",
+    dynamism_synthesis: "",
   });
   const labels = ["Document version", "AVLD version", "Software version", "Calibration version"];
   const gen = async (fmtType) => {
@@ -326,6 +327,7 @@ export function DocVersionsModal({ onClose }) {
         ["sender_tel", "Sender telephone"],
         ["sender_email", "Sender email"],
         ["synthesis", "Global synthesis (optional)"],
+        ["dynamism_synthesis", "Dynamism synthesis (optional)"],
       ].map(([key, label]) => (
         <div className="form-row" key={key}>
           <label>{label}</label>

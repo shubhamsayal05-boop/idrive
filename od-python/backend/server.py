@@ -1858,14 +1858,15 @@ async def create_report(fmt: str, payload: dict = Body(default={})):
             "charts": charts, "events_by_sdv": events_by_sdv,
             "doc_versions": payload.get("doc_versions") or []}
     out = os.path.join(tempfile.gettempdir(), f"ODRIV_report.{fmt}")
+    report_fields = payload.get("report_fields")
     if fmt == "pptx":
-        report_builder.build_pptx(data, out)
+        report_builder.build_pptx(data, out, report_fields=report_fields)
         media = "application/vnd.openxmlformats-officedocument.presentationml.presentation"
     elif fmt == "pdf":
         report_builder.build_pdf(data, out)
         media = "application/pdf"
     else:
-        docx_builder.build_docx(data, out, report_fields=payload.get("report_fields"))
+        docx_builder.build_docx(data, out, report_fields=report_fields)
         media = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     await moniteur(f"Report generated ({fmt.upper()})")
     fname = f"ODRIV_{(project.get('name_code') or 'report').replace(' ', '_')}.{fmt}"
