@@ -1,0 +1,27 @@
+{
+ "constants": {
+  "COEF1": 2,
+  "COEF2": -1,
+  "COEF3": 0,
+  "PUISS": 3,
+  "GLOBALPUISS": 5,
+  "FORMS": "Recalibrated C1 non-averaged C2 averaged"
+ },
+ "coefficients": {
+  "1": {
+   "RED": 100,
+   "YELLOW": 100,
+   "GREEN": 10
+  },
+  "2": {
+   "RED": 80,
+   "YELLOW": 80,
+   "GREEN": 8
+  },
+  "3": {
+   "RED": 60,
+   "YELLOW": 60,
+   "GREEN": 6
+  }
+ }
+}

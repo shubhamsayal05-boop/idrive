@@ -1,0 +1,156 @@
+{
+  "drivability": {
+    "index": {
+      "vehicles": [
+        {
+          "name": "P8 MHEV MDL2",
+          "x": 0,
+          "y": 4
+        },
+        {
+          "name": "24M_3.6_JL_PS-A_V222_0223",
+          "x": 0,
+          "y": 51.5
+        },
+        {
+          "name": "24MY_JL_2.0T_VP_V150_091322",
+          "x": 0,
+          "y": 99
+        },
+        {
+          "name": null,
+          "x": 0,
+          "y": 50
+        }
+      ],
+      "index_rouge": 0.55,
+      "index_orange": 0.15999999999999992,
+      "index_vert": 0.29000000000000004,
+      "pleine_echelle": 1,
+      "seuils_par_milestone": {
+        "vert_orange": [
+          0.56,
+          0.61,
+          0.66,
+          0.71
+        ],
+        "orange_rouge": [
+          0.4,
+          0.45,
+          0.5,
+          0.55
+        ],
+        "pleine_echelle": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "taux": {
+      "x": 0.016376552938998503,
+      "index_rouge": 0.25,
+      "index_orange": 0.5,
+      "index_vert": 0.25,
+      "pleine_echelle": 1,
+      "seuils_par_milestone": {
+        "vert_orange": [
+          0.06,
+          0.05,
+          0.05,
+          0.03
+        ],
+        "orange_rouge": [
+          0.12,
+          0.11,
+          0.1,
+          0.09
+        ],
+        "pleine_echelle": [
+          0.18,
+          0.16,
+          0.14,
+          0.12
+        ]
+      }
+    }
+  },
+  "responsiveness": {
+    "index": {
+      "vehicles": [
+        {
+          "name": "P8 MHEV MDL2",
+          "x": 0,
+          "y": 4
+        },
+        {
+          "name": "24M_3.6_JL_PS-A_V222_0223",
+          "x": 0,
+          "y": 51.5
+        },
+        {
+          "name": "24MY_JL_2.0T_VP_V150_091322",
+          "x": 0,
+          "y": 99
+        },
+        {
+          "name": null,
+          "x": 0,
+          "y": 50
+        }
+      ],
+      "index_rouge": 0.55,
+      "index_orange": 0.19999999999999996,
+      "index_vert": 0.25,
+      "pleine_echelle": 1,
+      "seuils_par_milestone": {
+        "vert_orange": [
+          0.6,
+          0.65,
+          0.7,
+          0.75
+        ],
+        "orange_rouge": [
+          0.4,
+          0.45,
+          0.5,
+          0.55
+        ],
+        "pleine_echelle": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "taux": {
+      "x": 0.018668303416138964,
+      "index_rouge": 0.25,
+      "index_orange": 0.5,
+      "index_vert": 0.25,
+      "pleine_echelle": 1,
+      "seuils_par_milestone": {
+        "vert_orange": [
+          0.06,
+          0.05,
+          0.05,
+          0.03
+        ],
+        "orange_rouge": [
+          0.12,
+          0.11,
+          0.1,
+          0.09
+        ],
+        "pleine_echelle": [
+          0.18,
+          0.16,
+          0.14,
+          0.12
+        ]
+      }
+    }
+  }
+}

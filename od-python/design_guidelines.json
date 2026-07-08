@@ -1,0 +1,101 @@
+{
+  "project_name": "ODRIV",
+  "theme_and_archetype": {
+    "theme": "LIGHT",
+    "archetype": "Archetype 4 (Swiss & High-Contrast)",
+    "description": "Authority, clarity, and function-first. Optimized for engineering and dense data analysis."
+  },
+  "typography": {
+    "fonts": {
+      "headings": "Chivo",
+      "body": "IBM Plex Sans",
+      "mono": "IBM Plex Mono"
+    },
+    "rules": {
+      "h1": "text-3xl sm:text-4xl font-bold tracking-tight",
+      "h2": "text-2xl sm:text-3xl font-semibold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-medium",
+      "body": "text-sm sm:text-base leading-relaxed",
+      "data_labels": "font-mono text-xs uppercase tracking-[0.1em]",
+      "table_values": "font-mono text-sm"
+    },
+    "installation": "yarn add @fontsource/chivo @fontsource/ibm-plex-sans @fontsource/ibm-plex-mono"
+  },
+  "colors": {
+    "background": {
+      "default": "#FAFAFA",
+      "surface": "#FFFFFF",
+      "surface_hover": "#F4F4F5"
+    },
+    "text": {
+      "primary": "#18181B",
+      "secondary": "#71717A",
+      "inverse": "#FFFFFF"
+    },
+    "border": {
+      "default": "#E4E4E7",
+      "focus": "#2563EB"
+    },
+    "brand": {
+      "primary": "#000000",
+      "primary_hover": "#27272A",
+      "accent": "#2563EB"
+    },
+    "status": {
+      "low_risk": "#16A34A",
+      "medium_risk": "#F59E0B",
+      "high_risk": "#DC2626"
+    }
+  },
+  "spacing_and_layout": {
+    "philosophy": "Control Room layout: Strict grids, high density, every pixel utilized. Cardless style preferred.",
+    "grid_system": "grid-cols-1 md:grid-cols-4 lg:grid-cols-12 with gap-4 or gap-6",
+    "containers": "Use 1px solid border (border-zinc-200) instead of heavy shadows. Maximum border radius is rounded-sm (4px).",
+    "padding": "Generous outer padding (p-6 or p-8) to frame the dashboard, but compact internal padding (p-3 or p-4) for data components to maximize density."
+  },
+  "components_strategy": {
+    "tables": "High density. Sticky headers. Use 'IBM Plex Mono' for numerical columns to ensure perfect vertical alignment. Right-align numbers. Implement 1px borders between rows and columns (The 'Technical' Look).",
+    "status_indicators": "Use solid 8px-12px circles (dots) for Red/Yellow/Green. Never use gradients for these. Ensure status colors have accessible contrast and tooltips for colorblindness.",
+    "charts": "Use Recharts for Scatter Charts (Vehicle Speed vs Acceleration). Dots on scatter charts should reflect their specific risk priority color. Use D3.js or pure SVG for the custom Global Index Gauge.",
+    "buttons": "Sharp edges or rounded-sm. Solid colors for primary actions, outline styles for secondary. No drop shadows.",
+    "forms_and_inputs": "Shadcn UI customized to be sharp. Gray border that turns brand-blue on focus.",
+    "navigation": "Top navigation or slim left sidebar with solid background, border-r or border-b, no glassmorphism."
+  },
+  "motion": {
+    "philosophy": "Functional and snappy.",
+    "rules": [
+      "Hover states: transition-colors duration-150 ease-in-out",
+      "No bounce or spring animations for data elements.",
+      "Respect prefers-reduced-motion."
+    ]
+  },
+  "accessibility": {
+    "testing": "All interactive elements, buttons, and form inputs MUST include a 'data-testid' attribute (e.g., data-testid='upload-excel-btn', data-testid='calculate-rating').",
+    "contrast": "Maintain 4.5:1 ratio for text. Data points in charts should use shapes or tooltips, not just color, to convey risk.",
+    "focus": "Clear focus rings (ring-2 ring-blue-500 ring-offset-1) on all interactive elements."
+  },
+  "icons": {
+    "library": "phosphor-icons/react",
+    "installation": "yarn add @phosphor-icons/react",
+    "usage": "Use Phosphor icons (duotone or regular) for dense data actions and navigation."
+  },
+  "media_and_images": {
+    "images": [
+      {
+        "category": "auth_background",
+        "description": "Macro shot of a car dashboard gauge cluster, suitable for an automotive telemetry tool auth screen.",
+        "url": "https://images.unsplash.com/photo-1547076286-60c93f1a3652?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwyfHxjYXIlMjBkYXNoYm9hcmQlMjB0ZWxlbWV0cnl8ZW58MHx8fHwxNzgxMjIzMDcyfDA&ixlib=rb-4.1.0&q=85"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build the dashboard using React, Tailwind CSS, and Shadcn UI primitives.",
+    "Strictly follow the 'Control Room' grid layout for the RATING scorecard and SDV details.",
+    "Implement the Excel upload flow with clear loading states and error handling.",
+    "Ensure the Drivability Index gauge is prominent and accurate.",
+    "Implement the large SDV rows table with status dots for P1/P2/P3 columns.",
+    "For the Per-SDV detail page, ensure the scatter chart accurately maps the data points with risk colors.",
+    "Always use the fonts and colors defined in this guideline.",
+    "Add data-testid attributes to all key elements for testing."
+  ]
+}

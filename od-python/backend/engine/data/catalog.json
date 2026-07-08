@@ -1,0 +1,322 @@
+[
+ {
+  "name": "Drive Away Creep Eng On",
+  "group": "Drive away",
+  "order": 1
+ },
+ {
+  "name": "Drive Away Creep Eng On - Cold",
+  "group": "Drive away",
+  "order": 2
+ },
+ {
+  "name": "Drive Away Creep Eng Off",
+  "group": "Drive away",
+  "order": 3
+ },
+ {
+  "name": "DASS Eng On",
+  "group": "Drive away",
+  "order": 4
+ },
+ {
+  "name": "DASS Eng On - Cold",
+  "group": "Drive away",
+  "order": 5
+ },
+ {
+  "name": "DASS Eng Off quick",
+  "group": "Drive away",
+  "order": 6
+ },
+ {
+  "name": "DASS Eng Off slow",
+  "group": "Drive away",
+  "order": 7
+ },
+ {
+  "name": "DASS - Eng Off - COM",
+  "group": "Drive away",
+  "order": 8
+ },
+ {
+  "name": "DASS - Extended Eng Off",
+  "group": "Drive away",
+  "order": 9
+ },
+ {
+  "name": "DA Rolling Start",
+  "group": "Drive away",
+  "order": 10
+ },
+ {
+  "name": "Accel Cst Load",
+  "group": "Accelerations",
+  "order": 11
+ },
+ {
+  "name": "Accel Cst Load - Cold",
+  "group": "Accelerations",
+  "order": 12
+ },
+ {
+  "name": "Accel Load Increase",
+  "group": "Accelerations",
+  "order": 13
+ },
+ {
+  "name": "Accel Load Decrease",
+  "group": "Accelerations",
+  "order": 14
+ },
+ {
+  "name": "Decel Without Brake",
+  "group": "Decelerations",
+  "order": 15
+ },
+ {
+  "name": "Decel Without Brake - Cold",
+  "group": "Decelerations",
+  "order": 16
+ },
+ {
+  "name": "Decel Cst Brake",
+  "group": "Decelerations",
+  "order": 17
+ },
+ {
+  "name": "Decel Cst Brake - Cold",
+  "group": "Decelerations",
+  "order": 18
+ },
+ {
+  "name": "Decel Trans to Cst Spd",
+  "group": "Decelerations",
+  "order": 19
+ },
+ {
+  "name": "Decel - Trans to Cst Spd - Cold",
+  "group": "Decelerations",
+  "order": 20
+ },
+ {
+  "name": "Cst Speed Without Load",
+  "group": "Constant Speeds",
+  "order": 21
+ },
+ {
+  "name": "Cst Speed Without Load - Cold",
+  "group": "Constant Speeds",
+  "order": 22
+ },
+ {
+  "name": "Cst Speed Cst Load",
+  "group": "Constant Speeds",
+  "order": 23
+ },
+ {
+  "name": "Cst Speed Cst Load - Cold",
+  "group": "Constant Speeds",
+  "order": 24
+ },
+ {
+  "name": "Power-on upshift",
+  "group": "Gearbox behaviour",
+  "order": 25
+ },
+ {
+  "name": "Power-on upshift Cold",
+  "group": "Gearbox behaviour",
+  "order": 26
+ },
+ {
+  "name": "Coast - brake-on downshift",
+  "group": "Gearbox behaviour",
+  "order": 27
+ },
+ {
+  "name": "Coast-brake-on downshift Cold",
+  "group": "Gearbox behaviour",
+  "order": 28
+ },
+ {
+  "name": "Tip out upshift",
+  "group": "Gearbox behaviour",
+  "order": 29
+ },
+ {
+  "name": "Load Reversal upshift",
+  "group": "Gearbox behaviour",
+  "order": 30
+ },
+ {
+  "name": "Coast - brake-on upshift",
+  "group": "Gearbox behaviour",
+  "order": 31
+ },
+ {
+  "name": "Power-on downshift",
+  "group": "Gearbox behaviour",
+  "order": 32
+ },
+ {
+  "name": "(PT) KD - tip in downshift",
+  "group": "Gearbox behaviour",
+  "order": 33
+ },
+ {
+  "name": "(TO) KD - tip in downshift",
+  "group": "Gearbox behaviour",
+  "order": 34
+ },
+ {
+  "name": "Load Reversal Downshift",
+  "group": "Gearbox behaviour",
+  "order": 35
+ },
+ {
+  "name": "Lever change",
+  "group": "Gearbox behaviour",
+  "order": 36
+ },
+ {
+  "name": "Maneuvering",
+  "group": "Gearbox behaviour",
+  "order": 37
+ },
+ {
+  "name": "Maneuvering - Cold",
+  "group": "Gearbox behaviour",
+  "order": 38
+ },
+ {
+  "name": "Maneuvering with throttle",
+  "group": "Gearbox behaviour",
+  "order": 39
+ },
+ {
+  "name": "Maneuvering at creep speed",
+  "group": "Gearbox behaviour",
+  "order": 40
+ },
+ {
+  "name": "Converter controlled slip",
+  "group": "Gearbox behaviour",
+  "order": 41
+ },
+ {
+  "name": "Converter lock up",
+  "group": "Gearbox behaviour",
+  "order": 42
+ },
+ {
+  "name": "Converter release",
+  "group": "Gearbox behaviour",
+  "order": 43
+ },
+ {
+  "name": "Shift Abort",
+  "group": "Gearbox behaviour",
+  "order": 44
+ },
+ {
+  "name": "Sailing Exit",
+  "group": "Gearbox behaviour",
+  "order": 45
+ },
+ {
+  "name": "Cylinder Deactivation",
+  "group": "Engine behaviour",
+  "order": 46
+ },
+ {
+  "name": "Cylinder Deactivation - Cold",
+  "group": "Engine behaviour",
+  "order": 47
+ },
+ {
+  "name": "Cylinder reactivation",
+  "group": "Engine behaviour",
+  "order": 48
+ },
+ {
+  "name": "Cylinder reactivation - Cold",
+  "group": "Engine behaviour",
+  "order": 49
+ },
+ {
+  "name": "Tip in at deceleration",
+  "group": "Tip in",
+  "order": 50
+ },
+ {
+  "name": "Tip in at constant speed",
+  "group": "Tip in",
+  "order": 51
+ },
+ {
+  "name": "Tip Out After Acceleration",
+  "group": "Tip out",
+  "order": 52
+ },
+ {
+  "name": "Tip Out At Constant Speed",
+  "group": "Tip out",
+  "order": 53
+ },
+ {
+  "name": "Idle Vehicle Stationary",
+  "group": "Idle",
+  "order": 54
+ },
+ {
+  "name": "Idle Vehicle Stationary - Cold",
+  "group": "Idle",
+  "order": 55
+ },
+ {
+  "name": "Idle Air Cond On-Off",
+  "group": "Idle",
+  "order": 56
+ },
+ {
+  "name": "Idle Air Cond On-Off - Cold",
+  "group": "Idle",
+  "order": 57
+ },
+ {
+  "name": "Manual Start",
+  "group": "Engine start",
+  "order": 58
+ },
+ {
+  "name": "Auto start vehicle stationary",
+  "group": "Engine start",
+  "order": 59
+ },
+ {
+  "name": "Auto start vehicle moving",
+  "group": "Engine start",
+  "order": 60
+ },
+ {
+  "name": "Manual Stop",
+  "group": "Engine shut off",
+  "order": 61
+ },
+ {
+  "name": "Auto stop",
+  "group": "Engine shut off",
+  "order": 62
+ },
+ {
+  "name": "Vehicle Stop",
+  "group": "Vehicle stationary",
+  "order": 63
+ },
+ {
+  "name": "Vehicle Stop - Cold",
+  "group": "Vehicle stationary",
+  "order": 64
+ }
+]

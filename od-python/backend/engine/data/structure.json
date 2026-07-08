@@ -1,0 +1,5674 @@
+{
+ "Power-on upshift": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "gear old",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "gear new",
+    "import": "P: gear end, gear end"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle Speed"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "P: n_t_act, n_t_act"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "P: m_t_act, m_t_act"
+   },
+   {
+    "name": "Shift delay (sec)",
+    "import": "P: shift delay1, shift delay1"
+   },
+   {
+    "name": "Shift duration (sec)",
+    "import": "P: shift duration1, shift duration1"
+   },
+   {
+    "name": "Learn Rule",
+    "import": "Val_A_Tend, learn_Rule"
+   },
+   {
+    "name": "Rpm flare",
+    "import": "P: delta n flare, delta n flare"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Ax gradients before Ratio Change",
+    "import": ", Ax gradients before Ratio Change"
+   },
+   {
+    "name": "Traction reduction",
+    "import": ", Traction reduction"
+   },
+   {
+    "name": "Ax gradients during Ratio Change",
+    "import": ", Ax gradients during Ratio Change"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Kick",
+    "import": ", Kick"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Shift delay",
+    "import": ", Shift delay"
+   },
+   {
+    "name": "Shift duration",
+    "import": ", Shift duration"
+   }
+  ]
+ },
+ "Power-on upshift Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "gear old",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "gear new",
+    "import": "P: gear end, gear end"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle Speed"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "P: n_t_act, n_t_act"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "P: m_t_act, m_t_act"
+   },
+   {
+    "name": "Shift delay (sec)",
+    "import": "P: shift delay1, shift delay1"
+   },
+   {
+    "name": "Shift duration (sec)",
+    "import": "P: shift duration1, shift duration1"
+   },
+   {
+    "name": "Learn Rule",
+    "import": "Val_A_Tend, learn_Rule"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "P: transm_temp_act, transm_temp_act"
+   },
+   {
+    "name": "Rpm flare",
+    "import": "P: delta n flare, delta n flare"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Ax gradients before Ratio Change",
+    "import": ", Ax gradients before Ratio Change"
+   },
+   {
+    "name": "Traction reduction",
+    "import": ", Traction reduction"
+   },
+   {
+    "name": "Ax gradients during Ratio Change",
+    "import": ", Ax gradients during Ratio Change"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Kick",
+    "import": ", Kick"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Shift delay",
+    "import": ", Shift delay"
+   },
+   {
+    "name": "Shift duration",
+    "import": ", Shift duration"
+   }
+  ]
+ },
+ "Tip out upshift": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "gear old",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "gear new",
+    "import": "P: gear end, gear end"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle_speed_act, vehicle_speed_act"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal_act, pedal_act"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "P: n_t_act, n_t_act"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "P: m_t_act, m_t_act"
+   },
+   {
+    "name": "Shift delay (sec)",
+    "import": "P: shift delay1, shift delay1"
+   },
+   {
+    "name": "Shift duration (sec)",
+    "import": "P: shift duration1, shift duration1"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Traction reduction",
+    "import": ", Traction reduction"
+   },
+   {
+    "name": "Deceleration characteristic",
+    "import": ", Deceleration characteristic"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Kick",
+    "import": ", Kick"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Shift delay",
+    "import": ", Shift delay"
+   },
+   {
+    "name": "Shift duration",
+    "import": ", Shift duration"
+   }
+  ]
+ },
+ "Coast - brake-on upshift": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "gear old",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "gear new",
+    "import": "P: gear end, gear end"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle_speed_act, vehicle_speed_act"
+   },
+   {
+    "name": "AccelerationChassis",
+    "import": "P: a2_act, a2_act"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "P: n_t_act, n_t_act"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "P: m_t_act, m_t_act"
+   },
+   {
+    "name": "Shift delay (sec)",
+    "import": "P: shift delay1, shift delay1"
+   },
+   {
+    "name": "Shift duration (sec)",
+    "import": "P: shift duration1, shift duration1"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Traction reduction",
+    "import": ", Traction reduction"
+   },
+   {
+    "name": "Deceleration characteristic",
+    "import": ", Deceleration characteristic"
+   },
+   {
+    "name": "Ax gradients during ratio change",
+    "import": ", Ax gradients during ratio change"
+   },
+   {
+    "name": "Ax gradients after ratio change",
+    "import": ", Ax gradients after ratio change"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Kick",
+    "import": ", Kick"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   },
+   {
+    "name": "Shift delay",
+    "import": ", Shift delay"
+   },
+   {
+    "name": "Speed decrease",
+    "import": ", Speed decrease"
+   },
+   {
+    "name": "Shift duration",
+    "import": ", Shift duration"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   }
+  ]
+ },
+ "Load Reversal upshift": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "gear old",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "gear new",
+    "import": "P: gear end, gear end"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle_speed_act, vehicle_speed_act"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal_act, pedal_act"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "P: n_t_act, n_t_act"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "P: m_t_act, m_t_act"
+   },
+   {
+    "name": "Shift delay (sec)",
+    "import": "P: shift delay1, shift delay1"
+   },
+   {
+    "name": "Shift duration (sec)",
+    "import": "P: shift duration1, shift duration1"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   },
+   {
+    "name": "Shift delay",
+    "import": ", Shift delay"
+   },
+   {
+    "name": "Shift duration",
+    "import": ", Shift duration"
+   }
+  ]
+ },
+ "Coast - brake-on downshift": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "gear old",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "gear new",
+    "import": "P: gear end, gear end"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle_speed_act, vehicle_speed_act"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "P: n_t_act, n_t_act"
+   },
+   {
+    "name": "AccelerationChassis",
+    "import": "P: a2_act, a2_act"
+   },
+   {
+    "name": "outRpmSpeed",
+    "import": "Val_A_Tstart, outRpmSpeed"
+   },
+   {
+    "name": "Engine Torque",
+    "import": "P: m_eng_act, m_eng_act"
+   },
+   {
+    "name": "Shift delay (sec)",
+    "import": "P: shift delay1, shift delay1"
+   },
+   {
+    "name": "Shift duration (sec)",
+    "import": "P: shift duration1, shift duration1"
+   },
+   {
+    "name": "Learn Rule",
+    "import": "Val_A_Tend, learn_Rule"
+   },
+   {
+    "name": "Rpm flare",
+    "import": "P: delta n flare, delta n flare"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Traction reduction",
+    "import": ", Traction reduction"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Kick",
+    "import": ", Kick"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Ax gradients before ratio change",
+    "import": ", Ax gradients before Ratio Change"
+   },
+   {
+    "name": "Ax gradients during ratio change",
+    "import": ", Ax gradients during ratio change"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   },
+   {
+    "name": "Speed increase",
+    "import": ", Speed increase"
+   },
+   {
+    "name": "Shift delay",
+    "import": ", Shift delay"
+   },
+   {
+    "name": "Shift duration",
+    "import": ", Shift duration"
+   }
+  ]
+ },
+ "Coast-brake-on downshift Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "gear old",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "gear new",
+    "import": "P: gear end, gear end"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle_speed_act, vehicle_speed_act"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "P: n_t_act, n_t_act"
+   },
+   {
+    "name": "AccelerationChassis",
+    "import": "P: a2_act, a2_act"
+   },
+   {
+    "name": "outRpmSpeed",
+    "import": "Val_A_Tstart, outRpmSpeed"
+   },
+   {
+    "name": "Engine Torque",
+    "import": "P: m_eng_act, m_eng_act"
+   },
+   {
+    "name": "Shift delay (sec)",
+    "import": "P: shift delay1, shift delay1"
+   },
+   {
+    "name": "Shift duration (sec)",
+    "import": "P: shift duration1, shift duration1"
+   },
+   {
+    "name": "Learn Rule",
+    "import": "Val_A_Tend, learn_Rule"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "P: transm_temp_act, transm_temp_act"
+   },
+   {
+    "name": "Rpm flare",
+    "import": "P: delta n flare, delta n flare"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Traction reduction",
+    "import": ", Traction reduction"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Kick",
+    "import": ", Kick"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Ax gradients before ratio change",
+    "import": ", Ax gradients before Ratio Change"
+   },
+   {
+    "name": "Ax gradients during ratio change",
+    "import": ", Ax gradients during ratio change"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   },
+   {
+    "name": "Speed increase",
+    "import": ", Speed increase"
+   },
+   {
+    "name": "Shift delay",
+    "import": ", Shift delay"
+   },
+   {
+    "name": "Shift duration",
+    "import": ", Shift duration"
+   }
+  ]
+ },
+ "Power-on downshift": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "gear old",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "gear new",
+    "import": "P: gear end, gear end"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle_speed_act, vehicle_speed_act"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal_act, pedal_act"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "P: n_t_act, n_t_act"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "P: m_t_act, m_t_act"
+   },
+   {
+    "name": "Shift delay (sec)",
+    "import": "P: shift delay1, shift delay1"
+   },
+   {
+    "name": "Shift duration (sec)",
+    "import": "P: shift duration1, shift duration1"
+   },
+   {
+    "name": "Rpm flare",
+    "import": "P: delta n flare, delta n flare"
+   },
+   {
+    "name": "Gear sequence",
+    "import": "P: gear sequence, gear sequence"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Ax gradients during ratio change",
+    "import": ", Ax gradients during ratio change"
+   },
+   {
+    "name": "Traction reduction",
+    "import": ", Traction reduction"
+   },
+   {
+    "name": "Ax gradients after ratio change",
+    "import": ", Ax gradients after ratio change"
+   },
+   {
+    "name": "Shift characteristic",
+    "import": ", Shift characteristic"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Kick",
+    "import": ", Kick"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Shift delay",
+    "import": ", Shift delay"
+   },
+   {
+    "name": "Shift duration",
+    "import": ", Shift duration"
+   }
+  ]
+ },
+ "(PT) KD - tip in downshift": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "gear old",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "gear new",
+    "import": "P: gear end, gear end"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle_speed_act, vehicle_speed_act"
+   },
+   {
+    "name": "Max Throttle Position",
+    "import": "max, Throttle Position"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "P: n_t_act, n_t_act"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "P: m_t_act, m_t_act"
+   },
+   {
+    "name": "Gear sequence",
+    "import": "P: gear sequence, gear sequence"
+   },
+   {
+    "name": "Initial Throttle position",
+    "import": "Val_A_Tstart, Throttle Position"
+   },
+   {
+    "name": "Initial acceleration level",
+    "import": "Val_A_Tstart, AccelerationChassis"
+   },
+   {
+    "name": "Response delay (sec)",
+    "import": "P: response delay, response delay"
+   },
+   {
+    "name": "Shift delay (sec)",
+    "import": "P: shift delay1, shift delay1"
+   },
+   {
+    "name": "Shift duration (sec)",
+    "import": "P: shift duration1, shift duration1"
+   },
+   {
+    "name": "Rpm flare",
+    "import": "P: delta n flare, delta n flare"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Ax gradients during ratio change",
+    "import": ", Ax gradients during ratio change"
+   },
+   {
+    "name": "Traction reduction",
+    "import": ", Traction reduction"
+   },
+   {
+    "name": "Response delay",
+    "import": ", Response delay"
+   },
+   {
+    "name": "Ax gradients after ratio change",
+    "import": ", Ax gradients after ratio change"
+   },
+   {
+    "name": "Shift characteristic",
+    "import": ", Shift characteristic"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Kick",
+    "import": ", Kick"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   },
+   {
+    "name": "Engine speed at engagement",
+    "import": ", Engine speed at engagement"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Shift delay",
+    "import": ", Shift delay"
+   },
+   {
+    "name": "Shift duration",
+    "import": ", Shift duration"
+   }
+  ]
+ },
+ "(TO) KD - tip in downshift": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "gear old",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "gear new",
+    "import": "P: gear end, gear end"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle_speed_act, vehicle_speed_act"
+   },
+   {
+    "name": "Max Throttle Position",
+    "import": "max, Throttle Position"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "P: n_t_act, n_t_act"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "P: m_t_act, m_t_act"
+   },
+   {
+    "name": "Gear sequence",
+    "import": "P: gear sequence, gear sequence"
+   },
+   {
+    "name": "Initial Throttle position",
+    "import": "Val_A_Tstart, Throttle Position"
+   },
+   {
+    "name": "Initial acceleration level",
+    "import": "Val_A_Tstart, AccelerationChassis"
+   },
+   {
+    "name": "Response delay (sec)",
+    "import": "P: response delay, response delay"
+   },
+   {
+    "name": "Shift delay (sec)",
+    "import": "P: shift delay1, shift delay1"
+   },
+   {
+    "name": "Shift duration (sec)",
+    "import": "P: shift duration1, shift duration1"
+   },
+   {
+    "name": "Rpm flare",
+    "import": "P: delta n flare, delta n flare"
+   },
+   {
+    "name": "Gear sequence",
+    "import": "P: gear sequence, gear sequence"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Ax gradients during ratio change",
+    "import": ", Ax gradients during ratio change"
+   },
+   {
+    "name": "Traction reduction",
+    "import": ", Traction reduction"
+   },
+   {
+    "name": "Response delay",
+    "import": ", Response delay"
+   },
+   {
+    "name": "Ax gradients after ratio change",
+    "import": ", Ax gradients after ratio change"
+   },
+   {
+    "name": "Shift characteristic",
+    "import": ", Shift characteristic"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Kick",
+    "import": ", Kick"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   },
+   {
+    "name": "Engine speed at engagement",
+    "import": ", Engine speed at engagement"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Shift delay",
+    "import": ", Shift delay"
+   },
+   {
+    "name": "Shift duration",
+    "import": ", Shift duration"
+   }
+  ]
+ },
+ "Load Reversal Downshift": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "gear old",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "gear new",
+    "import": "P: gear end, gear end"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle_speed_act, vehicle_speed_act"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "Val_A_Tend, Throttle Position"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "P: n_t_act, n_t_act"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "Val_A_Tend, Front shaft Torque"
+   },
+   {
+    "name": "Shift delay (sec)",
+    "import": "P: shift delay1, shift delay1"
+   },
+   {
+    "name": "Shift duration (sec)",
+    "import": "P: shift duration1, shift duration1"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   },
+   {
+    "name": "Shift delay",
+    "import": ", Shift delay"
+   },
+   {
+    "name": "Shift duration",
+    "import": ", Shift duration"
+   }
+  ]
+ },
+ "Lever change": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Old Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "New Selector_Lever_Position",
+    "import": "P: selector lever end, selector lever end"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Learn Rule",
+    "import": "Val_A_Tend, learn_Rule"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Bump",
+    "import": ", Bump"
+   },
+   {
+    "name": "Engine speed fluctuations",
+    "import": ", Engine speed fluctuations"
+   },
+   {
+    "name": "Engine speed drift",
+    "import": ", Engine speed drift"
+   },
+   {
+    "name": "Engine speed overshoot",
+    "import": ", Engine speed overshoot"
+   },
+   {
+    "name": "Engine speed undershoot",
+    "import": ", Engine speed undershoot"
+   },
+   {
+    "name": "Idle stabilization duration",
+    "import": ", Idle stabilization duration"
+   },
+   {
+    "name": "Stabilization duration",
+    "import": ", Stabilization duration"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   }
+  ]
+ },
+ "Maneuvering": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Old Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "New Selector_Lever_Position",
+    "import": "P: selector lever end, selector lever end"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle Speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Bump",
+    "import": ", Bump"
+   },
+   {
+    "name": "Delay",
+    "import": ", Delay"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   }
+  ]
+ },
+ "Sailing Exit": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "gear old",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "gear new",
+    "import": "P: gear end, gear end"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "Val_A_Tstart, Turbine Speed"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "Val_A_Tstart, Front shaft Torque"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Kick",
+    "import": ", Kick"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Speed increase delay",
+    "import": ", Speed increase delay"
+   },
+   {
+    "name": "Speed pickup duration",
+    "import": ", Speed pickup duration"
+   },
+   {
+    "name": "Engine speed overshoot",
+    "import": ", Engine speed overshoot"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   }
+  ]
+ },
+ "Converter lock up": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "Val_A_Tstart, Turbine Speed"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "Val_A_Tstart, Front shaft Torque"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Correlation",
+    "import": ", Correlation"
+   },
+   {
+    "name": "Engine speed step",
+    "import": ", Engine speed step"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   }
+  ]
+ },
+ "Converter controlled slip": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "Val_A_Tstart, Turbine Speed"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "Val_A_Tstart, Front shaft Torque"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Correlation",
+    "import": ", Correlation"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   }
+  ]
+ },
+ "Converter release": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "AccelerationChassis",
+    "import": "Val_A_Tstart, AccelerationChassis"
+   },
+   {
+    "name": "Brake",
+    "import": "P: brake, brake"
+   },
+   {
+    "name": "outRpmSpeed",
+    "import": "Val_A_Tstart, outRpmSpeed"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "Val_A_Tstart, Turbine Speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Correlation",
+    "import": ", Correlation"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   }
+  ]
+ },
+ "Auto stop": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Engine Temperature",
+    "import": "P: engine temperature, engine temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "Val_A_Tstart, Front shaft Torque"
+   },
+   {
+    "name": "A/C State",
+    "import": "P: AC, AC"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Brake Position",
+    "import": "Val_A_Tstart, Brake Position"
+   },
+   {
+    "name": "Brake",
+    "import": "P: brake, brake"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   },
+   {
+    "name": "Duration",
+    "import": ", Duration"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   }
+  ]
+ },
+ "Tip in at deceleration": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "max, Throttle Position"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "ax level",
+    "import": "P: ax level, ax level"
+   },
+   {
+    "name": "gear shift",
+    "import": "P: gear shift, gear shift"
+   },
+   {
+    "name": "Response delay (sec)",
+    "import": "P: response delay, response delay"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Agility",
+    "import": ", Agility"
+   },
+   {
+    "name": "Absolute torque",
+    "import": ", Absolute torque"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Kick",
+    "import": ", Kick"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Torque smoothness",
+    "import": ", Torque smoothness"
+   },
+   {
+    "name": "Flare",
+    "import": ", Flare"
+   },
+   {
+    "name": "Stumble",
+    "import": ", Stumble"
+   },
+   {
+    "name": "Response delay",
+    "import": ", Response delay"
+   },
+   {
+    "name": "Bump",
+    "import": ", Bump"
+   },
+   {
+    "name": "Ax Increase",
+    "import": ", Ax increase"
+   }
+  ]
+ },
+ "Tip in at constant speed": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "max, Throttle Position"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "ax level",
+    "import": "P: ax level, ax level"
+   },
+   {
+    "name": "gear shift",
+    "import": "P: gear shift, gear shift"
+   },
+   {
+    "name": "Response delay (sec)",
+    "import": "P: response delay, response delay"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Agility",
+    "import": ", Agility"
+   },
+   {
+    "name": "Absolute torque",
+    "import": ", Absolute torque"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Kick",
+    "import": ", Kick"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Torque smoothness",
+    "import": ", Torque smoothness"
+   },
+   {
+    "name": "Flare",
+    "import": ", Flare"
+   },
+   {
+    "name": "Stumble",
+    "import": ", Stumble"
+   },
+   {
+    "name": "Response delay",
+    "import": ", Response delay"
+   },
+   {
+    "name": "Bump",
+    "import": ", Bump"
+   },
+   {
+    "name": "Ax Increase",
+    "import": ", Ax increase"
+   }
+  ]
+ },
+ "Tip Out At Constant Speed": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "AccelerationChassis",
+    "import": "Val_A_Tstart, AccelerationChassis"
+   },
+   {
+    "name": "gear shift",
+    "import": "P: gear shift, gear shift"
+   },
+   {
+    "name": "Response delay (sec)",
+    "import": "P: response delay, response delay"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration overshoot",
+    "import": ", Acceleration overshoot"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Kick",
+    "import": ", Kick"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Response delay",
+    "import": ", Response delay"
+   },
+   {
+    "name": "Bump",
+    "import": ", Bump"
+   }
+  ]
+ },
+ "Tip Out After Acceleration": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "AccelerationChassis",
+    "import": "Val_A_Tstart, AccelerationChassis"
+   },
+   {
+    "name": "gear shift",
+    "import": "P: gear shift, gear shift"
+   },
+   {
+    "name": "Response delay (sec)",
+    "import": "P: response delay, response delay"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration overshoot",
+    "import": ", Acceleration overshoot"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Kick",
+    "import": ", Kick"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Response delay",
+    "import": ", Response delay"
+   },
+   {
+    "name": "Bump",
+    "import": ", Bump"
+   }
+  ]
+ },
+ "DASS Eng On": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Ax max 2s",
+    "import": "P: ax max 2s, ax max 2s"
+   },
+   {
+    "name": "Pedal change time",
+    "import": "P: pedal change time, pedal change time"
+   },
+   {
+    "name": "Response delay (sec)",
+    "import": "P: response delay, response delay"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Brake release delay",
+    "import": "C: Brake release delay, Brake release delay"
+   },
+   {
+    "name": "Brake release bump",
+    "import": "C: Brake release bump, Brake release bump"
+   },
+   {
+    "name": "Brake release surge",
+    "import": "C: Brake release surge, Brake release surge"
+   },
+   {
+    "name": "Response delay",
+    "import": ", Response delay"
+   },
+   {
+    "name": "Agility",
+    "import": ", Agility"
+   },
+   {
+    "name": "Bump",
+    "import": ", Bump"
+   },
+   {
+    "name": "Stumble",
+    "import": ", Stumble"
+   },
+   {
+    "name": "Acceleration peak",
+    "import": "C: Acceleration peak, Acceleration peak"
+   },
+   {
+    "name": "Acceleration Performance",
+    "import": ", Acceleration Performance"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Engagement steadiness",
+    "import": "C: Engagement steadiness, Engagement steadiness"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Engine speed overshoot",
+    "import": ", Engine speed overshoot"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   }
+  ]
+ },
+ "Drive Away Creep Eng On": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Brake release delay",
+    "import": "C: Brake release delay, Brake release delay"
+   },
+   {
+    "name": "Brake release bump",
+    "import": "C: Brake release bump, Brake release bump"
+   },
+   {
+    "name": "Brake release surge",
+    "import": "C: Brake release surge, Brake release surge"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   }
+  ]
+ },
+ "Accel Cst Load": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "Val_A_Tstart, Front shaft Torque"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration steps",
+    "import": "C: Acceleration steps, Acceleration steps"
+   },
+   {
+    "name": "Expected acceleration",
+    "import": "C: Expected acceleration, Expected acceleration"
+   },
+   {
+    "name": "Pedal map",
+    "import": "C: Pedal map, Pedal map"
+   },
+   {
+    "name": "Reference acceleration",
+    "import": "C: Reference acceleration, Reference acceleration"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   }
+  ]
+ },
+ "Cst Speed Without Load": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Correlation",
+    "import": ", Correlation"
+   },
+   {
+    "name": "Engine speed fluctuations",
+    "import": ", Engine speed fluctuations"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   },
+   {
+    "name": "Vehicle speed crit",
+    "import": "C: Vehicle speed, Vehicle speed"
+   }
+  ]
+ },
+ "Cst Speed Cst Load": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Correlation",
+    "import": ", Correlation"
+   },
+   {
+    "name": "Engine speed fluctuations",
+    "import": ", Engine speed fluctuations"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   }
+  ]
+ },
+ "Idle Vehicle Stationary": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Engine Temperature",
+    "import": "P: engine temperature, engine temperature"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Combustion quality",
+    "import": ", Combustion quality"
+   },
+   {
+    "name": "Cylinder balance",
+    "import": ", Cylinder balance"
+   },
+   {
+    "name": "Engine speed drift",
+    "import": ", Engine speed drift"
+   },
+   {
+    "name": "Engine speed fluctuations",
+    "import": ", Engine speed fluctuations"
+   },
+   {
+    "name": "Idle speed",
+    "import": ", Idle speed"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   }
+  ]
+ },
+ "Idle Air Cond On-Off": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Engine Temperature",
+    "import": "P: engine temperature, engine temperature"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Engine speed drift",
+    "import": ", Engine speed drift"
+   },
+   {
+    "name": "Engine speed fluctuations",
+    "import": ", Engine speed fluctuations"
+   },
+   {
+    "name": "Engine speed overshoot",
+    "import": ", Engine speed overshoot"
+   },
+   {
+    "name": "Engine speed undershoot",
+    "import": ", Engine speed undershoot"
+   },
+   {
+    "name": "Idle stabilization duration",
+    "import": ", Idle stabilization duration"
+   }
+  ]
+ },
+ "Cylinder Deactivation": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Engine speed change",
+    "import": ", Engine speed change"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   }
+  ]
+ },
+ "Cylinder reactivation": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Engine speed change",
+    "import": ", Engine speed change"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   }
+  ]
+ },
+ "DASS Eng On - Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Ax max 2s",
+    "import": "P: ax max 2s, ax max 2s"
+   },
+   {
+    "name": "Pedal change time",
+    "import": "P: pedal change time, pedal change time"
+   },
+   {
+    "name": "Response delay (sec)",
+    "import": "P: response delay, response delay"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Brake release delay",
+    "import": "C: Brake release delay, Brake release delay"
+   },
+   {
+    "name": "Brake release bump",
+    "import": "C: Brake release bump, Brake release bump"
+   },
+   {
+    "name": "Brake release surge",
+    "import": "C: Brake release surge, Brake release surge"
+   },
+   {
+    "name": "Response delay",
+    "import": ", Response delay"
+   },
+   {
+    "name": "Agility",
+    "import": ", Agility"
+   },
+   {
+    "name": "Bump",
+    "import": ", Bump"
+   },
+   {
+    "name": "Stumble",
+    "import": ", Stumble"
+   },
+   {
+    "name": "Acceleration peak",
+    "import": "C: Acceleration peak, Acceleration peak"
+   },
+   {
+    "name": "Acceleration Performance",
+    "import": ", Acceleration Performance"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Engagement steadiness",
+    "import": "C: Engagement steadiness, Engagement steadiness"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Engine speed overshoot",
+    "import": ", Engine speed overshoot"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   }
+  ]
+ },
+ "Drive Away Creep Eng On - Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Brake release delay",
+    "import": "C: Brake release delay, Brake release delay"
+   },
+   {
+    "name": "Brake release bump",
+    "import": "C: Brake release bump, Brake release bump"
+   },
+   {
+    "name": "Brake release surge",
+    "import": "C: Brake release surge, Brake release surge"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   }
+  ]
+ },
+ "Accel Cst Load - Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "Val_A_Tstart, Front shaft Torque"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration steps",
+    "import": "C: Acceleration steps, Acceleration steps"
+   },
+   {
+    "name": "Expected acceleration",
+    "import": "C: Expected acceleration, Expected acceleration"
+   },
+   {
+    "name": "Pedal map",
+    "import": "C: Pedal map, Pedal map"
+   },
+   {
+    "name": "Reference acceleration",
+    "import": "C: Reference acceleration, Reference acceleration"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   }
+  ]
+ },
+ "Cst Speed Without Load - Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Correlation",
+    "import": ", Correlation"
+   },
+   {
+    "name": "Engine speed fluctuations",
+    "import": ", Engine speed fluctuations"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   },
+   {
+    "name": "Vehicle speed crit",
+    "import": "C: Vehicle speed, Vehicle speed"
+   }
+  ]
+ },
+ "Cst Speed Cst Load - Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Correlation",
+    "import": ", Correlation"
+   },
+   {
+    "name": "Engine speed fluctuations",
+    "import": ", Engine speed fluctuations"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   }
+  ]
+ },
+ "Idle Vehicle Stationary - Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Engine Temperature",
+    "import": "P: engine temperature, engine temperature"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Combustion quality",
+    "import": ", Combustion quality"
+   },
+   {
+    "name": "Cylinder balance",
+    "import": ", Cylinder balance"
+   },
+   {
+    "name": "Engine speed drift",
+    "import": ", Engine speed drift"
+   },
+   {
+    "name": "Engine speed fluctuations",
+    "import": ", Engine speed fluctuations"
+   },
+   {
+    "name": "Idle speed",
+    "import": ", Idle speed"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   }
+  ]
+ },
+ "Idle Air Cond On-Off - Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Engine Temperature",
+    "import": "P: engine temperature, engine temperature"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Engine speed drift",
+    "import": ", Engine speed drift"
+   },
+   {
+    "name": "Engine speed fluctuations",
+    "import": ", Engine speed fluctuations"
+   },
+   {
+    "name": "Engine speed overshoot",
+    "import": ", Engine speed overshoot"
+   },
+   {
+    "name": "Engine speed undershoot",
+    "import": ", Engine speed undershoot"
+   },
+   {
+    "name": "Idle stabilization duration",
+    "import": ", Idle stabilization duration"
+   }
+  ]
+ },
+ "Cylinder Deactivation - Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Engine speed change",
+    "import": ", Engine speed change"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   }
+  ]
+ },
+ "Cylinder reactivation - Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Engine speed change",
+    "import": ", Engine speed change"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   }
+  ]
+ },
+ "DA Rolling Start": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "delta pedal",
+    "import": "P: delta pedal, delta pedal"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Ax max 2s",
+    "import": "P: ax max 2s, ax max 2s"
+   },
+   {
+    "name": "Pedal change time",
+    "import": "P: pedal change time, pedal change time"
+   },
+   {
+    "name": "Response delay (sec)",
+    "import": "P: response delay, response delay"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Engagement steadiness",
+    "import": "C: Engagement steadiness, Engagement steadiness"
+   },
+   {
+    "name": "Response delay",
+    "import": ", Response delay"
+   }
+  ]
+ },
+ "DASS Eng Off quick": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Ax max 2s",
+    "import": "P: ax max 2s, ax max 2s"
+   },
+   {
+    "name": "Pedal change time",
+    "import": "P: pedal change time, pedal change time"
+   },
+   {
+    "name": "Response delay (sec)",
+    "import": "P: response delay, response delay"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Brake release delay",
+    "import": "C: Brake release delay, Brake release delay"
+   },
+   {
+    "name": "Brake release bump",
+    "import": "C: Brake release bump, Brake release bump"
+   },
+   {
+    "name": "Brake release surge",
+    "import": "C: Brake release surge, Brake release surge"
+   },
+   {
+    "name": "Response delay",
+    "import": ", Response delay"
+   },
+   {
+    "name": "Agility",
+    "import": ", Agility"
+   },
+   {
+    "name": "Bump",
+    "import": ", Bump"
+   },
+   {
+    "name": "Stumble",
+    "import": ", Stumble"
+   },
+   {
+    "name": "Acceleration peak",
+    "import": "C: Acceleration peak, Acceleration peak"
+   },
+   {
+    "name": "Acceleration Performance",
+    "import": ", Acceleration Performance"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Engagement steadiness",
+    "import": "C: Engagement steadiness, Engagement steadiness"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Engine speed overshoot",
+    "import": ", Engine speed overshoot"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   }
+  ]
+ },
+ "Drive Away Creep Eng Off": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Brake release delay",
+    "import": "C: Brake release delay, Brake release delay"
+   },
+   {
+    "name": "Brake release bump",
+    "import": "C: Brake release bump, Brake release bump"
+   },
+   {
+    "name": "Brake release surge",
+    "import": "C: Brake release surge, Brake release surge"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   }
+  ]
+ },
+ "Auto start vehicle stationary": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Engine Temperature",
+    "import": "P: engine temperature, engine temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "Val_A_Tend, Front shaft Torque"
+   },
+   {
+    "name": "A/C State",
+    "import": "P: AC, AC"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "Val_A_Tend, Vehicle Speed"
+   },
+   {
+    "name": "Brake Position",
+    "import": "Val_A_Tstart, Brake Position"
+   },
+   {
+    "name": "Brake",
+    "import": "P: brake, brake"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Engine speed overshoot",
+    "import": ", Engine speed overshoot"
+   },
+   {
+    "name": "Engine speed stumble",
+    "import": ", Engine speed stumble"
+   },
+   {
+    "name": "Engine speed undershoot",
+    "import": ", Engine speed undershoot"
+   },
+   {
+    "name": "Idle stabilization duration",
+    "import": ", Idle stabilization duration"
+   },
+   {
+    "name": "Speed pickup duration",
+    "import": ", Speed pickup duration"
+   },
+   {
+    "name": "Start duration",
+    "import": ", Start duration"
+   },
+   {
+    "name": "Starter speed",
+    "import": ", Starter speed"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   }
+  ]
+ },
+ "Auto start vehicle moving": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Engine Temperature",
+    "import": "P: engine temperature, engine temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "Val_A_Tend, Front shaft Torque"
+   },
+   {
+    "name": "A/C State",
+    "import": "P: AC, AC"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "Val_A_Tend, Vehicle Speed"
+   },
+   {
+    "name": "Brake Position",
+    "import": "Val_A_Tstart, Brake Position"
+   },
+   {
+    "name": "Brake",
+    "import": "P: brake, brake"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Engine speed overshoot",
+    "import": ", Engine speed overshoot"
+   },
+   {
+    "name": "Engine speed stumble",
+    "import": ", Engine speed stumble"
+   },
+   {
+    "name": "Speed pickup duration",
+    "import": ", Speed pickup duration"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   },
+   {
+    "name": "Traction reduction",
+    "import": ", Traction reduction"
+   }
+  ]
+ },
+ "DASS Eng Off slow": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Ax max 2s",
+    "import": "P: ax max 2s, ax max 2s"
+   },
+   {
+    "name": "Pedal change time",
+    "import": "P: pedal change time, pedal change time"
+   },
+   {
+    "name": "Response delay (sec)",
+    "import": "P: response delay, response delay"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Brake release delay",
+    "import": "C: Brake release delay, Brake release delay"
+   },
+   {
+    "name": "Brake release bump",
+    "import": "C: Brake release bump, Brake release bump"
+   },
+   {
+    "name": "Brake release surge",
+    "import": "C: Brake release surge, Brake release surge"
+   },
+   {
+    "name": "Response delay",
+    "import": ", Response delay"
+   },
+   {
+    "name": "Agility",
+    "import": ", Agility"
+   },
+   {
+    "name": "Bump",
+    "import": ", Bump"
+   },
+   {
+    "name": "Stumble",
+    "import": ", Stumble"
+   },
+   {
+    "name": "Acceleration peak",
+    "import": "C: Acceleration peak, Acceleration peak"
+   },
+   {
+    "name": "Acceleration Performance",
+    "import": ", Acceleration Performance"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Engagement steadiness",
+    "import": "C: Engagement steadiness, Engagement steadiness"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Engine speed overshoot",
+    "import": ", Engine speed overshoot"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   }
+  ]
+ },
+ "DASS - Eng Off - COM": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Ax max 2s",
+    "import": "P: ax max 2s, ax max 2s"
+   },
+   {
+    "name": "Pedal change time",
+    "import": "P: pedal change time, pedal change time"
+   },
+   {
+    "name": "Response delay (sec)",
+    "import": "P: response delay, response delay"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Brake release delay",
+    "import": "C: Brake release delay, Brake release delay"
+   },
+   {
+    "name": "Brake release bump",
+    "import": "C: Brake release bump, Brake release bump"
+   },
+   {
+    "name": "Brake release surge",
+    "import": "C: Brake release surge, Brake release surge"
+   },
+   {
+    "name": "Response delay",
+    "import": ", Response delay"
+   },
+   {
+    "name": "Agility",
+    "import": ", Agility"
+   },
+   {
+    "name": "Bump",
+    "import": ", Bump"
+   },
+   {
+    "name": "Stumble",
+    "import": ", Stumble"
+   },
+   {
+    "name": "Acceleration peak",
+    "import": "C: Acceleration peak, Acceleration peak"
+   },
+   {
+    "name": "Acceleration Performance",
+    "import": ", Acceleration Performance"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Engagement steadiness",
+    "import": "C: Engagement steadiness, Engagement steadiness"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Engine speed overshoot",
+    "import": ", Engine speed overshoot"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   }
+  ]
+ },
+ "DASS - Extended Eng Off": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Ax max 2s",
+    "import": "P: ax max 2s, ax max 2s"
+   },
+   {
+    "name": "Pedal change time",
+    "import": "P: pedal change time, pedal change time"
+   },
+   {
+    "name": "Response delay (sec)",
+    "import": "P: response delay, response delay"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Brake release delay",
+    "import": "C: Brake release delay, Brake release delay"
+   },
+   {
+    "name": "Brake release bump",
+    "import": "C: Brake release bump, Brake release bump"
+   },
+   {
+    "name": "Brake release surge",
+    "import": "C: Brake release surge, Brake release surge"
+   },
+   {
+    "name": "Response delay",
+    "import": ", Response delay"
+   },
+   {
+    "name": "Agility",
+    "import": ", Agility"
+   },
+   {
+    "name": "Bump",
+    "import": ", Bump"
+   },
+   {
+    "name": "Stumble",
+    "import": ", Stumble"
+   },
+   {
+    "name": "Acceleration peak",
+    "import": "C: Acceleration peak, Acceleration peak"
+   },
+   {
+    "name": "Acceleration Performance",
+    "import": ", Acceleration Performance"
+   },
+   {
+    "name": "Shock",
+    "import": ", Shock"
+   },
+   {
+    "name": "Engagement steadiness",
+    "import": "C: Engagement steadiness, Engagement steadiness"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Engine speed overshoot",
+    "import": ", Engine speed overshoot"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   }
+  ]
+ },
+ "Manual Start": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Engine Temperature",
+    "import": "P: engine temperature, engine temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "Val_A_Tend, Front shaft Torque"
+   },
+   {
+    "name": "A/C State",
+    "import": "P: AC, AC"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "Val_A_Tend, Vehicle Speed"
+   },
+   {
+    "name": "Brake Position",
+    "import": "Val_A_Tstart, Brake Position"
+   },
+   {
+    "name": "Brake",
+    "import": "P: brake, brake"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Engine speed overshoot",
+    "import": ", Engine speed overshoot"
+   },
+   {
+    "name": "Engine speed stumble",
+    "import": ", Engine speed stumble"
+   },
+   {
+    "name": "Engine speed undershoot",
+    "import": ", Engine speed undershoot"
+   },
+   {
+    "name": "Idle stabilization duration",
+    "import": ", Idle stabilization duration"
+   },
+   {
+    "name": "Speed pickup duration",
+    "import": ", Speed pickup duration"
+   },
+   {
+    "name": "Start duration",
+    "import": ", Start duration"
+   },
+   {
+    "name": "Starter response delay",
+    "import": ", Starter response delay"
+   },
+   {
+    "name": "Starter speed",
+    "import": ", Starter speed"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   }
+  ]
+ },
+ "Manual Stop": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Engine Temperature",
+    "import": "P: engine temperature, engine temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "Val_A_Tstart, Front shaft Torque"
+   },
+   {
+    "name": "A/C State",
+    "import": "P: AC, AC"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Brake Position",
+    "import": "Val_A_Tstart, Brake Position"
+   },
+   {
+    "name": "Brake",
+    "import": "P: brake, brake"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Duration",
+    "import": ", Duration"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   }
+  ]
+ },
+ "Decel Without Brake - Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Deceleration level",
+    "import": "P: deceleration level, deceleration level"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration steps",
+    "import": "C: Acceleration steps, Acceleration steps"
+   },
+   {
+    "name": "Expected deceleration stronger",
+    "import": "C: Expected deceleration stronger, Expected deceleration stronger"
+   },
+   {
+    "name": "Expected deceleration weaker",
+    "import": "C: Expected deceleration weaker, Expected deceleration weaker"
+   },
+   {
+    "name": "Reference deceleration stronger",
+    "import": "C: Reference deceleration stronger, Reference deceleration stronger"
+   },
+   {
+    "name": "Reference deceleration weaker",
+    "import": "C: Reference deceleration weaker, Reference deceleration weaker"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   }
+  ]
+ },
+ "Decel Cst Brake - Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Deceleration level",
+    "import": "P: deceleration level, deceleration level"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration steps",
+    "import": "C: Acceleration steps, Acceleration steps"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   }
+  ]
+ },
+ "Decel - Trans to Cst Spd - Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Deceleration level",
+    "import": "P: deceleration level, deceleration level"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Engine speed undershoot",
+    "import": ", Engine speed undershoot"
+   },
+   {
+    "name": "Idle stabilization duration",
+    "import": ", Idle stabilization duration"
+   },
+   {
+    "name": "Transition shock",
+    "import": "C: Transition shock, Transition shock"
+   },
+   {
+    "name": "Transition surge",
+    "import": "C: Transition surge, Transition surge"
+   }
+  ]
+ },
+ "Vehicle Stop - Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Engine Temperature",
+    "import": "P: engine temperature, engine temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "Val_A_Tstart, Front shaft Torque"
+   },
+   {
+    "name": "A/C State",
+    "import": "P: AC, AC"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Brake Position",
+    "import": "Val_A_Tstart, Brake Position"
+   },
+   {
+    "name": "Brake",
+    "import": "P: brake, brake"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration decrease",
+    "import": ", Acceleration decrease"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration increase",
+    "import": ", Acceleration increase"
+   },
+   {
+    "name": "Engine speed fluctuations",
+    "import": ", Engine speed fluctuations"
+   },
+   {
+    "name": "Engine speed overshoot",
+    "import": ", Engine speed overshoot"
+   },
+   {
+    "name": "Engine speed undershoot",
+    "import": ", Engine speed undershoot"
+   }
+  ]
+ },
+ "Decel Without Brake": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Deceleration level",
+    "import": "P: deceleration level, deceleration level"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration steps",
+    "import": "C: Acceleration steps, Acceleration steps"
+   },
+   {
+    "name": "Expected deceleration stronger",
+    "import": "C: Expected deceleration stronger, Expected deceleration stronger"
+   },
+   {
+    "name": "Expected deceleration weaker",
+    "import": "C: Expected deceleration weaker, Expected deceleration weaker"
+   },
+   {
+    "name": "Reference deceleration stronger",
+    "import": "C: Reference deceleration stronger, Reference deceleration stronger"
+   },
+   {
+    "name": "Reference deceleration weaker",
+    "import": "C: Reference deceleration weaker, Reference deceleration weaker"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   }
+  ]
+ },
+ "Decel Cst Brake": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Deceleration level",
+    "import": "P: deceleration level, deceleration level"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration steps",
+    "import": "C: Acceleration steps, Acceleration steps"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   }
+  ]
+ },
+ "Decel Trans to Cst Spd": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Deceleration level",
+    "import": "P: deceleration level, deceleration level"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Engine speed undershoot",
+    "import": ", Engine speed undershoot"
+   },
+   {
+    "name": "Idle stabilization duration",
+    "import": ", Idle stabilization duration"
+   },
+   {
+    "name": "Transition shock",
+    "import": "C: Transition shock, Transition shock"
+   },
+   {
+    "name": "Transition surge",
+    "import": "C: Transition surge, Transition surge"
+   }
+  ]
+ },
+ "Vehicle Stop": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "Engine Temperature",
+    "import": "P: engine temperature, engine temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "Val_A_Tstart, Front shaft Torque"
+   },
+   {
+    "name": "A/C State",
+    "import": "P: AC, AC"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Brake Position",
+    "import": "Val_A_Tstart, Brake Position"
+   },
+   {
+    "name": "Brake",
+    "import": "P: brake, brake"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration decrease",
+    "import": ", Acceleration decrease"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Acceleration increase",
+    "import": ", Acceleration increase"
+   },
+   {
+    "name": "Engine speed fluctuations",
+    "import": ", Engine speed fluctuations"
+   },
+   {
+    "name": "Engine speed overshoot",
+    "import": ", Engine speed overshoot"
+   },
+   {
+    "name": "Engine speed undershoot",
+    "import": ", Engine speed undershoot"
+   }
+  ]
+ },
+ "Accel Load Increase": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "delta pedal",
+    "import": "P: delta pedal, delta pedal"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Correlation",
+    "import": ", Correlation"
+   },
+   {
+    "name": "Expected acceleration",
+    "import": "C: Expected acceleration, Expected acceleration"
+   },
+   {
+    "name": "Reference acceleration",
+    "import": "C: Reference acceleration, Reference acceleration"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   },
+   {
+    "name": "Torque response",
+    "import": ", Torque response"
+   }
+  ]
+ },
+ "Accel Load Decrease": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "delta pedal",
+    "import": "P: delta pedal, delta pedal"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Correlation",
+    "import": ", Correlation"
+   },
+   {
+    "name": "Expected acceleration",
+    "import": "C: Expected acceleration, Expected acceleration"
+   },
+   {
+    "name": "Reference acceleration",
+    "import": "C: Reference acceleration, Reference acceleration"
+   },
+   {
+    "name": "Surge",
+    "import": ", Surge"
+   }
+  ]
+ },
+ "Shift Abort": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "gear",
+    "import": "P: gear start, gear start"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle_speed_act, vehicle_speed_act"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal_act, pedal_act"
+   },
+   {
+    "name": "Turbine Speed",
+    "import": "P: n_t_act, n_t_act"
+   },
+   {
+    "name": "Front shaft Torque",
+    "import": "P: m_t_act, m_t_act"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   },
+   {
+    "name": "Shift duration",
+    "import": ", Shift duration"
+   },
+   {
+    "name": "Steadiness",
+    "import": ", Steadiness"
+   }
+  ]
+ },
+ "Maneuvering - Cold": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Old Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "New Selector_Lever_Position",
+    "import": "P: selector lever end, selector lever end"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle Speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Bump",
+    "import": ", Bump"
+   },
+   {
+    "name": "Delay",
+    "import": ", Delay"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   }
+  ]
+ },
+ "Maneuvering with throttle": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Old Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "New Selector_Lever_Position",
+    "import": "P: selector lever end, selector lever end"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: delta pedal, delta pedal"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle Speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Bump",
+    "import": ", Bump"
+   },
+   {
+    "name": "Delay",
+    "import": ", Delay"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   }
+  ]
+ },
+ "Maneuvering at creep speed": {
+  "columns": [
+   {
+    "name": "Criticality",
+    "import": null
+   },
+   {
+    "name": "Event Priority",
+    "import": null
+   },
+   {
+    "name": "Event Rating",
+    "import": null
+   }
+  ],
+  "data": [
+   {
+    "name": "Old Selector_Lever_Position",
+    "import": "P: selector lever start, selector lever start"
+   },
+   {
+    "name": "New Selector_Lever_Position",
+    "import": "P: selector lever end, selector lever end"
+   },
+   {
+    "name": "Gearbox Temperature",
+    "import": "Val_A_Tstart, Gearbox Temperature"
+   },
+   {
+    "name": "Throttle Position",
+    "import": "P: pedal, pedal"
+   },
+   {
+    "name": "Engine Speed",
+    "import": "P: engine speed, engine speed"
+   },
+   {
+    "name": "Vehicle Speed",
+    "import": "P: vehicle speed, vehicle Speed"
+   },
+   {
+    "name": "Start time of the Sub Event",
+    "import": "Temps debut d'analyse, Start time of the Sub Event"
+   },
+   {
+    "name": "Acquisition Name",
+    "import": "Nom de l'essai, Acquisition Name"
+   }
+  ],
+  "criteria": [
+   {
+    "name": "Bump",
+    "import": ", Bump"
+   },
+   {
+    "name": "Delay",
+    "import": ", Delay"
+   },
+   {
+    "name": "Jerks",
+    "import": ", Jerks"
+   },
+   {
+    "name": "Acceleration disturbances",
+    "import": ", Acceleration disturbances"
+   },
+   {
+    "name": "Acceleration disturbances HF",
+    "import": ", Acceleration disturbances HF"
+   },
+   {
+    "name": "Acceleration disturbances LF",
+    "import": ", Acceleration disturbances LF"
+   }
+  ]
+ }
+}
