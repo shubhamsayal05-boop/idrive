@@ -1,6 +1,8 @@
 """Shared matplotlib table images used by Word and PowerPoint ODrive reports."""
 import io
 
+from .classifier import MISSING, get_channel
+
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -182,10 +184,18 @@ def _priority_table_png(events, part_key, filt):
     for crit, prio, color, ev in filtered[:12]:
         sc = ev.get(part_key) or {}
         sub = "-"
-        for ch in ev.get("channels") or []:
-            if str(ch.get("name", "")).lower() in ("sub event name", "sub_event_name"):
-                sub = str(ch.get("value") or "-")[:30]
-                break
+        chans = ev.get("channels") or {}
+        if isinstance(chans, dict):
+            val = get_channel(chans, "Sub Event Name")
+            if val != MISSING and val is not None:
+                sub = str(val)[:30]
+        else:
+            for ch in chans:
+                if isinstance(ch, dict) and str(ch.get("name", "")).lower() in (
+                    "sub event name", "sub_event_name"
+                ):
+                    sub = str(ch.get("value") or "-")[:30]
+                    break
         rows.append([str(crit), str(prio or "-"), str(color or "-"), sub, _fmt(sc.get("indice_occ"), 2)])
     title = "Highest Criticality to improve" if filt == "high" else "Lowest Criticality to improve"
     return _table_png(headers, rows, title=title)
