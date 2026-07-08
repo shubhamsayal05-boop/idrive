@@ -15,6 +15,7 @@ from docx.enum.text import WD_BREAK
 from docx.oxml.ns import qn
 from docx.shared import Inches, Pt
 
+from engine.report_fields import normalize_report_fields
 from engine.report_tables import (
     SYNTHESIS_PARTS,
     _global_risk_png,
@@ -269,10 +270,10 @@ def _apply_bookmark_fields(doc, project, fields):
         "ClimCond": f.get("climate") or "n/a",
         "AcStatus": f.get("ac_status") or "n/a",
         "vehOption": f.get("vehicle_options") or "n/a",
-        "SendFrom": f.get("sender_name") or "From:",
-        "TelFrom": f.get("sender_tel") or "Tél.:",
-        "MailFrom": f.get("sender_email") or "Mail to:",
-        "DepTV": f.get("sender_dept") or "Department:",
+        "SendFrom": f.get("from") or f.get("name") or "n/a",
+        "TelFrom": f.get("sender_tel") or "n/a",
+        "MailFrom": f.get("sender_email") or "n/a",
+        "DepTV": f.get("sender_dept") or "n/a",
         "Global_Synthesis": f.get("synthesis") or "SYNTHESIS:",
     }
     for name, text in mapping.items():
@@ -289,9 +290,7 @@ def build_docx(data, out_path, report_fields=None):
 
     project = data.get("project") or {}
     glob = data.get("global") or {}
-    fields = dict(report_fields or {})
-    if not fields.get("project"):
-        fields["project"] = project.get("name_code") or ""
+    fields = normalize_report_fields(project, report_fields)
 
     _fill_cover_tables(doc, project, fields, data.get("doc_versions") or [])
     _apply_bookmark_fields(doc, project, fields)

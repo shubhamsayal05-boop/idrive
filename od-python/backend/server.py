@@ -19,6 +19,7 @@ from engine import config_loader, scoring, importer
 from engine.classifier import classify_event, get_channel
 from engine import reports as report_builder
 from engine import docx_report as docx_builder
+from engine.report_fields import default_doc_versions, normalize_report_fields
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -1836,38 +1837,55 @@ async def create_report(fmt: str, payload: dict = Body(default={})):
     charts_cfg = {k.strip().upper(): v for k, v in cfg["chart_params"].items()}
     charts = {}
     events_by_sdv = {}
-    for r in rows:
-        events = await db.events.find({"sdv": r["name"]}, {"_id": 0}).to_list(5000)
-        events_by_sdv[r["name"]] = events
-        params = charts_cfg.get(r["name"].strip().upper(), [])
-        active = next((p for p in params if p.get("active")), None)
-        x_name = (active or {}).get("x") or "Vehicle Speed"
-        y_name = (active or {}).get("y") or "AccelerationChassis"
-        pts = []
-        for ev in events:
-            x = get_channel(ev["channels"], x_name)
-            y = get_channel(ev["channels"], y_name)
-            try:
-                pts.append({"x": float(x), "y": float(y),
-                            "color": (ev.get("driv") or {}).get("color")})
-            except (TypeError, ValueError):
-                continue
-        png_buf = report_builder.scatter_png(pts, x_name, y_name, r["name"])
-        charts[r["name"]] = {"png": png_buf.getvalue() if png_buf else None}
-    data = {"project": project, "global": glob, "sdv_results": rows,
-            "charts": charts, "events_by_sdv": events_by_sdv,
-            "doc_versions": payload.get("doc_versions") or []}
-    out = os.path.join(tempfile.gettempdir(), f"ODRIV_report.{fmt}")
-    report_fields = payload.get("report_fields")
-    if fmt == "pptx":
-        report_builder.build_pptx(data, out, report_fields=report_fields)
-        media = "application/vnd.openxmlformats-officedocument.presentationml.presentation"
-    elif fmt == "pdf":
-        report_builder.build_pdf(data, out)
-        media = "application/pdf"
-    else:
-        docx_builder.build_docx(data, out, report_fields=report_fields)
-        media = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    try:
+        for r in rows:
+            events = await db.events.find({"sdv": r["name"]}, {"_id": 0}).to_list(5000)
+            events_by_sdv[r["name"]] = events
+            params = charts_cfg.get(r["name"].strip().upper(), [])
+            active = next((p for p in params if p.get("active")), None)
+            x_name = (active or {}).get("x") or "Vehicle Speed"
+            y_name = (active or {}).get("y") or "AccelerationChassis"
+            pts = []
+            for ev in events:
+                x = get_channel(ev["channels"], x_name)
+                y = get_channel(ev["channels"], y_name)
+                try:
+                    pts.append({"x": float(x), "y": float(y),
+                                "color": (ev.get("driv") or {}).get("color")})
+                except (TypeError, ValueError):
+                    continue
+            png_buf = report_builder.scatter_png(pts, x_name, y_name, r["name"])
+            charts[r["name"]] = {"png": png_buf.getvalue() if png_buf else None}
+        raw_dv = payload.get("doc_versions") or []
+        if raw_dv and all(isinstance(x, str) for x in raw_dv):
+            doc_versions = default_doc_versions(project)
+            extras = [x.strip() for x in raw_dv if str(x).strip()]
+            if extras:
+                doc_versions[-1]["version"] = " / ".join(extras)
+        elif raw_dv:
+            doc_versions = raw_dv
+        else:
+            doc_versions = default_doc_versions(project)
+        report_fields = normalize_report_fields(project, payload.get("report_fields"))
+        data = {"project": project, "global": glob, "sdv_results": rows,
+                "charts": charts, "events_by_sdv": events_by_sdv,
+                "doc_versions": doc_versions}
+        out = os.path.join(tempfile.gettempdir(), f"ODRIV_report.{fmt}")
+        if fmt == "pptx":
+            report_builder.build_pptx(data, out, report_fields=report_fields)
+            media = "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+        elif fmt == "pdf":
+            report_builder.build_pdf(data, out)
+            media = "application/pdf"
+        else:
+            docx_builder.build_docx(data, out, report_fields=report_fields)
+            media = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    except FileNotFoundError as e:
+        raise HTTPException(500, str(e))
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(500, "Report generation failed: %s" % e)
     await moniteur(f"Report generated ({fmt.upper()})")
     fname = f"ODRIV_{(project.get('name_code') or 'report').replace(' ', '_')}.{fmt}"
     return FileResponse(out, filename=fname, media_type=media)

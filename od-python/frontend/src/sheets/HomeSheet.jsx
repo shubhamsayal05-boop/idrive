@@ -317,7 +317,7 @@ export default function HomeSheet() {
       {modal === "db" && <OpenDatabaseModal onClose={() => setModal(null)} />}
       {modal === "saved" && <SavedProjectsModal onClose={() => setModal(null)}
         onLoaded={async () => { await refresh(); }} />}
-      {modal === "report" && <DocVersionsModal onClose={() => setModal(null)} />}
+      {modal === "report" && <DocVersionsModal project={project} onClose={() => setModal(null)} />}
 
       {calcProgress && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.45)",

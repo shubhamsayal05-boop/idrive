@@ -201,7 +201,7 @@ class TestProjectPipeline:
         rc = session.post(f"{API}/rating/calculate", timeout=120)
         assert rc.status_code == 200
         r = session.post(f"{API}/report/pptx",
-                         json={"doc_versions": [{"name": "Test", "version": "1.0"}]},
+                         json={"report_fields": {}},
                          timeout=180)
         assert r.status_code == 200, r.text
         assert len(r.content) > 5000
@@ -216,13 +216,7 @@ class TestProjectPipeline:
     def test_15b_report_docx(self, session):
         r = session.post(
             f"{API}/report/docx",
-            json={
-                "doc_versions": [{"name": "ODRIV", "version": "v29 test"}],
-                "report_fields": {
-                    "domain": "DRIVABILITY-DYNAMISM",
-                    "sender_name": "Test User",
-                },
-            },
+            json={"report_fields": {"name": "Test User"}},
             timeout=180,
         )
         assert r.status_code == 200, r.text

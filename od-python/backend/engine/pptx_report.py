@@ -6,6 +6,7 @@ from pptx import Presentation
 from pptx.dml.color import RGBColor
 from pptx.util import Inches, Pt
 
+from engine.report_fields import normalize_report_fields
 from engine.report_tables import (
     SYNTHESIS_PARTS,
     _global_risk_png,
@@ -89,14 +90,14 @@ def _sender_lines(fields):
     f = fields or {}
     return [
         "SENDER(S)",
-        "  From: %s" % (f.get("sender_name") or "n/a"),
+        "  From: %s" % (f.get("from") or "n/a"),
+        "  Name: %s" % (f.get("name") or "n/a"),
         "  Department: %s" % (f.get("sender_dept") or "n/a"),
         "  Tél.: %s    Mail to: %s" % (f.get("sender_tel") or "n/a", f.get("sender_email") or "n/a"),
         "",
         "RECIPIENT(S): %s" % (f.get("recipients") or "For Information"),
         "",
-        "Place, %s" % (f.get("site") or "n/a"),
-        datetime.now().strftime("%m/%d/%Y"),
+        f.get("places") or ("Place, n/a %s" % datetime.now().strftime("%m/%d/%Y")),
     ]
 
 
@@ -121,6 +122,7 @@ def _test_conditions_lines(fields):
         "- Location and date of test: %s" % (f.get("loc_date_test") or "n/a"),
         "- Climate condition: %s" % (f.get("climate") or "n/a"),
         "- A/C status: %s" % (f.get("ac_status") or "n/a"),
+        "- Vehicle mileage at start of test: %s" % (f.get("vehicle_mileage") or "n/a"),
         "- Vehicle options: %s" % (f.get("vehicle_options") or "n/a"),
     ]
 
@@ -178,8 +180,8 @@ def _add_sdv_slides(prs, blank, data, events_by_sdv, charts):
                 y += 0.38
                 raw = _png_bytes(png)
                 if raw:
-                    pic = slide.shapes.add_picture(io.BytesIO(raw), Inches(0.5), Inches(y), width=Inches(6.2))
-                    y += pic.height.inches + 0.2
+                    slide.shapes.add_picture(io.BytesIO(raw), Inches(0.5), Inches(y), width=Inches(6.2))
+                    y += 3.0
                 if y > 6.8:
                     slide = prs.slides.add_slide(blank)
                     _slide_title(slide, heading + " (continued)")
@@ -195,9 +197,7 @@ def build_pptx(data, out_path, report_fields=None):
 
     project = data.get("project") or {}
     glob = data.get("global") or {}
-    fields = dict(report_fields or {})
-    if not fields.get("project"):
-        fields["project"] = project.get("name_code") or ""
+    fields = normalize_report_fields(project, report_fields)
 
     # Title slide
     slide = prs.slides.add_slide(blank)

@@ -246,54 +246,84 @@ export function NewProjectModal({ onClose, onCreated, lists }) {
   );
 }
 
-/* ---------------- DocVersions -> report ---------------- */
-export function DocVersionsModal({ onClose }) {
-  const [versions, setVersions] = useState(["", "", "", ""]);
+/* ---------------- PRE REMPLISSAGE -> report (Excel Preremplissage form) -------- */
+const EMPTY_REPORT_FIELDS = {
+  project: "",
+  car_number: "",
+  standard: "",
+  stage: "",
+  goal: "",
+  site: "",
+  loc_date_test: "",
+  climate: "",
+  ac_status: "",
+  vehicle_mileage: "",
+  name: "",
+  department: "",
+  from: "",
+  telephone: "",
+  email: "",
+};
+
+export function DocVersionsModal({ onClose, project }) {
   const [generating, setGenerating] = useState(null);
   const [reportFields, setReportFields] = useState({
-    domain: "DRIVABILITY-DYNAMISM",
-    standard: "n/a",
-    stage: "n/a",
-    goal: "n/a",
-    site: "Place, n/a",
-    loc_date_test: "",
-    climate: "n/a",
-    ac_status: "n/a",
-    vehicle_options: "n/a",
-    sender_name: "",
-    sender_dept: "",
-    sender_tel: "",
-    sender_email: "",
-    synthesis: "",
-    dynamism_synthesis: "",
+    ...EMPTY_REPORT_FIELDS,
+    project: project?.name_code || "",
   });
-  const labels = ["Document version", "AVLD version", "Software version", "Calibration version"];
+
+  useEffect(() => {
+    if (project?.name_code) {
+      setReportFields((f) => ({ ...f, project: project.name_code }));
+    }
+  }, [project?.name_code]);
+
   const gen = async (fmtType) => {
     setGenerating(fmtType);
     try {
-      const res = await api.post(`/report/${fmtType}`, {
-        doc_versions: versions,
-        report_fields: reportFields,
-      }, { responseType: "blob" });
+      const res = await api.post(`/report/${fmtType}`, { report_fields: reportFields }, { responseType: "blob" });
       const a = document.createElement("a");
       a.href = URL.createObjectURL(new Blob([res.data]));
       a.download = `ODRIV_report.${fmtType}`;
       document.body.appendChild(a); a.click(); a.remove();
+      onClose();
     } catch (e) {
-      alert("Report failed: " + (e.response?.status === 400 ? "calculate the rating first" : e.message));
+      const msg = e.response?.data
+        ? (typeof e.response.data === "string" ? e.response.data : e.response.statusText)
+        : (e.response?.status === 400 ? "calculate the rating first" : e.message);
+      alert("Report failed: " + msg);
     } finally { setGenerating(null); }
   };
+
+  const fields = [
+    ["project", "Project", true],
+    ["car_number", "Car Number"],
+    ["standard", "Standard"],
+    ["stage", "Stage"],
+    ["goal", "Goal"],
+    ["site", "Site"],
+    ["loc_date_test", "Location and date of test"],
+    ["climate", "Climate condition"],
+    ["ac_status", "A/C status"],
+    ["vehicle_mileage", "Vehicle mileage at start of test"],
+    ["name", "Name"],
+    ["department", "Department"],
+    ["from", "From"],
+    ["telephone", "Telephone"],
+    ["email", "Email"],
+  ];
+
   return (
     <Modal
-      title="DocVersions — CREATE REPORT" onClose={onClose}
+      title="PRE REMPLISSAGE — CREATE REPORT" onClose={onClose}
       footer={
         <>
           <button className="xl-btn" onClick={onClose} data-testid="docv-cancel">Cancel</button>
-          <button className="xl-btn primary" onClick={() => gen("docx")} disabled={!!generating} data-testid="docv-docx">
-            {generating === "docx" ? "Generating…" : "Word report (.docx)"}
-          </button>
           <button className="xl-btn primary" onClick={() => gen("pptx")} disabled={!!generating} data-testid="docv-pptx">
-            {generating === "pptx" ? "Generating…" : "PowerPoint (.pptx)"}
+            {generating === "pptx" ? "Generating…" : "Générer PPT"}
+          </button>
+          <button className="xl-btn primary" onClick={() => gen("docx")} disabled={!!generating} data-testid="docv-docx">
+            {generating === "docx" ? "Generating…" : "Générer Word"}
           </button>
           <button className="xl-btn primary" onClick={() => gen("pdf")} disabled={!!generating} data-testid="docv-pdf">
             {generating === "pdf" ? "Generating…" : "PDF report"}
@@ -302,37 +332,17 @@ export function DocVersionsModal({ onClose }) {
       }
     >
       <div style={{ fontSize: 11.5, color: "#555", marginBottom: 10 }}>
-        Enter document versions (DocVersions D7:D10) and report header fields (Excel Preremplissage form), then generate.
+        Compléter les informations nécessaires (all fields optional — leave blank to use defaults).
       </div>
-      {labels.map((l, i) => (
-        <div className="form-row" key={l}>
-          <label>{l}</label>
-          <input value={versions[i]} data-testid={`docv-field-${i}`}
-            onChange={(e) => setVersions(versions.map((v, j) => (j === i ? e.target.value : v)))} />
-        </div>
-      ))}
-      <div style={{ marginTop: 12, marginBottom: 6, fontWeight: 600, fontSize: 12 }}>Report header (Word)</div>
-      {[
-        ["domain", "Domain"],
-        ["standard", "Standard"],
-        ["stage", "Stage"],
-        ["goal", "Goal"],
-        ["site", "Site / place"],
-        ["loc_date_test", "Location & date of test"],
-        ["climate", "Climate condition"],
-        ["ac_status", "A/C status"],
-        ["vehicle_options", "Vehicle options"],
-        ["sender_name", "Sender name"],
-        ["sender_dept", "Sender department"],
-        ["sender_tel", "Sender telephone"],
-        ["sender_email", "Sender email"],
-        ["synthesis", "Global synthesis (optional)"],
-        ["dynamism_synthesis", "Dynamism synthesis (optional)"],
-      ].map(([key, label]) => (
+      {fields.map(([key, label, locked]) => (
         <div className="form-row" key={key}>
           <label>{label}</label>
-          <input value={reportFields[key]}
-            onChange={(e) => setReportFields({ ...reportFields, [key]: e.target.value })} />
+          <input
+            value={reportFields[key] || ""}
+            readOnly={!!locked}
+            data-testid={`preremplissage-${key}`}
+            onChange={(e) => !locked && setReportFields({ ...reportFields, [key]: e.target.value })}
+          />
         </div>
       ))}
     </Modal>
