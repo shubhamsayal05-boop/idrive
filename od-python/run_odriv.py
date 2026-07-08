@@ -18,6 +18,7 @@ import json
 import os
 import subprocess
 import sys
+import shutil
 import threading
 import time
 import urllib.request
@@ -51,6 +52,43 @@ os.environ.setdefault("DB_NAME", "odriv")
 HOST, PORT = "127.0.0.1", 8001
 URL = f"http://{HOST}:{PORT}"
 STORE = os.path.join(HERE, "odriv_data.json")
+FRONTEND_DIR = os.path.join(HERE, "frontend")
+FRONTEND_BUILD_INDEX = os.path.join(FRONTEND_DIR, "build", "index.html")
+FRONTEND_SRC_MARK = os.path.join(FRONTEND_DIR, "src", "components", "modals.jsx")
+
+
+def _ensure_frontend_build():
+    """Build the React UI when missing or stale (frontend/build is not in git)."""
+    if not os.path.isfile(os.path.join(FRONTEND_DIR, "package.json")):
+        return os.path.isfile(FRONTEND_BUILD_INDEX)
+    stale = (not os.path.isfile(FRONTEND_BUILD_INDEX)
+             or (os.path.isfile(FRONTEND_SRC_MARK)
+                 and os.path.getmtime(FRONTEND_SRC_MARK) > os.path.getmtime(FRONTEND_BUILD_INDEX)))
+    if not stale:
+        return True
+    npm = "npm.cmd" if os.name == "nt" else "npm"
+    if not shutil.which(npm):
+        if os.path.isfile(FRONTEND_BUILD_INDEX):
+            print("[ODRIV] npm not found — using existing frontend build.")
+            return True
+        print("[ODRIV] WARNING: frontend not built and npm is not installed.")
+        print("         Install Node.js from https://nodejs.org/ then restart,")
+        print("         or run: cd frontend && npm install --legacy-peer-deps && npm run build")
+        return False
+    print("[ODRIV] Building frontend (one time, ~1 min)...")
+    try:
+        subprocess.check_call([npm, "install", "--legacy-peer-deps"],
+                              cwd=FRONTEND_DIR, shell=(os.name == "nt"))
+        subprocess.check_call([npm, "run", "build"],
+                              cwd=FRONTEND_DIR, shell=(os.name == "nt"))
+        print("[ODRIV] Frontend ready.")
+        return os.path.isfile(FRONTEND_BUILD_INDEX)
+    except subprocess.CalledProcessError as exc:
+        print(f"[ODRIV] Frontend build failed ({exc}).")
+        return os.path.isfile(FRONTEND_BUILD_INDEX)
+
+
+_ensure_frontend_build()
 
 
 def mongo_alive(url: str, timeout_s: float = 1.5) -> bool:

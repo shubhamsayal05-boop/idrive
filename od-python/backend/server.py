@@ -11,7 +11,7 @@ from typing import Optional
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, APIRouter, HTTPException, UploadFile, File, Body
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, HTMLResponse
 from motor.motor_asyncio import AsyncIOMotorClient
 from starlette.middleware.cors import CORSMiddleware
 
@@ -1894,19 +1894,44 @@ async def create_report(fmt: str, payload: dict = Body(default={})):
 app.include_router(api)
 
 # ----------------------------------------------------------- static frontend
-# One-click mode: if frontend/build exists, serve the SPA from this process.
 FRONTEND_BUILD = ROOT_DIR.parent / "frontend" / "build"
-if FRONTEND_BUILD.is_dir():
+
+
+def _frontend_ready():
+    return FRONTEND_BUILD.is_dir() and (FRONTEND_BUILD / "index.html").is_file()
+
+
+if _frontend_ready():
     from fastapi.staticfiles import StaticFiles
     app.mount("/static", StaticFiles(directory=FRONTEND_BUILD / "static"),
               name="static")
 
+    @app.get("/", include_in_schema=False)
+    async def serve_spa_root():
+        return FileResponse(FRONTEND_BUILD / "index.html")
+
     @app.get("/{full_path:path}", include_in_schema=False)
     async def serve_spa(full_path: str):
+        if full_path.startswith("api"):
+            raise HTTPException(404)
         candidate = FRONTEND_BUILD / full_path
         if full_path and candidate.is_file():
             return FileResponse(candidate)
         return FileResponse(FRONTEND_BUILD / "index.html")
+else:
+    @app.get("/", include_in_schema=False)
+    async def serve_missing_frontend():
+        return HTMLResponse(
+            "<!DOCTYPE html><html><head><title>ODRIV</title></head><body>"
+            "<h1>ODRIV — frontend not built</h1>"
+            "<p>Restart using <code>START_ODRIV.bat</code> or <code>python run_odriv.py</code> "
+            "(requires <a href='https://nodejs.org/'>Node.js</a> for the first run).</p>"
+            "<p>Or manually: <code>cd frontend &amp;&amp; npm install --legacy-peer-deps &amp;&amp; npm run build</code></p>"
+            "<p>API is running: <a href='/api/state'>/api/state</a> · "
+            "<a href='/api/docs'>/api/docs</a></p>"
+            "</body></html>",
+            status_code=503,
+        )
 
 app.add_middleware(
     CORSMiddleware,

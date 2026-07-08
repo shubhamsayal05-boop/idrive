@@ -25,8 +25,10 @@ node_modules/
 next-env.d.ts
 *.tsbuildinfo
 
-# Production builds
+# Production builds (keep od-python/frontend/build in git for one-click users)
 /build
+!frontend/build/
+!frontend/build/**
 dist/
 dist
 

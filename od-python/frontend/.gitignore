@@ -9,7 +9,8 @@
 /coverage
 
 # production
-/build
+# Production builds — shipped in repo for one-click Windows/Mac/Linux users
+# /build
 
 # misc
 .DS_Store

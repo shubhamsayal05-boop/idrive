@@ -24,6 +24,7 @@ if not exist .venv\deps_ok (
   )
   type nul > .venv\deps_ok
 )
+echo Starting ODRIV ^(builds the UI on first run if Node.js is installed^)...
 python run_odriv.py
 echo.
 echo ODRIV stopped.
