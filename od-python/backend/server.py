@@ -20,6 +20,7 @@ from engine.classifier import classify_event, get_channel
 from engine import reports as report_builder
 from engine import docx_report as docx_builder
 from engine.report_fields import default_doc_versions, normalize_report_fields
+from engine.report_data import build_charts_for_sdv, catalog_groups
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -1835,27 +1836,20 @@ async def create_report(fmt: str, payload: dict = Body(default={})):
         raise HTTPException(400, "Calculate the rating before creating a report")
     cfg = await get_config()
     charts_cfg = {k.strip().upper(): v for k, v in cfg["chart_params"].items()}
+    targets_lookup = config_loader.build_targets_lookup(cfg["targets"], project or {})
+    catalog = cfg.get("catalog") or []
     charts = {}
     events_by_sdv = {}
+    summaries_by_sdv = {}
     try:
         for r in rows:
-            events = await db.events.find({"sdv": r["name"]}, {"_id": 0}).to_list(5000)
-            events_by_sdv[r["name"]] = events
-            params = charts_cfg.get(r["name"].strip().upper(), [])
-            active = next((p for p in params if p.get("active")), None)
-            x_name = (active or {}).get("x") or "Vehicle Speed"
-            y_name = (active or {}).get("y") or "AccelerationChassis"
-            pts = []
-            for ev in events:
-                x = get_channel(ev["channels"], x_name)
-                y = get_channel(ev["channels"], y_name)
-                try:
-                    pts.append({"x": float(x), "y": float(y),
-                                "color": (ev.get("driv") or {}).get("color")})
-                except (TypeError, ValueError):
-                    continue
-            png_buf = report_builder.scatter_png(pts, x_name, y_name, r["name"])
-            charts[r["name"]] = {"png": png_buf.getvalue() if png_buf else None}
+            cname = r["name"]
+            events = await db.events.find({"sdv": cname}, {"_id": 0}).to_list(5000)
+            events_by_sdv[cname] = events
+            summaries_by_sdv[cname] = _sdv_summary(
+                project, cname, events, cfg, targets_lookup)
+            charts[cname] = build_charts_for_sdv(
+                events, charts_cfg, cname, report_builder.scatter_png)
         raw_dv = payload.get("doc_versions") or []
         if raw_dv and all(isinstance(x, str) for x in raw_dv):
             doc_versions = default_doc_versions(project)
@@ -1869,6 +1863,8 @@ async def create_report(fmt: str, payload: dict = Body(default={})):
         report_fields = normalize_report_fields(project, payload.get("report_fields"))
         data = {"project": project, "global": glob, "sdv_results": rows,
                 "charts": charts, "events_by_sdv": events_by_sdv,
+                "summaries_by_sdv": summaries_by_sdv,
+                "catalog_groups": catalog_groups(catalog),
                 "doc_versions": doc_versions}
         out = os.path.join(tempfile.gettempdir(), f"ODRIV_report.{fmt}")
         if fmt == "pptx":

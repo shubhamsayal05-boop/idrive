@@ -34,7 +34,7 @@ VERDICT_COLOR = {"Low Risk": (0, 0xB0, 0x50), "Medium Risk": (0xFF, 0xC0, 0),
 PT_COLOR = {"RED": "#FF0000", "YELLOW": "#E6C200", "GREEN": "#00B050"}
 
 
-def scatter_png(events, x_name, y_name, title):
+def scatter_png(events, x_name, y_name, title, xlim=None, ylim=None):
     """Build a colored scatter chart PNG for one SDV; returns bytes or None."""
     xs, ys, cs = [], [], []
     for ev in events:
@@ -51,6 +51,10 @@ def scatter_png(events, x_name, y_name, title):
     ax.set_xlabel(x_name, fontsize=9)
     ax.set_ylabel(y_name, fontsize=9)
     ax.set_title(title, fontsize=10, fontweight="bold")
+    if xlim and xlim[0] is not None and xlim[1] is not None:
+        ax.set_xlim(xlim)
+    if ylim and ylim[0] is not None and ylim[1] is not None:
+        ax.set_ylim(ylim)
     ax.grid(True, linewidth=0.4, alpha=0.5, zorder=0)
     fig.tight_layout()
     buf = io.BytesIO()

@@ -24,7 +24,8 @@ from engine.report_tables import (
     _priority_table_png,
     _project_home_png,
     _scorecard_png,
-    _sdv_synthesis_png,
+    _sdv_summary_panel_png,
+    part_label,
 )
 from engine.reports import _fmt_doc_version
 
@@ -208,14 +209,14 @@ def _insert_sdv_sections(doc, data, events_by_sdv, charts):
     if annex_p is None:
         annex_p = doc.paragraphs[-1]
 
+    summaries = data.get("summaries_by_sdv") or {}
     sdv_list = data.get("sdv_results") or []
     for j, sdv in enumerate(sdv_list):
         name = sdv.get("name") or "SDV"
         events = events_by_sdv.get(name) or []
-        for t, part_key, part_label in (
-            (1, "driv", "DRIVABILITY"),
-            (2, "dyn", "RESPONSIVENESS"),
-        ):
+        sdv_charts = (charts or {}).get(name) or {}
+        sdv_summary = summaries.get(name) or {}
+        for t, part_key in ((1, "driv"), (2, "dyn")):
             if t == 2 and not _has_dyn_section(sdv):
                 continue
             if t == 2 and not (sdv.get("dyn") or {}):
@@ -223,21 +224,33 @@ def _insert_sdv_sections(doc, data, events_by_sdv, charts):
             if j > 0 or t > 1:
                 _insert_page_break_before(annex_p)
 
-            heading = "2.%d.%d %s %s" % (j + 1, t, name.upper(), part_label)
+            part_label_text = part_label(part_key)
+            heading = "2.%d.%d %s %s" % (j + 1, t, name.upper(), part_label_text)
             anchor = _add_heading_before(annex_p, heading)
 
-            # 1 — Synthesis
+            # 1 — Synthesis (full SDV summary panel)
             syn = _add_bullet_section(annex_p, SYNTHESIS_PARTS[0])
-            syn_png = _sdv_synthesis_png(sdv, part_key)
+            syn_png = _sdv_summary_panel_png(
+                sdv_summary.get(part_key), name, part_key, sdv_result=sdv)
             if syn_png:
                 _add_image_after(annex_p, syn_png)
 
-            # 2 — Points visualisation 1 (scatter)
-            chart = (charts or {}).get(name) or {}
-            png = chart.get("png")
-            if png:
+            part_charts = sdv_charts.get(part_key) or sdv_charts
+            # 2 — Points visualisation 1
+            png1 = part_charts.get(1) or part_charts.get("1")
+            if isinstance(png1, dict):
+                png1 = png1.get("png")
+            if png1:
                 _add_bullet_section(annex_p, SYNTHESIS_PARTS[1])
-                _add_image_after(annex_p, png)
+                _add_image_after(annex_p, png1)
+
+            # 3 — Points visualisation 2
+            png2 = part_charts.get(2) or part_charts.get("2")
+            if isinstance(png2, dict):
+                png2 = png2.get("png")
+            if png2:
+                _add_bullet_section(annex_p, SYNTHESIS_PARTS[2])
+                _add_image_after(annex_p, png2)
 
             # 4/5 — priority tables
             hi = _priority_table_png(events, part_key, "high")
@@ -296,11 +309,13 @@ def build_docx(data, out_path, report_fields=None):
     _apply_bookmark_fields(doc, project, fields)
 
     # Embedded rating / home screenshots (SysHome, SysDr, SysDynT, SysDynGR)
+    state = {"event_count": sum(len(v) for v in (data.get("events_by_sdv") or {}).values()),
+             "sdv_count": len(data.get("sdv_results") or [])}
     for bm, png in (
-        ("SysHome", _project_home_png(project, glob)),
+        ("SysHome", _project_home_png(project, glob, state=state)),
         ("SysDr", _global_risk_png(glob)),
-        ("SysDynT", _scorecard_png(data)),
-        ("SysDynGR", _scorecard_png(data)),
+        ("SysDynT", _scorecard_png(data, forecast=False)),
+        ("SysDynGR", _scorecard_png(data, forecast=True, title="Scorecard — forecast @ SOPM")),
     ):
         if png:
             _replace_bookmark_content(doc, bm, image_bytes=_png_bytes(png))

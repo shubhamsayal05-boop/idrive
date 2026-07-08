@@ -15,7 +15,8 @@ from engine.report_tables import (
     _priority_table_png,
     _project_home_png,
     _scorecard_png_chunks,
-    _sdv_synthesis_png,
+    _sdv_summary_panel_png,
+    part_label,
 )
 from engine.reports import TEAL, _fmt_doc_version
 
@@ -149,22 +150,27 @@ def _doc_versions_rows(doc_versions):
 
 
 def _add_sdv_slides(prs, blank, data, events_by_sdv, charts):
+    summaries = data.get("summaries_by_sdv") or {}
     for j, sdv in enumerate(data.get("sdv_results") or []):
         name = sdv.get("name") or "SDV"
         events = events_by_sdv.get(name) or []
-        chart_png = (charts.get(name) or {}).get("png")
-        for t, part_key, part_label in ((1, "driv", "DRIVABILITY"), (2, "dyn", "RESPONSIVENESS")):
+        sdv_charts = (charts or {}).get(name) or {}
+        sdv_summary = summaries.get(name) or {}
+        for t, part_key in ((1, "driv"), (2, "dyn")):
             if t == 2 and not _has_dyn_section(sdv):
                 continue
             if t == 2 and not (sdv.get("dyn") or {}):
                 continue
-            heading = "2.%d.%d %s %s" % (j + 1, t, name.upper(), part_label)
+            heading = "2.%d.%d %s %s" % (j + 1, t, name.upper(), part_label(part_key))
             slide = prs.slides.add_slide(blank)
             _slide_title(slide, heading)
             y = 1.0
+            part_charts = sdv_charts.get(part_key) or sdv_charts
             sections = [
-                (SYNTHESIS_PARTS[0], _sdv_synthesis_png(sdv, part_key)),
-                (SYNTHESIS_PARTS[1], chart_png if chart_png else None),
+                (SYNTHESIS_PARTS[0], _sdv_summary_panel_png(
+                    sdv_summary.get(part_key), name, part_key, sdv_result=sdv)),
+                (SYNTHESIS_PARTS[1], part_charts.get(1) or part_charts.get("1")),
+                (SYNTHESIS_PARTS[2], part_charts.get(2) or part_charts.get("2")),
             ]
             hi = _priority_table_png(events, part_key, "high")
             lo = _priority_table_png(events, part_key, "low")
@@ -227,7 +233,10 @@ def build_pptx(data, out_path, report_fields=None):
     _slide_title(slide, "SYNTHESIS — Test conditions")
     _add_text_block(slide, Inches(0.5), Inches(1.1), Inches(12), Inches(2.0), _test_conditions_lines(fields), font_size=12)
 
-    home_png = _project_home_png(project, glob)
+    home_png = _project_home_png(project, glob, state={
+        "event_count": sum(len(v) for v in (data.get("events_by_sdv") or {}).values()),
+        "sdv_count": len(data.get("sdv_results") or []),
+    })
     if home_png:
         _add_image_slide(prs, blank, "Project summary", home_png)
 
@@ -235,8 +244,11 @@ def build_pptx(data, out_path, report_fields=None):
     if risk_png:
         _add_image_slide(prs, blank, "Risk assessment for customer complaints", risk_png)
 
-    for title, png in _scorecard_png_chunks(data):
+    for title, png in _scorecard_png_chunks(data, forecast=False):
         _add_image_slide(prs, blank, title, png)
+
+    for title, png in _scorecard_png_chunks(data, forecast=True):
+        _add_image_slide(prs, blank, title.replace("use cases", "forecast @ SOPM"), png)
 
     slide = prs.slides.add_slide(blank)
     _slide_title(slide, "Objective results")
